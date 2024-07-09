@@ -4,8 +4,8 @@ import { NextPage, NextPageContext } from 'next';
 import NextErrorComponent, { ErrorProps } from 'next/error';
 import React from 'react';
 
-import { PageError } from '@src/components/features/errors/page-error';
-import { tryget } from '@src/utils';
+import { PageError } from '~/components/features/errors/page-error';
+import { tryget } from '~/utils';
 
 export interface NextPageErrorRequest extends IncomingMessage {
   query: {

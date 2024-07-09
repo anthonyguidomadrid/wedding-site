@@ -4,8 +4,8 @@ import { useTranslation } from 'next-i18next';
 import React from 'react';
 import { File } from 'react-kawaii';
 
-import { PageContainer } from '@src/components/templates/page-container';
-import colorfulTheme from '@src/theme';
+import { PageContainer } from '~/components/templates/page-container';
+import colorfulTheme from '~/utils/theme';
 
 interface PropsInterface {
   error?: {

@@ -3,11 +3,6 @@ import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect, ReactElement } from 'react';
 
-import { Header } from '../header';
-
-import { CtfFooterGql } from '@src/components/features/ctf-components/ctf-footer/ctf-footer-gql';
-import { CtfMobileMenuGql } from '@src/components/features/ctf-components/ctf-mobile-menu/ctf-mobile-menu-gql';
-
 const useStyles = makeStyles((theme: Theme) => ({
   content: {
     ...theme.typography.body1,
@@ -20,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface LayoutPropsInterface {
   preview: boolean;
-  children: ReactElement[];
+  children: ReactElement;
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
@@ -47,22 +42,9 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
   return (
     <>
       <CssBaseline />
-      {/* header */}
-      <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
 
       {/* content */}
       <div className={classes.content}>{children}</div>
-
-      {/* footer */}
-      <CtfFooterGql />
-
-      {/* mobile menu */}
-      <CtfMobileMenuGql
-        isOpen={isMenuOpen}
-        onOpenChange={(newOpen: boolean) => {
-          setMenuOpen(newOpen);
-        }}
-      />
     </>
   );
 };

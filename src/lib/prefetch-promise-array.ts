@@ -1,4 +1,4 @@
-import { prefetchMap } from '@src/lib/prefetch-mappings';
+import { prefetchMap } from '~/lib/prefetch-mappings';
 
 /**
  * Create an array of prefetchQuery functions that can be awaited in our pages to prefetch React Query calls

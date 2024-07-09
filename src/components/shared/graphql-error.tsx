@@ -2,7 +2,7 @@ import { Box, Theme, Typography } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import React, { useMemo } from 'react';
 
-import { tryget } from '@src/utils';
+import { tryget } from '~/utils';
 
 // TODO: add other errors than only `NetworkError`
 

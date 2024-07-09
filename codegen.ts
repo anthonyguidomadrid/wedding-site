@@ -29,10 +29,7 @@ export const config: CodegenConfig = {
         baseTypesPath: 'lib/__generated/graphql.types.ts',
         folder: '__generated',
       },
-      plugins: [
-        'typescript-operations',
-        'typescript-react-query',
-      ],
+      plugins: ['typescript-operations', 'typescript-react-query'],
       config: {
         exposeQueryKeys: true,
         exposeFetcher: true,
@@ -43,7 +40,7 @@ export const config: CodegenConfig = {
         dedupeFragments: true,
         preResolveTypes: true,
         withHooks: true,
-        fetcher: '@src/lib/fetchConfig#customFetcher',
+        fetcher: '~/lib/fetchConfig#customFetcher',
       },
     },
   },

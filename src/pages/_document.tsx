@@ -6,7 +6,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import flush from 'styled-jsx';
 
-import colorfulTheme from '@src/theme';
+import colorfulTheme from '~/utils/theme';
 
 export default class CustomDocument extends Document {
   render() {

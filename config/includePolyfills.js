@@ -4,8 +4,8 @@ module.exports = function includePolyfills(config) {
   config.entry = async () => {
     const entries = await originalEntry();
 
-    if (entries['main.js'] && !entries['main.js'].includes('./src/polyfills.ts')) {
-      entries['main.js'].unshift('./src/polyfills.ts');
+    if (entries['main.js'] && !entries['main.js'].includes('./src/utils/polyfills.ts')) {
+      entries['main.js'].unshift('./src/utils/polyfills.ts');
     }
 
     return entries;

@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import React, { useMemo } from 'react';
 
-import { useContentfulContext } from '@src/contentful-context';
-import { componentGqlMap, componentMap } from '@src/mappings';
+import { useContentfulContext } from '~/utils/contentful-context';
+import { componentGqlMap, componentMap } from '~/utils/mappings';
 
 let previousComponent: string | null = null;
 interface Props {
