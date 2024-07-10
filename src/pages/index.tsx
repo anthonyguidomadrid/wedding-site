@@ -1,12 +1,11 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
-import { useTranslation } from 'react-i18next';
 
+import { HomePage } from '~/components/organisms/HomePage';
 import { getServerSideTranslations } from '~/lib/get-serverside-translations';
 
-const LangPage: NextPage = () => {
-  const { t } = useTranslation();
-  return <h1>{t('title')}</h1>;
+const LandingPage: NextPage = () => {
+  return <HomePage />;
 };
 
 export const getServerSideProps = async ({ locale }: NextPageContext) => {
@@ -31,4 +30,4 @@ export const getServerSideProps = async ({ locale }: NextPageContext) => {
   }
 };
 
-export default LangPage;
+export default LandingPage;

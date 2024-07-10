@@ -1,3 +1,12 @@
 {
-  "title": "Bienvenidos"
+  "menu": {
+    "details": "La Boda",
+    "faq": "Preguntas y respuestas",
+    "rvsp": "Confirmación",
+    "gift": "Luna de miel"
+  },
+  "title": {
+    "welcome": "Boda de Juan y Anthony",
+    "footer": "Contacta con nosotros"
+  }
 }
