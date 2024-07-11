@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
 
 import { AnimatedDiv } from './components/AnimatedDiv';
@@ -5,9 +6,23 @@ import { CustomScrollLink } from './components/ScrollLink';
 import { Nav, Section } from './HomePage.styles';
 
 import { LanguageSelector } from '~/components/atoms/LanguageSelector';
+import { Greeting } from '~/components/atoms/Test/component/Greeting';
+import { Test } from '~/components/atoms/Test/Section';
+import { SectionData, SectionProps } from '~/components/atoms/Test/Section.types';
+import { SECTION_QUERY } from '~/queries/sections';
 
 export const HomePage = () => {
   const { t } = useTranslation();
+  const DynamicTest = dynamic<SectionProps<SectionData>>(() => Promise.resolve(Test), {
+    ssr: false,
+  });
+
+  const sections = [
+    {
+      query: SECTION_QUERY,
+      Component: Greeting,
+    },
+  ];
 
   return (
     <div>
@@ -18,6 +33,10 @@ export const HomePage = () => {
         <CustomScrollLink to="section4">{t('menu.gift')}</CustomScrollLink>
         <LanguageSelector />
       </Nav>
+      {sections.map(({ query, Component }, index) => (
+        <DynamicTest key={index} query={query} Component={Component} />
+      ))}
+
       <Section name="header" backgroundColor="red">
         <AnimatedDiv>{t('title.welcome')}</AnimatedDiv>
       </Section>
