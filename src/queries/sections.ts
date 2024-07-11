@@ -9,3 +9,13 @@ export const SECTION_QUERY = gql`
     }
   }
 `;
+
+export const GREETING_QUERY = gql`
+  query Greeting($locale: String, $preview: Boolean) {
+    greetingCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        hello
+      }
+    }
+  }
+`;

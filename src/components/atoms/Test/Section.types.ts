@@ -8,7 +8,8 @@ export type SectionData = {
   };
 };
 
-export type SectionProps<T> = {
+export type SectionProps<TProps, Tquery> = {
   query: RequestDocument;
-  Component: React.ComponentType<T>;
+  Component: React.ComponentType<TProps>;
+  normalizer: (data: Tquery) => TProps;
 };

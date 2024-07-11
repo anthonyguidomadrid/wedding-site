@@ -6,8 +6,12 @@ import { SectionProps } from './Section.types';
 
 import { fetchContentfulData } from '~/utils/contentful';
 
-export const Test = <T,>({ query, Component }: SectionProps<T>) => {
-  const [content, setContent] = useState<T | null>(null); // Adjusted useState type
+export const Test = <TProps, Tquery>({
+  query,
+  Component,
+  normalizer,
+}: SectionProps<TProps, Tquery>) => {
+  const [content, setContent] = useState<TProps | null>(null);
   const { ref, inView } = useInView({ triggerOnce: true });
   const { locale } = useRouter();
 
@@ -15,11 +19,11 @@ export const Test = <T,>({ query, Component }: SectionProps<T>) => {
     if (inView && !content) {
       const fetchData = async () => {
         try {
-          const { data, errors } = await fetchContentfulData<T>(query, {
+          const { data, errors } = await fetchContentfulData<Tquery>(query, {
             locale,
           });
           if (data) {
-            setContent(data);
+            setContent(normalizer(data));
           } else {
             console.error(errors);
           }
@@ -29,7 +33,7 @@ export const Test = <T,>({ query, Component }: SectionProps<T>) => {
       };
       fetchData();
     }
-  }, [inView, content, locale, query]);
+  }, [inView, content, locale, query, normalizer]);
 
   return (
     <div ref={ref} style={{ minHeight: '100vh', padding: '50px' }}>
