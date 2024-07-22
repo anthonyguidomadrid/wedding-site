@@ -1,7 +1,7 @@
 import { CssBaseline } from '@mui/material';
 import React, { ReactElement } from 'react';
 
-import { Menu } from '~/components/molecules/Menu';
+import { Menu } from '~/components/Menu';
 
 interface LayoutPropsInterface {
   preview: boolean;

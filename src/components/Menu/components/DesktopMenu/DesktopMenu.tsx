@@ -1,11 +1,11 @@
 import { MenuItems } from './components/MenuItems';
-import { splitMenuArray } from './DesktopMenu.func';
+import { getMenuFontColor, splitMenuArray } from './DesktopMenu.func';
 import { DesktopMenuWrapper } from './DesktopMenu.styles';
 import { MENU_ITEMS } from '../../Menu.func';
 import { Logo } from '../Logo';
 
-import { FadeInWrapper } from '~/components/molecules/FadeInWrapper';
-import { LanguageSelector } from '~/components/molecules/Menu/components/LanguageSelector';
+import { LanguageSelector } from '~/components/Menu/components/LanguageSelector';
+import { FadeInWrapper } from '~/components/shared/FadeInWrapper';
 import { useScroll } from '~/hooks';
 
 export const DesktopMenu = () => {
@@ -13,7 +13,7 @@ export const DesktopMenu = () => {
   const { isAtTop } = useScroll();
   return (
     <FadeInWrapper>
-      <DesktopMenuWrapper isAtTop={isAtTop}>
+      <DesktopMenuWrapper color={getMenuFontColor(isAtTop)}>
         <MenuItems itemsArray={firstHalfMenuArr} />
         <Logo />
         <MenuItems itemsArray={secondHalfMenuArr} />

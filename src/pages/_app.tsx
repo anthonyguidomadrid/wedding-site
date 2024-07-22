@@ -8,7 +8,7 @@ import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
 import nextI18nConfig from 'next-i18next.config';
-import { Layout } from '~/components/organisms/Layout/layout';
+import { Layout } from '~/components/shared/Layout/layout';
 import { queryConfig } from '~/lib/gql-client';
 import { theme } from '~/theme';
 import { useContentfulContext, ContentfulContentProvider } from '~/utils/contentful-context';

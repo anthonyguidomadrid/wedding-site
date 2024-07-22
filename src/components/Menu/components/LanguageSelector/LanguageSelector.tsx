@@ -3,8 +3,8 @@ import { MouseEvent } from 'react';
 
 import { LanguageButton, LanguageSelectorWrapper } from './LanguageSelector.styles';
 
-import { FadeInWrapper } from '~/components/molecules/FadeInWrapper';
 import { useScroll } from '~/hooks';
+import { getMenuFontColor } from '../DesktopMenu/DesktopMenu.func';
 
 export const LanguageSelector = () => {
   const { locales } = useRouter();
@@ -21,7 +21,12 @@ export const LanguageSelector = () => {
   return (
     <LanguageSelectorWrapper>
       {locales?.map(loc => (
-        <LanguageButton key={loc} value={loc} onClick={onLocaleChange} isAtTop={isAtTop}>
+        <LanguageButton
+          key={loc}
+          value={loc}
+          onClick={onLocaleChange}
+          textColor={getMenuFontColor(isAtTop)}
+        >
           {loc.toUpperCase()}
         </LanguageButton>
       ))}

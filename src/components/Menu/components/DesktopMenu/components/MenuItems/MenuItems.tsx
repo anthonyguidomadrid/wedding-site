@@ -1,5 +1,6 @@
 import { MenuItemsProps } from './MenuItems.types';
-import { CustomScrollLink } from '../ScrollLink';
+
+import { CustomScrollLink } from '~/components/shared/ScrollLink';
 
 export const MenuItems = ({ itemsArray }: MenuItemsProps) => (
   <>
