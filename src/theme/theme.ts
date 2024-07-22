@@ -20,10 +20,10 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
   return colorConfigs[`palette-${palette}`];
 };
 
-const colorfulTheme = createTheme({
+export const theme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `'Red Hat Display', sans-serif`,
+    fontFamily: `Open Sans, Arial, sans-serif`,
     htmlFontSize: 10,
     caption: {
       fontSize: '1.5rem',
@@ -46,5 +46,3 @@ const colorfulTheme = createTheme({
   },
   components: {},
 });
-
-export default colorfulTheme;

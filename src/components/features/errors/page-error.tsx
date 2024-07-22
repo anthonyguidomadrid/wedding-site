@@ -5,7 +5,7 @@ import React from 'react';
 import { File } from 'react-kawaii';
 
 import { PageContainer } from '~/components/templates/page-container';
-import colorfulTheme from '~/utils/theme';
+import { theme } from '~/theme';
 
 interface PropsInterface {
   error?: {
@@ -60,7 +60,7 @@ export const PageError = (props: PropsInterface) => {
                 <File
                   size={100}
                   mood="ko"
-                  color={colorfulTheme.palette.primary.main}
+                  color={theme.palette.primary.main}
                   className={classes.icon}
                 />
                 <Typography variant="h1" gutterBottom>

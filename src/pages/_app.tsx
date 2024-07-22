@@ -7,12 +7,11 @@ import Head from 'next/head';
 import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import contentfulConfig from 'contentful.config';
 import nextI18nConfig from 'next-i18next.config';
-import { Layout } from '~/components/templates/layout/layout';
+import { Layout } from '~/components/organisms/Layout/layout';
 import { queryConfig } from '~/lib/gql-client';
+import { theme } from '~/theme';
 import { useContentfulContext, ContentfulContentProvider } from '~/utils/contentful-context';
-import colorfulTheme from '~/utils/theme';
 
 const LivePreviewProvider = ({ children }) => {
   const { previewActive, locale } = useContentfulContext();
@@ -77,7 +76,7 @@ const CustomApp = ({
           <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false} />
             <StyledEngineProvider injectFirst>
-              <ThemeProvider theme={colorfulTheme}>
+              <ThemeProvider theme={theme}>
                 <Hydrate state={dehydratedState}>
                   <Layout preview={previewActive}>
                     <Component {...pageProps} err={err} />

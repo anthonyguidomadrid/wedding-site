@@ -6,7 +6,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import flush from 'styled-jsx';
 
-import colorfulTheme from '~/utils/theme';
+import { theme } from '~/theme';
 
 export default class CustomDocument extends Document {
   render() {
@@ -17,7 +17,7 @@ export default class CustomDocument extends Document {
 
           <meta charSet="utf-8" />
           {/* PWA primary color */}
-          <meta name="theme-color" content={colorfulTheme.palette.primary.main} />
+          <meta name="theme-color" content={theme.palette.primary.main} />
 
           <link
             href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap"
