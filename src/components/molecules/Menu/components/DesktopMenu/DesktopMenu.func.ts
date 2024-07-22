@@ -1,5 +1,7 @@
 import { MenuItem } from '../../Menu.types';
 
+import { theme } from '~/theme';
+
 export const splitMenuArray = (array: MenuItem[]): MenuItem[][] => {
   const mid = Math.floor(array.length / 2);
 
@@ -9,6 +11,7 @@ export const splitMenuArray = (array: MenuItem[]): MenuItem[][] => {
   return [firstHalf, secondHalf];
 };
 
-export const getFontColor = (isAtTop: boolean) => {
-  return isAtTop ? 'white' : 'black';
+export const getMenuFontColor = (isAtTop: boolean) => {
+  const commonColor = isAtTop ? 'white' : 'black';
+  return theme.palette.common[commonColor];
 };

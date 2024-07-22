@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
-import { getFontColor } from '~/components/molecules/Menu/components/DesktopMenu/DesktopMenu.func';
+import { getMenuFontColor } from '~/components/molecules/Menu/components/DesktopMenu/DesktopMenu.func';
 
 export const LanguageSelectorWrapper = styled.div(({ theme }) => ({
   position: 'absolute',
@@ -9,9 +9,8 @@ export const LanguageSelectorWrapper = styled.div(({ theme }) => ({
   textTransform: 'uppercase',
 }));
 
-export const LanguageButton = styled(Button)<{ isAtTop: boolean }>(({ theme, isAtTop }) => {
-  const textColor = getFontColor(isAtTop);
-  const color = theme.palette.common[textColor];
+export const LanguageButton = styled(Button)<{ isAtTop: boolean }>(({ isAtTop }) => {
+  const color = getMenuFontColor(isAtTop);
   return {
     minWidth: '10px',
     color,

@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { StyledScrollLink } from './ScrollLink.styles';
 import { ScrollLinkProps } from './ScrollLink.types';
 
+import { FadeInWrapper } from '~/components/molecules/FadeInWrapper';
+
 export const CustomScrollLink = ({ to, label }: ScrollLinkProps) => {
   const { t } = useTranslation();
   return (

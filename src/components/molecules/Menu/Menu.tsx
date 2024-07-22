@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 import { DesktopMenu } from './components';
 import { MobileMenu } from './components/MobileMenu';
 import { Nav } from './Menu.styles';

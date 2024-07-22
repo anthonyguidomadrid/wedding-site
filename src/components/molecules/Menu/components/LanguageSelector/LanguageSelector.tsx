@@ -3,6 +3,7 @@ import { MouseEvent } from 'react';
 
 import { LanguageButton, LanguageSelectorWrapper } from './LanguageSelector.styles';
 
+import { FadeInWrapper } from '~/components/molecules/FadeInWrapper';
 import { useScroll } from '~/hooks';
 
 export const LanguageSelector = () => {
