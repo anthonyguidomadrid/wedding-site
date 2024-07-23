@@ -19,7 +19,7 @@ export const LanguageSelector = () => {
   };
 
   return (
-    <LanguageSelectorWrapper>
+    <>
       {locales?.map(loc => (
         <LanguageButton
           key={loc}
@@ -30,6 +30,6 @@ export const LanguageSelector = () => {
           {loc.toUpperCase()}
         </LanguageButton>
       ))}
-    </LanguageSelectorWrapper>
+    </>
   );
 };

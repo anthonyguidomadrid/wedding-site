@@ -2,6 +2,7 @@ import { MenuItems } from './components/MenuItems';
 import { getMenuFontColor, splitMenuArray } from './DesktopMenu.func';
 import { DesktopMenuWrapper } from './DesktopMenu.styles';
 import { MENU_ITEMS } from '../../Menu.func';
+import { AbsoluteWrapper } from '../../Menu.styles';
 import { Logo } from '../Logo';
 
 import { LanguageSelector } from '~/components/Menu/components/LanguageSelector';
@@ -17,7 +18,9 @@ export const DesktopMenu = () => {
         <MenuItems itemsArray={firstHalfMenuArr} />
         <Logo />
         <MenuItems itemsArray={secondHalfMenuArr} />
-        <LanguageSelector />
+        <AbsoluteWrapper>
+          <LanguageSelector />
+        </AbsoluteWrapper>
       </DesktopMenuWrapper>
     </FadeInWrapper>
   );

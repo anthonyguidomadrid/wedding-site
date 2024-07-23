@@ -1,4 +1,4 @@
 export type FadeInWrapperProps = {
-  children: React.ReactElement | React.ReactElement[] | undefined;
+  children: React.ReactNode;
   timeout?: number;
 };

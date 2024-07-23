@@ -42,6 +42,7 @@ export const theme = createTheme({
     },
     background: {
       default: 'white',
+      menu: 'rgba(255, 255, 255, 0.75)',
     },
   },
   components: {},

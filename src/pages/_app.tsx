@@ -6,12 +6,14 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 
 import nextI18nConfig from 'next-i18next.config';
 import { Layout } from '~/components/shared/Layout/layout';
 import { queryConfig } from '~/lib/gql-client';
 import { theme } from '~/theme';
 import { useContentfulContext, ContentfulContentProvider } from '~/utils/contentful-context';
+import { store } from '~/utils/store';
 
 const LivePreviewProvider = ({ children }) => {
   const { previewActive, locale } = useContentfulContext();
@@ -77,11 +79,13 @@ const CustomApp = ({
             <ReactQueryDevtools initialIsOpen={false} />
             <StyledEngineProvider injectFirst>
               <ThemeProvider theme={theme}>
-                <Hydrate state={dehydratedState}>
-                  <Layout preview={previewActive}>
-                    <Component {...pageProps} err={err} />
-                  </Layout>
-                </Hydrate>
+                <Provider store={store}>
+                  <Hydrate state={dehydratedState}>
+                    <Layout preview={previewActive}>
+                      <Component {...pageProps} err={err} />
+                    </Layout>
+                  </Hydrate>
+                </Provider>
               </ThemeProvider>
             </StyledEngineProvider>
           </QueryClientProvider>

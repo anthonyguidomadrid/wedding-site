@@ -1,14 +1,6 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
-import { getMenuFontColor } from '~/components/Menu/components/DesktopMenu/DesktopMenu.func';
-
-export const LanguageSelectorWrapper = styled.div(({ theme }) => ({
-  position: 'absolute',
-  right: theme.spacing(2),
-  textTransform: 'uppercase',
-}));
-
 export const LanguageButton = styled(Button)<{ textColor: string }>(({ textColor }) => ({
   minWidth: '10px',
   color: textColor,
