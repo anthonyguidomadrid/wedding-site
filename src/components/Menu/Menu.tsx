@@ -10,7 +10,7 @@ export const Menu = () => {
   const { isAtTop } = useScroll();
   const { isMobileMenuOpen } = useMobileMenu();
   return (
-    <Nav isTransparent={isAtTop && !isMobileMenuOpen} isMenuOpen={isMobileMenuOpen}>
+    <Nav isTransparent={isAtTop && !isMobileMenuOpen} isMenuOpen={isMobile && isMobileMenuOpen}>
       {isMobile ? <MobileMenu /> : <DesktopMenu />}
     </Nav>
   );

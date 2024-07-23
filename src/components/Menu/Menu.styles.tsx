@@ -9,11 +9,10 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
     zIndex: 1000,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
     padding: theme.spacing(2),
     backgroundColor: isTransparent ? 'transparent' : theme.palette.background.menu,
-    maxHeight: isMenuOpen ? '100vh' : '10vh',
-    transition: 'background-color 0.5s ease-in-out, max-height 0.5s ease-in-out',
+    height: isMenuOpen ? '100vh' : '10vh',
+    transition: 'background-color 0.5s ease-in-out, height 0.5s ease-in-out',
   }),
 );
 export const AbsoluteWrapper = styled.div(({ theme }) => ({
