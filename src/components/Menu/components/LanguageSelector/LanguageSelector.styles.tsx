@@ -1,14 +1,12 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
-export const LanguageButton = styled(Button)<{ textColor: string }>(({ textColor }) => ({
-  minWidth: '10px',
-  color: textColor,
-  transition: 'color background-color 0.5s ease',
-  fontSize: '1rem',
+export const LanguageButton = styled(Button)(({ theme }) => ({
+  minWidth: 'fit-content',
   borderRadius: 0,
+  padding: theme.spacing(0, 4),
   '&:not(:last-child)': {
-    borderRight: `1px ${textColor} solid`,
-    height: '20px',
+    borderRight: `1px ${theme.palette.common.black} solid`,
+    paddingLeft: 0,
   },
 }));

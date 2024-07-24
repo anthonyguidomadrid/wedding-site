@@ -8,18 +8,18 @@ import { MenuItem } from './Menu.types';
 export const MENU_ITEMS: MenuItem[] = [
   {
     item: 'details',
-    icon: BrunchDiningIcon,
+    Icon: BrunchDiningIcon,
   },
   {
     item: 'faq',
-    icon: QuestionAnswerIcon,
+    Icon: QuestionAnswerIcon,
   },
   {
     item: 'rvsp',
-    icon: BookOnlineIcon,
+    Icon: BookOnlineIcon,
   },
   {
     item: 'honeymoon',
-    icon: CardTravelIcon,
+    Icon: CardTravelIcon,
   },
 ];

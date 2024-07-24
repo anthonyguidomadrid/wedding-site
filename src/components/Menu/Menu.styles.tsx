@@ -12,7 +12,7 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
     padding: theme.spacing(2),
     backgroundColor: isTransparent ? 'transparent' : theme.palette.background.menu,
     height: isMenuOpen ? '100vh' : '10vh',
-    transition: 'background-color 0.5s ease-in-out, height 0.5s ease-in-out',
+    transition: 'background-color 0.5s ease-in-out, height 1s ease-in-out',
   }),
 );
 export const AbsoluteWrapper = styled.div(({ theme }) => ({

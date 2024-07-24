@@ -1,15 +1,12 @@
 import { useRouter } from 'next/router';
 import { MouseEvent } from 'react';
 
-import { LanguageButton, LanguageSelectorWrapper } from './LanguageSelector.styles';
+import { LanguageButton } from './LanguageSelector.styles';
+import { LanguageSelectorProps } from './LanguageSelector.types';
 
-import { useScroll } from '~/hooks';
-import { getMenuFontColor } from '../DesktopMenu/DesktopMenu.func';
-
-export const LanguageSelector = () => {
+export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className }) => {
   const { locales } = useRouter();
   const router = useRouter();
-  const { isAtTop } = useScroll();
 
   const onLocaleChange = (event: MouseEvent<HTMLButtonElement>) => {
     const selectedLocale = event.currentTarget.value;
@@ -21,12 +18,7 @@ export const LanguageSelector = () => {
   return (
     <>
       {locales?.map(loc => (
-        <LanguageButton
-          key={loc}
-          value={loc}
-          onClick={onLocaleChange}
-          textColor={getMenuFontColor(isAtTop)}
-        >
+        <LanguageButton key={loc} value={loc} onClick={onLocaleChange} className={className}>
           {loc.toUpperCase()}
         </LanguageButton>
       ))}

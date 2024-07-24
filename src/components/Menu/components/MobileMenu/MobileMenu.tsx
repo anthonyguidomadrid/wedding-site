@@ -1,32 +1,30 @@
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useEffect } from 'react';
+import TranslateIcon from '@mui/icons-material/Translate';
 
+import { MobileMenuItem } from './components';
 import { MenuButton, MenuItemsWrapper, MobileMenuWrapper } from './MobileMenu.styles';
+import { MENU_ITEMS } from '../../Menu.constant';
 import { AbsoluteWrapper } from '../../Menu.styles';
 import { getMenuFontColor } from '../DesktopMenu/DesktopMenu.func';
-import { Logo } from '../Logo';
+import { LanguageSelector } from '../LanguageSelector';
+import { MenuLogo } from '../MenuLogo';
 
-import { FadeInWrapper } from '~/components/shared';
+import { ScrollLink, FadeInWrapper } from '~/components/shared';
 import { useMobileMenu, useScroll } from '~/hooks';
 
 export const MobileMenu = () => {
   const { isMobileMenuOpen, toogleMobileMenu } = useMobileMenu();
   const { isAtTop } = useScroll();
   const toogleMenu = () => toogleMobileMenu();
-
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isMobileMenuOpen]);
+  const closeMenu = () => {
+    if (isMobileMenuOpen) toogleMenu();
+  };
 
   return (
     <FadeInWrapper>
       <MobileMenuWrapper>
-        <Logo />
+        <MenuLogo onClick={closeMenu} />
         <AbsoluteWrapper>
           <MenuButton
             onClick={toogleMenu}
@@ -36,15 +34,18 @@ export const MobileMenu = () => {
           </MenuButton>
         </AbsoluteWrapper>
       </MobileMenuWrapper>
-      {isMobileMenuOpen && (
+      <FadeInWrapper timeout={isMobileMenuOpen ? 4000 : 1000} display={isMobileMenuOpen}>
         <MenuItemsWrapper>
-          <p>Menu 1</p>
-          <p>Menu 2</p>
-          <p>Menu 3</p>
-          <p>Menu 4</p>
-          <p>Menu 5</p>
+          {MENU_ITEMS.map(({ item, Icon }) => (
+            <MobileMenuItem key={item} Icon={Icon}>
+              <ScrollLink label={item} to={item} onClick={toogleMenu} />
+            </MobileMenuItem>
+          ))}
+          <MobileMenuItem Icon={TranslateIcon}>
+            <LanguageSelector />
+          </MobileMenuItem>
         </MenuItemsWrapper>
-      )}
+      </FadeInWrapper>
     </FadeInWrapper>
   );
 };

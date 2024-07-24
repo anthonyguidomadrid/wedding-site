@@ -1,11 +1,11 @@
 import { MenuItemsProps } from './MenuItems.types';
 
-import { CustomScrollLink } from '~/components/shared/ScrollLink';
+import { ScrollLink } from '~/components/shared/ScrollLink';
 
-export const MenuItems = ({ itemsArray }: MenuItemsProps) => (
+export const MenuItems: React.FC<MenuItemsProps> = ({ itemsArray }) => (
   <>
     {itemsArray.map(({ item }) => (
-      <CustomScrollLink key={item} label={item} to={item} />
+      <ScrollLink key={item} label={item} to={item} />
     ))}
   </>
 );

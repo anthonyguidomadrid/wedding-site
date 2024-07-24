@@ -1,11 +1,10 @@
 import { MenuItems } from './components/MenuItems';
 import { getMenuFontColor, splitMenuArray } from './DesktopMenu.func';
-import { DesktopMenuWrapper } from './DesktopMenu.styles';
-import { MENU_ITEMS } from '../../Menu.func';
+import { DesktopMenuWrapper, StyledLanguageSelector } from './DesktopMenu.styles';
+import { MENU_ITEMS } from '../../Menu.constant';
 import { AbsoluteWrapper } from '../../Menu.styles';
-import { Logo } from '../Logo';
+import { MenuLogo } from '../MenuLogo';
 
-import { LanguageSelector } from '~/components/Menu/components/LanguageSelector';
 import { FadeInWrapper } from '~/components/shared/FadeInWrapper';
 import { useScroll } from '~/hooks';
 
@@ -16,10 +15,10 @@ export const DesktopMenu = () => {
     <FadeInWrapper>
       <DesktopMenuWrapper color={getMenuFontColor(isAtTop)}>
         <MenuItems itemsArray={firstHalfMenuArr} />
-        <Logo />
+        <MenuLogo />
         <MenuItems itemsArray={secondHalfMenuArr} />
         <AbsoluteWrapper>
-          <LanguageSelector />
+          <StyledLanguageSelector textColor={getMenuFontColor(isAtTop)} />
         </AbsoluteWrapper>
       </DesktopMenuWrapper>
     </FadeInWrapper>

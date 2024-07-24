@@ -53,22 +53,22 @@ export const HomePage = () => {
         <DynamicTest key={index} query={query} Component={Component} normalizer={normalizer} />
       ))} */}
 
-      <Section name="header" backgroundColor="red">
+      <Section name="header" backgroundColor="#C4DFDF">
         <AnimatedDiv>{t('title.welcome')}</AnimatedDiv>
       </Section>
-      <Section name="details" backgroundColor="green">
+      <Section name="details" backgroundColor="#D2E9E9">
         <AnimatedDiv>{t('menu.details')}</AnimatedDiv>
       </Section>
-      <Section name="faq" backgroundColor="blue">
+      <Section name="faq" backgroundColor="#E3F4F4">
         <AnimatedDiv>{t('menu.faq')}</AnimatedDiv>
       </Section>
-      <Section name="rvsp" backgroundColor="yellow">
+      <Section name="rvsp" backgroundColor="#F8F6F4">
         <AnimatedDiv>{t('menu.rvsp')}</AnimatedDiv>
       </Section>
-      <Section name="honeymoon" backgroundColor="purple">
+      <Section name="honeymoon" backgroundColor="#C4DFDF">
         <AnimatedDiv>{t('menu.honeymoon')}</AnimatedDiv>
       </Section>
-      <Section name="footer" backgroundColor="lightBlue" height="50vh">
+      <Section name="footer" backgroundColor="#D2E9E9" height="50vh">
         {t('title.footer')}
       </Section>
     </div>

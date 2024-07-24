@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { LanguageSelector } from '../LanguageSelector';
 
 export const DesktopMenuWrapper = styled.div<{ color: string }>(({ theme, color }) => ({
   color,
@@ -13,3 +14,15 @@ export const MenuItemsWrapper = styled.div(({ theme }) => ({
   display: 'flex',
   gap: theme.spacing(6),
 }));
+
+export const StyledLanguageSelector = styled(LanguageSelector)<{ textColor: string }>(
+  ({ textColor, theme }) => ({
+    color: textColor,
+    transition: 'color background-color 0.5s ease',
+    fontSize: '1rem',
+    padding: theme.spacing(0, 2),
+    '&:not(:last-child)': {
+      borderRight: `1px ${textColor} solid`,
+    },
+  }),
+);

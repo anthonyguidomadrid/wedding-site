@@ -11,10 +11,11 @@ export const MenuButton = styled(Button)<{ iconColor: string }>(({ iconColor }) 
   color: iconColor,
 }));
 
-export const MenuItemsWrapper = styled.div(() => ({
+export const MenuItemsWrapper = styled.div(({ theme }) => ({
   height: '90vh',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   overflow: 'hidden',
+  gap: theme.spacing(7),
 }));

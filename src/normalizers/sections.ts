@@ -15,7 +15,6 @@ export type helloRawQuery = {
 };
 
 export const helloNormalizer = (query: helloRawQuery): { greeting: string } => {
-  console.log({ query });
   return { greeting: query.greetingCollection.items[0].hello };
 };
 
