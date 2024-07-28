@@ -6,6 +6,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import flush from 'styled-jsx';
 
+import { getServerSideTranslations } from '~/lib/get-serverside-translations';
 import { theme } from '~/theme';
 
 export default class CustomDocument extends Document {
@@ -38,7 +39,6 @@ export default class CustomDocument extends Document {
   }
 }
 
-// eslint-disable-next-line func-names
 CustomDocument.getInitialProps = async function (ctx: DocumentContext) {
   // Resolution order
   //
@@ -73,9 +73,13 @@ CustomDocument.getInitialProps = async function (ctx: DocumentContext) {
 
   const initialProps = await Document.getInitialProps(ctx);
 
+  const locale = ctx.locale || ctx.defaultLocale || 'en';
+  const translations = await getServerSideTranslations(locale);
+
   return {
     ...initialProps,
-    locale: ctx.locale,
+    ...translations,
+    locale,
     styles: (
       <>
         {sheets.getStyleElement()}

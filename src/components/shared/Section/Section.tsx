@@ -1,12 +1,14 @@
+import { CircularProgress } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { SectionProps } from './Section.types';
+import { SpinnerWrapper } from './Sections.styles';
 
 import { fetchContentfulData } from '~/utils/contentful';
 
-export const Test = <TProps, Tquery>({
+export const Section = <TProps, Tquery>({
   query,
   Component,
   normalizer,
@@ -36,8 +38,14 @@ export const Test = <TProps, Tquery>({
   }, [inView, content, locale, query, normalizer]);
 
   return (
-    <div ref={ref} style={{ minHeight: '100vh', padding: '50px' }}>
-      {content ? <Component {...content} /> : <p>Loading...</p>}
-    </div>
+    <section ref={ref}>
+      {content ? (
+        <Component {...content} />
+      ) : (
+        <SpinnerWrapper>
+          <CircularProgress />
+        </SpinnerWrapper>
+      )}
+    </section>
   );
 };

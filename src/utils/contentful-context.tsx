@@ -1,7 +1,7 @@
 import { useContext, createContext } from 'react';
 
 import contentfulConfig from '../../contentful.config';
-import i18nConfig from '../../next-i18next.config.js';
+import i18nConfig from '../../next-i18next.config';
 const { i18n } = i18nConfig;
 
 export interface ContentfulContextInterface {

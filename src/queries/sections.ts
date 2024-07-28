@@ -19,3 +19,19 @@ export const GREETING_QUERY = gql`
     }
   }
 `;
+
+export const FOOTER_QUERY = gql`
+  query Footer($locale: String, $preview: Boolean) {
+    footerCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        email
+        phonesCollection {
+          items {
+            phoneNumber
+            name
+          }
+        }
+      }
+    }
+  }
+`;
