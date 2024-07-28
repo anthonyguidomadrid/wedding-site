@@ -6,7 +6,7 @@ export const LanguageButton = styled(Button)(({ theme }) => ({
   borderRadius: 0,
   padding: theme.spacing(0, 4),
   '&:not(:last-child)': {
-    borderRight: `1px ${theme.palette.common.black} solid`,
+    borderRight: `1px ${theme.palette.text.primary} solid`,
     paddingLeft: 0,
   },
 }));

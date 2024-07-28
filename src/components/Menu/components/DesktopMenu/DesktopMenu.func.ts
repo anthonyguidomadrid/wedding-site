@@ -12,6 +12,5 @@ export const splitMenuArray = (array: MenuItem[]): MenuItem[][] => {
 };
 
 export const getMenuFontColor = (isAtTop: boolean) => {
-  const commonColor = isAtTop ? 'white' : 'black';
-  return theme.palette.common[commonColor];
+  return isAtTop ? theme.palette.common.white : theme.palette.text.primary;
 };

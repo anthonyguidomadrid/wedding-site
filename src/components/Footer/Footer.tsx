@@ -7,7 +7,7 @@ import { ScrollLink } from '../shared';
 
 import { getMailLink, getPhoneLink } from '~/helpers';
 
-export const Footer = ({ email, phones }: FooterProps) => {
+export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
   const { t } = useTranslation();
   return (
     <Grid container>
