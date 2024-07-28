@@ -68,9 +68,6 @@ export const HomePage = () => {
       <Section name="honeymoon" backgroundColor="#C4DFDF">
         <AnimatedDiv>{t('menu.honeymoon')}</AnimatedDiv>
       </Section>
-      <Section name="footer" backgroundColor="#D2E9E9" height="50vh">
-        {t('title.footer')}
-      </Section>
     </div>
   );
 };

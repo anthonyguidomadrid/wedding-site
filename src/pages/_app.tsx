@@ -65,7 +65,6 @@ const CustomApp = ({
         <title key="title">Title</title>
         <meta key="og:title" property="og:title" content="Title" />
         <meta key="description" name="description" content="Description" />
-
         <meta key="og:description" property="og:description" content="Description" />
         <meta key="og:image" property="og:image" content="" />
         <meta key="og:image:width" property="og:image:width" content="1200" />

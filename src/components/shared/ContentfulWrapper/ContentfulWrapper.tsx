@@ -1,21 +1,25 @@
 import { CircularProgress } from '@mui/material';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { SectionProps } from './Section.types';
-import { SpinnerWrapper } from './Sections.styles';
+import { SpinnerWrapper } from './ContentfulWrapper.styles';
+import { ContentfulWrapperProps } from './ContentfulWrapper.types';
 
 import { fetchContentfulData } from '~/utils/contentful';
 
-export const Section = <TProps, Tquery>({
+export const ContentfulWrapper = <TProps, Tquery>({
   query,
   Component,
   normalizer,
-}: SectionProps<TProps, Tquery>) => {
+}: ContentfulWrapperProps<TProps, Tquery>) => {
   const [content, setContent] = useState<TProps | null>(null);
   const { ref, inView } = useInView({ triggerOnce: true });
   const { locale } = useRouter();
+  const DynamicComponent = dynamic<TProps>(() => Promise.resolve(Component), {
+    ssr: false,
+  });
 
   useEffect(() => {
     if (inView && !content) {
@@ -40,7 +44,7 @@ export const Section = <TProps, Tquery>({
   return (
     <section ref={ref}>
       {content ? (
-        <Component {...content} />
+        <DynamicComponent {...content} />
       ) : (
         <SpinnerWrapper>
           <CircularProgress />

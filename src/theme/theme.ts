@@ -23,8 +23,15 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
 export const theme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `Open Sans, Arial, sans-serif`,
+    fontFamily: `Red Hat Display, Arial, sans-serif`,
     fontSize: 16,
+    h3: {
+      fontSize: 22,
+      fontWeight: 500,
+      textTransform: 'capitalize',
+      fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
+      paddingBottom: '8px',
+    },
   },
   palette: {
     text: {

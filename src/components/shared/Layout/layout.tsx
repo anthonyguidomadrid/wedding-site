@@ -1,7 +1,7 @@
 import { CssBaseline } from '@mui/material';
 import React, { ReactElement } from 'react';
 
-import { Section } from '../Section';
+import { ContentfulWrapper } from '../ContentfulWrapper';
 
 import { Footer } from '~/components/Footer';
 import { Menu } from '~/components/Menu';
@@ -19,7 +19,7 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
       <CssBaseline />
       <Menu />
       <div>{children}</div>
-      <Section query={FOOTER_QUERY} Component={Footer} normalizer={footerNormalizer} />
+      <ContentfulWrapper query={FOOTER_QUERY} Component={Footer} normalizer={footerNormalizer} />
     </>
   );
 };
