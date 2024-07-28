@@ -24,11 +24,7 @@ export const theme = createTheme({
   spacing: SPACER,
   typography: {
     fontFamily: `Open Sans, Arial, sans-serif`,
-    htmlFontSize: 10,
-    caption: {
-      fontSize: '1.5rem',
-      opacity: 0.6,
-    } as TypographyStyleOptions & { opacity: number },
+    fontSize: 16,
   },
   palette: {
     text: {

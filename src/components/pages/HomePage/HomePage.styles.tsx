@@ -7,6 +7,5 @@ export const Section = styled(Element)(({ backgroundColor, height }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  fontSize: '2rem',
   backgroundColor,
 }));
