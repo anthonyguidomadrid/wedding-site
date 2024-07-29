@@ -17,8 +17,8 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
       <FooterWrapper>
         <Grid container alignItems="center">
           <Grid item xs={12} md={4} order={{ xs: 3, md: 1 }}>
-            <FadeInWrapper>
-              <FooterGrid>
+            <FooterGrid>
+              <FadeInWrapper>
                 <Grid item>
                   <Typography variant="h3">{t('title.contact')}</Typography>
                 </Grid>
@@ -34,8 +34,8 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
                     <a href={getMailLink(email)}>{email}</a>
                   </Typography>
                 </Grid>
-              </FooterGrid>
-            </FadeInWrapper>
+              </FadeInWrapper>
+            </FooterGrid>
           </Grid>
           <Grid item xs={12} md={4} order={{ xs: 1, md: 2 }}>
             <LogoGrid isMobile={isMobile}>
@@ -51,8 +51,8 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
             </LogoGrid>
           </Grid>
           <Grid item xs={12} md={4} order={{ xs: 2, md: 3 }}>
-            <FadeInWrapper>
-              <FooterGrid>
+            <FooterGrid>
+              <FadeInWrapper>
                 <Grid item>
                   <Typography variant="h3">{t('title.menu')}</Typography>
                 </Grid>
@@ -61,8 +61,8 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
                     <ScrollLink label={item} to={item} />
                   </Grid>
                 ))}
-              </FooterGrid>
-            </FadeInWrapper>
+              </FadeInWrapper>
+            </FooterGrid>
           </Grid>
         </Grid>
       </FooterWrapper>

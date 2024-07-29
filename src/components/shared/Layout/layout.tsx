@@ -2,6 +2,7 @@ import { CssBaseline } from '@mui/material';
 import React, { ReactElement } from 'react';
 
 import { ContentfulWrapper } from '../ContentfulWrapper';
+import { ScrollToTopButton } from '../ScrollToTopButton';
 
 import { Footer } from '~/components/Footer';
 import { Menu } from '~/components/Menu';
@@ -18,6 +19,7 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
     <>
       <CssBaseline />
       <Menu />
+      <ScrollToTopButton />
       <div>{children}</div>
       <ContentfulWrapper query={FOOTER_QUERY} Component={Footer} normalizer={footerNormalizer} />
     </>
