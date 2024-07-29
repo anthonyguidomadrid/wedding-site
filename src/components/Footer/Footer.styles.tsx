@@ -4,6 +4,7 @@ import { Grid } from '@mui/material';
 export const FooterWrapper = styled.section(({ theme }) => ({
   backgroundColor: theme.palette.text.primary,
   color: theme.palette.common.white,
+  textAlign: 'center',
   a: {
     color: theme.palette.common.white,
     textDecoration: 'none',
@@ -13,11 +14,22 @@ export const FooterWrapper = styled.section(({ theme }) => ({
   },
 }));
 
-export const FooterGrip = styled(Grid)(({ theme }) => ({
+export const FooterGrid = styled(Grid)(({ theme }) => ({
   padding: theme.spacing(10),
 }));
-FooterGrip.defaultProps = {
+FooterGrid.defaultProps = {
   container: true,
   flexDirection: 'column',
   spacing: 3,
+};
+
+export const LogoGrid = styled(Grid)<{ isMobile: boolean }>(({ theme, isMobile }) => ({
+  height: '100%',
+  padding: theme.spacing(10),
+  ...(isMobile && { paddingTop: theme.spacing(20) }),
+}));
+LogoGrid.defaultProps = {
+  container: true,
+  alignContent: 'center',
+  justifyContent: 'center',
 };
