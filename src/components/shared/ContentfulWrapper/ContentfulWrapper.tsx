@@ -22,8 +22,8 @@ export const ContentfulWrapper = <TProps, Tquery>({
   });
 
   useEffect(() => {
-    if (inView && !content) {
-      const fetchData = async () => {
+    const fetchData = async () => {
+      if (inView) {
         try {
           const { data, errors } = await fetchContentfulData<Tquery>(query, {
             locale,
@@ -36,10 +36,10 @@ export const ContentfulWrapper = <TProps, Tquery>({
         } catch (error) {
           console.error('Error fetching data:', error);
         }
-      };
-      fetchData();
-    }
-  }, [inView, content, locale, query, normalizer]);
+      }
+    };
+    fetchData();
+  }, [inView, locale, query, normalizer]);
 
   return (
     <section ref={ref}>

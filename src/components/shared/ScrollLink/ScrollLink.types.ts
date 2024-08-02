@@ -1,5 +1,5 @@
 export type ScrollLinkProps = {
-  label: string;
+  children?: React.ReactNode;
   to: string;
   onClick?: () => void;
 };

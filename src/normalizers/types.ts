@@ -1,17 +1,5 @@
-export type rawQuery = {
-  testCollection: {
-    items: {
-      greeting: string;
-    }[];
-  };
-};
-
-export type helloRawQuery = {
-  greetingCollection: {
-    items: {
-      hello: string;
-    }[];
-  };
+export type Image = {
+  url: string;
 };
 
 export type Phone = {
@@ -26,8 +14,23 @@ export type FooterItem = {
   };
 };
 
+export type HeaderItem = {
+  title: string;
+  startingDate: string;
+  finishingDate: string;
+  place: string;
+  ctaLabel: string;
+  backgroundImage: Image;
+};
+
 export type FooterQuery = {
   footerCollection: {
     items: FooterItem[];
+  };
+};
+
+export type HeaderQuery = {
+  headerCollection: {
+    items: HeaderItem[];
   };
 };

@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
                 </Grid>
                 {MENU_ITEMS.map(({ item }) => (
                   <Grid item key={item}>
-                    <ScrollLink label={item} to={item} />
+                    <ScrollLink to={item}>{t(`menu.${item}`)}</ScrollLink>
                   </Grid>
                 ))}
               </FadeInWrapper>

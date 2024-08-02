@@ -3,7 +3,9 @@
 import { useTranslation } from 'react-i18next';
 
 import { AnimatedDiv } from './components/AnimatedDiv';
+import { SECTIONS } from './HomePage.constant';
 import { Section } from './HomePage.styles';
+import { ContentfulWrapper } from '~/components/shared/ContentfulWrapper';
 
 // import { Greeting } from '~/components/atoms/Test/component/Greeting';
 // import { Hello } from '~/components/atoms/Test/component/Hello';
@@ -19,43 +21,17 @@ import { Section } from './HomePage.styles';
 
 export const HomePage = () => {
   const { t } = useTranslation();
-  // const DynamicTest = dynamic<
-  //   SectionProps<{ greeting?: string; label?: string }, rawQuery & helloRawQuery>
-  // >(() => Promise.resolve(Test), {
-  //   ssr: false,
-  // });
-
-  // interface SectionConfig<TQuery, TProps> {
-  //   query: string;
-  //   Component: React.ComponentType<TProps>;
-  //   normalizer: (query: TQuery) => TProps;
-  // }
-
-  // const SECTIONS: Array<
-  //   | SectionConfig<helloRawQuery, { greeting?: string }>
-  //   | SectionConfig<rawQuery, { label?: string }>
-  // > = [
-  //   {
-  //     query: SECTION_QUERY,
-  //     Component: Greeting,
-  //     normalizer: greetingNormalizer,
-  //   },
-  //   {
-  //     query: GREETING_QUERY,
-  //     Component: Hello,
-  //     normalizer: helloNormalizer,
-  //   },
-  // ];
 
   return (
     <div>
-      {/* {SECTIONS.map(({ query, Component, normalizer }, index) => (
-        <DynamicTest key={index} query={query} Component={Component} normalizer={normalizer} />
-      ))} */}
-
-      <Section name="header" backgroundColor="#C4DFDF">
-        <AnimatedDiv>{t('title.welcome')}</AnimatedDiv>
-      </Section>
+      {SECTIONS.map(({ query, Component, normalizer }, index) => (
+        <ContentfulWrapper
+          key={index}
+          query={query}
+          Component={Component}
+          normalizer={normalizer}
+        />
+      ))}
       <Section name="details" backgroundColor="#D2E9E9">
         <AnimatedDiv>{t('menu.details')}</AnimatedDiv>
       </Section>
