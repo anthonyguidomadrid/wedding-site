@@ -1,5 +1,9 @@
+import { useRouter } from 'next/router';
+
 import { HeaderProps } from './Header.types';
 import { ScrollLink } from '../shared';
+
+import { formatDate } from '~/helpers';
 
 export const Header: React.FC<HeaderProps> = ({
   title,
@@ -9,8 +13,9 @@ export const Header: React.FC<HeaderProps> = ({
   ctaLabel,
   backgroundImageLink,
 }) => {
+  const { locale } = useRouter();
   return (
-    <div
+    <section
       style={{
         height: '100vh',
         textAlign: 'center',
@@ -20,15 +25,16 @@ export const Header: React.FC<HeaderProps> = ({
         backgroundImage: `url(${backgroundImageLink})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        color: '#000',
+        color: '#fff',
         flexDirection: 'column',
       }}
     >
       <h1>{title}</h1>
-      <p>{startingDate}</p>
-      <p>{finishingDate}</p>
+      <p>
+        {formatDate(startingDate, locale)} - {formatDate(finishingDate, locale)}
+      </p>
       <p>{place}</p>
       <ScrollLink to="rvsp">{ctaLabel}</ScrollLink>
-    </div>
+    </section>
   );
 };
