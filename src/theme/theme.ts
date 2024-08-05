@@ -32,6 +32,9 @@ export const theme = createTheme({
       fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
       paddingBottom: '8px',
     },
+    small: {
+      fontSize: 12,
+    },
   },
   palette: {
     text: {

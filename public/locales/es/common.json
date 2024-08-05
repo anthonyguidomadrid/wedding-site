@@ -10,5 +10,12 @@
     "footer": "Contacta con nosotros",
     "contact": "Contacta con nosotros",
     "menu": "Menú"
+  },
+  "counter": {
+    "months": "Meses",
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos"
   }
 }
