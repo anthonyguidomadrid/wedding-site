@@ -7,7 +7,7 @@ import { DurationGridItem } from './components/DurationGridItem';
 import { normalizeDuration } from './Counter.func';
 import { CounterProps, NormalizedDuration } from './Counter.types';
 
-export const Counter: React.FC<CounterProps> = ({ dueDate }) => {
+export const Counter: React.FC<CounterProps> = ({ endingDate }) => {
   const [duration, setDuration] = useState<NormalizedDuration>([]);
   const { ref, inView } = useInView();
 
@@ -15,7 +15,7 @@ export const Counter: React.FC<CounterProps> = ({ dueDate }) => {
     if (inView) {
       const updateDuration = () => {
         const now = new Date();
-        const interval = intervalToDuration({ end: new Date(dueDate), start: now });
+        const interval = intervalToDuration({ end: new Date(endingDate), start: now });
         setDuration(normalizeDuration(interval));
       };
 
@@ -24,7 +24,7 @@ export const Counter: React.FC<CounterProps> = ({ dueDate }) => {
 
       return () => clearInterval(intervalId);
     }
-  }, [dueDate, inView]);
+  }, [endingDate, inView]);
 
   return (
     <Grid container spacing={2} ref={ref} justifyContent="center">

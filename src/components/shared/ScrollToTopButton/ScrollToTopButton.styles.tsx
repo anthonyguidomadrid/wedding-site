@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
-export const ButtonToTop = styled(Button)<{ isMobile: boolean }>(({ theme, isMobile }) => ({
+export const ButtonToTop = styled(Button)(({ theme }) => ({
   position: 'fixed',
   bottom: theme.spacing(2),
   right: theme.spacing(2),
@@ -11,10 +11,14 @@ export const ButtonToTop = styled(Button)<{ isMobile: boolean }>(({ theme, isMob
   transform: 'rotate(-90deg)',
   zIndex: 9999,
   minWidth: 0,
-  borderRadius: isMobile ? '24px' : '28px',
-  padding: isMobile ? '10px' : '14px',
+  borderRadius: '24px',
+  padding: '10px',
   '&:hover': {
     backgroundColor: theme.palette.common.white,
     opacity: 0.75,
+  },
+  [theme.breakpoints.up('md')]: {
+    borderRadius: '28px',
+    padding: '14px',
   },
 }));

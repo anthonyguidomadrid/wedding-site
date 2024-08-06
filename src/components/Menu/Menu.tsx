@@ -23,7 +23,7 @@ export const Menu = () => {
   }, [isMobileMenuOpen, isMobile]);
 
   return (
-    <Nav isTransparent={isTransparent} isMenuOpen={isMenuOpen} isMobile={isMobile}>
+    <Nav isTransparent={isTransparent} isMenuOpen={isMenuOpen}>
       {isMobile ? <MobileMenu /> : <DesktopMenu />}
     </Nav>
   );

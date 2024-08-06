@@ -23,10 +23,13 @@ FooterGrid.defaultProps = {
   spacing: 3,
 };
 
-export const LogoGrid = styled(Grid)<{ isMobile: boolean }>(({ theme, isMobile }) => ({
+export const LogoGrid = styled(Grid)(({ theme }) => ({
   height: '100%',
   padding: theme.spacing(10),
-  ...(isMobile && { paddingTop: theme.spacing(20) }),
+  paddingTop: theme.spacing(20),
+  [theme.breakpoints.up('md')]: {
+    paddingTop: 0,
+  },
 }));
 LogoGrid.defaultProps = {
   container: true,

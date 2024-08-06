@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean; isMobile: boolean }>(
-  ({ theme, isTransparent, isMenuOpen, isMobile }) => ({
+export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
+  ({ theme, isTransparent, isMenuOpen }) => ({
     position: 'fixed',
     top: 0,
     left: 0,
@@ -10,11 +10,10 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean; isM
     display: 'flex',
     justifyContent: 'center',
     padding: theme.spacing(2),
-    backgroundColor: isTransparent
-      ? 'transparent'
-      : isMobile
-      ? theme.palette.common.white
-      : theme.palette.background.menu,
+    backgroundColor: isTransparent ? 'transparent' : theme.palette.common.white,
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: isTransparent ? 'transparent' : theme.palette.background.menu,
+    },
     height: isMenuOpen ? '100vh' : '10vh',
     transition: 'background-color 0.5s ease-in-out, height 1s ease-in-out',
   }),

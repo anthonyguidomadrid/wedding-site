@@ -25,6 +25,10 @@ export const theme = createTheme({
   typography: {
     fontFamily: `Red Hat Display, Arial, sans-serif`,
     fontSize: 16,
+    h1: {
+      fontSize: 72,
+      fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
+    },
     h3: {
       fontSize: 22,
       fontWeight: 500,

@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
             </FooterGrid>
           </Grid>
           <Grid item xs={12} md={4} order={{ xs: 1, md: 2 }}>
-            <LogoGrid isMobile={isMobile}>
+            <LogoGrid>
               <FadeInWrapper>
                 <div
                   style={{

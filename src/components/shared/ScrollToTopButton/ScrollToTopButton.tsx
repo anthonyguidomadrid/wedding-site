@@ -11,7 +11,7 @@ export const ScrollToTopButton = () => {
   const { isMobileMenuOpen } = useMobileMenu();
   return (
     <FadeInWrapper display={(!isMobile && !isAtTop) || (!isAtTop && !isMobileMenuOpen && isMobile)}>
-      <ButtonToTop onClick={() => scrollToTop()} isMobile={isMobile}>
+      <ButtonToTop onClick={() => scrollToTop()}>
         <ArrowForwardIosIcon fontSize="small" />
       </ButtonToTop>
     </FadeInWrapper>
