@@ -7,11 +7,9 @@ import { MENU_ITEMS } from '../Menu/Menu.constant';
 import { FadeInWrapper, ScrollLink } from '../shared';
 
 import { getMailLink, getPhoneLink } from '~/helpers';
-import { useMobile } from '~/hooks';
 
 export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
   const { t } = useTranslation();
-  const { isMobile } = useMobile();
   return (
     <FadeInWrapper>
       <FooterWrapper>

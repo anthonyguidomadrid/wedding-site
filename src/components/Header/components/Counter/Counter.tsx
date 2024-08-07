@@ -1,10 +1,10 @@
-import { Grid } from '@mui/material';
 import { intervalToDuration } from 'date-fns';
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { DurationGridItem } from './components/DurationGridItem';
 import { normalizeDuration } from './Counter.func';
+import { GridContainer } from './Counter.styles';
 import { CounterProps, NormalizedDuration } from './Counter.types';
 
 export const Counter: React.FC<CounterProps> = ({ endingDate }) => {
@@ -27,10 +27,10 @@ export const Counter: React.FC<CounterProps> = ({ endingDate }) => {
   }, [endingDate, inView]);
 
   return (
-    <Grid container spacing={2} ref={ref} justifyContent="center">
+    <GridContainer ref={ref}>
       {duration.map((durationItem, index) => (
         <DurationGridItem key={index} {...durationItem} />
       ))}
-    </Grid>
+    </GridContainer>
   );
 };

@@ -12,6 +12,7 @@ import {
 import { HeaderProps } from './Header.types';
 
 import { formatDate } from '~/helpers';
+import { FadeInWrapper } from '../shared';
 
 export const Header: React.FC<HeaderProps> = ({
   title,
@@ -24,17 +25,29 @@ export const Header: React.FC<HeaderProps> = ({
   const { locale } = useRouter();
   return (
     <HeaderSection>
-      <ImageBackground backgroundImageLink={backgroundImageLink} />
-      <ContentWrapper>
-        <Counter endingDate={startingDate} />
-        <Typography variant="h1">{title}</Typography>
-        <DateWrapper>
-          <Typography>{formatDate(startingDate, locale)} -</Typography>
-          <Typography>{formatDate(finishingDate, locale)}</Typography>
-        </DateWrapper>
-        <Typography>{place}</Typography>
-        <CtaBtn to="rvsp">{ctaLabel}</CtaBtn>
-      </ContentWrapper>
+      <FadeInWrapper>
+        <ImageBackground backgroundImageLink={backgroundImageLink} />
+        <ContentWrapper>
+          <FadeInWrapper delay={3000}>
+            <Counter endingDate={startingDate} />
+          </FadeInWrapper>
+          <FadeInWrapper delay={1000}>
+            <Typography variant="h1">{title}</Typography>
+          </FadeInWrapper>
+          <FadeInWrapper delay={1500}>
+            <DateWrapper>
+              <Typography>{formatDate(startingDate, locale)} -</Typography>
+              <Typography>{formatDate(finishingDate, locale)}</Typography>
+            </DateWrapper>
+          </FadeInWrapper>
+          <FadeInWrapper delay={2000}>
+            <Typography>{place}</Typography>
+          </FadeInWrapper>
+          <FadeInWrapper delay={2500}>
+            <CtaBtn to="rvsp">{ctaLabel}</CtaBtn>
+          </FadeInWrapper>
+        </ContentWrapper>
+      </FadeInWrapper>
     </HeaderSection>
   );
 };

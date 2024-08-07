@@ -6,7 +6,7 @@ import { DurationGridProps } from './DurationGridItem.types';
 export const DurationGridItem: React.FC<DurationGridProps> = ({ timeDuration, durationType }) => {
   const { t } = useTranslation();
   return (
-    <Grid item xs={1.5}>
+    <Grid item xs={2}>
       <Typography>{timeDuration}</Typography>
       <Typography variant="small">{t(`counter.${durationType}`)}</Typography>
     </Grid>
