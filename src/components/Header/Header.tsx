@@ -2,7 +2,13 @@ import { Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 
 import { Counter } from './components/Counter';
-import { ContentWrapper, CtaBtn, Date, HeaderSection, ImageBackground } from './Header.styles';
+import {
+  ContentWrapper,
+  CtaBtn,
+  DateWrapper,
+  HeaderSection,
+  ImageBackground,
+} from './Header.styles';
 import { HeaderProps } from './Header.types';
 
 import { formatDate } from '~/helpers';
@@ -22,9 +28,10 @@ export const Header: React.FC<HeaderProps> = ({
       <ContentWrapper>
         <Counter endingDate={startingDate} />
         <Typography variant="h1">{title}</Typography>
-        <Date>
-          {formatDate(startingDate, locale)} - {formatDate(finishingDate, locale)}
-        </Date>
+        <DateWrapper>
+          <Typography>{formatDate(startingDate, locale)} -</Typography>
+          <Typography>{formatDate(finishingDate, locale)}</Typography>
+        </DateWrapper>
         <Typography>{place}</Typography>
         <CtaBtn to="rvsp">{ctaLabel}</CtaBtn>
       </ContentWrapper>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import { Typography } from '@mui/material';
 
 import { ScrollLink } from '../shared/ScrollLink';
-import { Typography } from '@mui/material';
 
 export const HeaderSection = styled.section(({ theme }) => ({
   height: '100vh',
@@ -39,11 +39,19 @@ export const ContentWrapper = styled.div(({ theme }) => ({
   gap: theme.spacing(5),
 }));
 
-export const Date = styled(Typography)(() => ({ textTransform: 'capitalize' }));
+export const DateWrapper = styled.div(({ theme }) => ({
+  textTransform: 'capitalize',
+  display: 'flex',
+  flexDirection: 'column',
+  [theme.breakpoints.up('md')]: {
+    flexDirection: 'row',
+    gap: theme.spacing(1),
+  },
+}));
 
 export const CtaBtn = styled(ScrollLink)(({ theme }) => ({
-  border: '1px solid white',
-  padding: theme.spacing(2, 3),
+  border: `1px solid ${theme.palette.common.white}`,
+  padding: theme.spacing(1, 3),
   borderRadius: theme.spacing(3),
   '&:hover': {
     backgroundColor: theme.palette.background.menu,

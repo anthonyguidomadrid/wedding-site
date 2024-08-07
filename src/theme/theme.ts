@@ -28,6 +28,9 @@ export const theme = createTheme({
     h1: {
       fontSize: 72,
       fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
+      '@media (max-width:900px)': {
+        fontSize: 48,
+      },
     },
     h3: {
       fontSize: 22,
