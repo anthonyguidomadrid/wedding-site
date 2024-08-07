@@ -28,23 +28,25 @@ export const Header: React.FC<HeaderProps> = ({
       <FadeInWrapper>
         <ImageBackground backgroundImageLink={backgroundImageLink} />
         <ContentWrapper>
-          <FadeInWrapper delay={3000}>
+          <FadeInWrapper delay={3500}>
             <Counter endingDate={startingDate} />
           </FadeInWrapper>
-          <FadeInWrapper delay={1000}>
+          <FadeInWrapper delay={1000} shouldSlide={true}>
             <Typography variant="h1">{title}</Typography>
           </FadeInWrapper>
-          <FadeInWrapper delay={1500}>
+          <FadeInWrapper delay={1500} shouldSlide={true}>
             <DateWrapper>
               <Typography>{formatDate(startingDate, locale)} -</Typography>
               <Typography>{formatDate(finishingDate, locale)}</Typography>
             </DateWrapper>
           </FadeInWrapper>
-          <FadeInWrapper delay={2000}>
+          <FadeInWrapper delay={2000} shouldSlide={true}>
             <Typography>{place}</Typography>
           </FadeInWrapper>
-          <FadeInWrapper delay={2500}>
-            <CtaBtn to="rvsp">{ctaLabel}</CtaBtn>
+          <FadeInWrapper delay={2500} shouldSlide={true}>
+            <div>
+              <CtaBtn to="rvsp">{ctaLabel}</CtaBtn>
+            </div>
           </FadeInWrapper>
         </ContentWrapper>
       </FadeInWrapper>

@@ -2,16 +2,21 @@ import { Box, Fade } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import { SlideWrapper } from './components';
 import { FadeInWrapperProps } from './FadeInWrapper.types';
+
+import { OptionalWrapper } from '~/helpers';
 
 export const FadeInWrapper: React.FC<FadeInWrapperProps> = ({
   children,
   timeout = 2000,
   display = true,
   delay = 0,
+  shouldSlide = false,
 }) => {
   const { ref, inView } = useInView({ triggerOnce: true });
   const [showAfterDelay, setShowAfterDelay] = useState(false);
+  const shouldDisplay = display && inView && showAfterDelay;
 
   useEffect(() => {
     if (display && inView && delay) {
@@ -26,8 +31,16 @@ export const FadeInWrapper: React.FC<FadeInWrapperProps> = ({
   }, [delay, display, inView]);
 
   return (
-    <Fade in={display && inView && showAfterDelay} timeout={timeout}>
-      <Box ref={ref}>{children}</Box>
+    <Fade in={shouldDisplay} timeout={timeout}>
+      <Box ref={ref}>
+        <OptionalWrapper
+          Wrapper={SlideWrapper}
+          condition={shouldSlide}
+          props={{ shouldDisplay, timeout }}
+        >
+          <Box>{children}</Box>
+        </OptionalWrapper>
+      </Box>
     </Fade>
   );
 };

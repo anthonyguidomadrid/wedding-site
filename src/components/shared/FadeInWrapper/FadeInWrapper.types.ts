@@ -3,4 +3,5 @@ export type FadeInWrapperProps = {
   timeout?: number;
   display?: boolean;
   delay?: number;
+  shouldSlide?: boolean;
 };
