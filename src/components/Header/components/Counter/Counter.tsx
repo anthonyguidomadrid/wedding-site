@@ -12,7 +12,7 @@ export const Counter: React.FC<CounterProps> = ({ endingDate }) => {
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && endingDate) {
       const updateDuration = () => {
         const now = new Date();
         const interval = intervalToDuration({ end: new Date(endingDate), start: now });

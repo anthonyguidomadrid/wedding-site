@@ -14,7 +14,7 @@ export const HeaderSection = styled.section(({ theme }) => ({
   alignItems: 'center',
 }));
 
-export const ImageBackground = styled.div<{ backgroundImageLink: string }>(
+export const ImageBackground = styled.div<{ backgroundImageLink?: string }>(
   ({ backgroundImageLink }) => ({
     position: 'absolute',
     top: 0,

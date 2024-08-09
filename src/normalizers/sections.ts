@@ -1,5 +1,6 @@
-import { FooterQuery, HeaderQuery } from './types';
+import { DetailsQuery, FooterQuery, HeaderQuery } from './types';
 
+import { DetailsProps } from '~/components/Details/Details.types';
 import { FooterProps } from '~/components/Footer';
 import { HeaderProps } from '~/components/Header';
 
@@ -23,5 +24,15 @@ export const headerNormalizer = (query: HeaderQuery): HeaderProps => {
     place,
     ctaLabel,
     backgroundImageLink: backgroundImage.url,
+  };
+};
+
+export const detailsNormalizer = (query: DetailsQuery): DetailsProps => {
+  const detailsItem = query.detailsCollection?.items[0];
+  const places = detailsItem?.placesCollection.items;
+  return {
+    title: detailsItem.title,
+    subtitle: detailsItem.subtitle,
+    places,
   };
 };

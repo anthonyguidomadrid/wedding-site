@@ -1,5 +1,6 @@
+import { DetailsProps } from '~/components/Details/Details.types';
 import { HeaderProps } from '~/components/Header';
-import { HeaderQuery } from '~/normalizers/types';
+import { DetailsQuery, HeaderQuery } from '~/normalizers/types';
 
 interface SectionConfig<TQuery, TProps> {
   query: string;
@@ -7,4 +8,8 @@ interface SectionConfig<TQuery, TProps> {
   normalizer: (query: TQuery) => TProps;
 }
 
-export type Section = SectionConfig<HeaderQuery, HeaderProps>;
+export type Section<TQuery, TProps> = {
+  query: string;
+  Component: React.FC<TProps>;
+  normalizer: (query: TQuery) => TProps;
+};

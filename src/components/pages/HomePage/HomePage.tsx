@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedDiv } from './components/AnimatedDiv';
 import { SECTIONS } from './HomePage.constant';
 import { Section } from './HomePage.styles';
+
 import { ContentfulWrapper } from '~/components/shared/ContentfulWrapper';
 
 // import { Greeting } from '~/components/atoms/Test/component/Greeting';
@@ -32,9 +33,6 @@ export const HomePage = () => {
           normalizer={normalizer}
         />
       ))}
-      <Section name="details" backgroundColor="#D2E9E9">
-        <AnimatedDiv>{t('menu.details')}</AnimatedDiv>
-      </Section>
       <Section name="faq" backgroundColor="#E3F4F4">
         <AnimatedDiv>{t('menu.faq')}</AnimatedDiv>
       </Section>

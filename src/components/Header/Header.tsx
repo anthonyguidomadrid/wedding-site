@@ -10,9 +10,9 @@ import {
   ImageBackground,
 } from './Header.styles';
 import { HeaderProps } from './Header.types';
+import { FadeInWrapper } from '../shared';
 
 import { formatDate } from '~/helpers';
-import { FadeInWrapper } from '../shared';
 
 export const Header: React.FC<HeaderProps> = ({
   title,
@@ -36,8 +36,8 @@ export const Header: React.FC<HeaderProps> = ({
           </FadeInWrapper>
           <FadeInWrapper delay={1500} shouldSlide={true}>
             <DateWrapper>
-              <Typography>{formatDate(startingDate, locale)} -</Typography>
-              <Typography>{formatDate(finishingDate, locale)}</Typography>
+              {startingDate && <Typography>{formatDate(startingDate, locale)} -</Typography>}
+              {finishingDate && <Typography>{formatDate(finishingDate, locale)}</Typography>}
             </DateWrapper>
           </FadeInWrapper>
           <FadeInWrapper delay={2000} shouldSlide={true}>

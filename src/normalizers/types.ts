@@ -34,3 +34,24 @@ export type HeaderQuery = {
     items: HeaderItem[];
   };
 };
+
+export type Place = {
+  title: string;
+  dateAndTime: string;
+  addressLine1: string;
+  addressLine2: string;
+  mapLink: string;
+  photo: Image;
+};
+
+export type DetailsItem = {
+  title: string;
+  subtitle: string;
+  placesCollection: { items: Place[] };
+};
+
+export type DetailsQuery = {
+  detailsCollection: {
+    items: DetailsItem[];
+  };
+};
