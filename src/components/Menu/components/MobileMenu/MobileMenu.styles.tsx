@@ -11,11 +11,14 @@ export const MenuButton = styled(Button)<{ iconColor: string }>(({ iconColor }) 
   color: iconColor,
 }));
 
-export const MenuItemsWrapper = styled.div(({ theme }) => ({
-  height: '90vh',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  overflow: 'hidden',
-  gap: theme.spacing(7),
-}));
+export const MenuItemsWrapper = styled.div<{ isMobileMenuOpen: boolean }>(
+  ({ theme, isMobileMenuOpen }) => ({
+    height: isMobileMenuOpen ? '90vh' : 0,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    gap: theme.spacing(7),
+    transition: 'height 1s ease-in-out',
+  }),
+);

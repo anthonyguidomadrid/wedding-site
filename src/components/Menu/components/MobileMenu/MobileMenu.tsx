@@ -37,7 +37,7 @@ export const MobileMenu = () => {
         </AbsoluteWrapper>
       </MobileMenuWrapper>
       <FadeInWrapper timeout={isMobileMenuOpen ? 4000 : 1000} display={isMobileMenuOpen}>
-        <MenuItemsWrapper>
+        <MenuItemsWrapper isMobileMenuOpen={isMobileMenuOpen}>
           {MENU_ITEMS.map(({ item, Icon }) => (
             <MobileMenuItem key={item} Icon={Icon}>
               <ScrollLink to={item} onClick={toogleMenu}>
