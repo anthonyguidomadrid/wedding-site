@@ -1,5 +1,8 @@
 export type Image = {
   url: string;
+  description: string;
+  width: number;
+  height: number;
 };
 
 export type Phone = {
@@ -42,6 +45,7 @@ export type Place = {
   addressLine2: string;
   mapLink: string;
   photo: Image;
+  index: number;
 };
 
 export type DetailsItem = {

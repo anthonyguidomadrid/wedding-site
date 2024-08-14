@@ -4,8 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { SlideWrapper } from './components';
 import { FadeInWrapperProps } from './FadeInWrapper.types';
-
-import { OptionalWrapper } from '~/helpers';
+import { OptionalWrapper } from '../OptionalWrapper';
 
 export const FadeInWrapper: React.FC<FadeInWrapperProps> = ({
   children,

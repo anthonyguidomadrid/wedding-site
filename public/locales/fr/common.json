@@ -17,5 +17,8 @@
     "hours": "Heures",
     "minutes": "Minutes",
     "seconds": "Secondes"
+  },
+  "place": {
+    "map-link": "Voir sur la carte"
   }
 }

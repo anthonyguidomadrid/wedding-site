@@ -32,6 +32,10 @@ export const theme = createTheme({
         fontSize: 48,
       },
     },
+    h2: {
+      fontSize: 52,
+      fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
+    },
     h3: {
       fontSize: 22,
       fontWeight: 500,

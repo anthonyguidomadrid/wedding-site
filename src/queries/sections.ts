@@ -1,5 +1,7 @@
 import { gql } from 'graphql-request';
 
+import { IMAGE_FRAGMENT } from './common';
+
 export const FOOTER_QUERY = gql`
   query Footer($locale: String, $preview: Boolean) {
     footerCollection(locale: $locale, preview: $preview, limit: 1) {
@@ -47,12 +49,12 @@ export const DETAILS_QUERY = gql`
             addressLine2
             mapLink
             photo {
-              url
-              description
+              ...ImageFields
             }
           }
         }
       }
     }
   }
+  ${IMAGE_FRAGMENT}
 `;
