@@ -6,8 +6,6 @@
     "honeymoon": "Luna de miel"
   },
   "title": {
-    "welcome": "Boda de Juan y Anthony",
-    "footer": "Contacta con nosotros",
     "contact": "Contacta con nosotros",
     "menu": "Menú"
   },
@@ -17,6 +15,9 @@
     "hours": "Horas",
     "minutes": "Minutos",
     "seconds": "Segundos"
+  },
+  "header": {
+    "cta": "Confirma tu asistencia"
   },
   "place": {
     "map-link": "Ver en el mapa"

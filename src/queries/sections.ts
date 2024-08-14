@@ -26,13 +26,13 @@ export const HEADER_QUERY = gql`
         startingDate
         finishingDate
         place
-        ctaLabel
         backgroundImage {
-          url
+          ...ImageFields
         }
       }
     }
   }
+  ${IMAGE_FRAGMENT}
 `;
 
 export const DETAILS_QUERY = gql`

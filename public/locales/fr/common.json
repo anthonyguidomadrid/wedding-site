@@ -18,6 +18,9 @@
     "minutes": "Minutes",
     "seconds": "Secondes"
   },
+  "header": {
+    "cta:": "Confirmez votre présence"
+  },
   "place": {
     "map-link": "Voir sur la carte"
   }

@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 import { Counter } from './components/Counter';
 import {
@@ -19,10 +20,10 @@ export const Header: React.FC<HeaderProps> = ({
   finishingDate,
   startingDate,
   place,
-  ctaLabel,
   backgroundImageLink,
 }) => {
   const { locale } = useRouter();
+  const { t } = useTranslation();
   return (
     <HeaderSection>
       <FadeInWrapper>
@@ -45,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
           </FadeInWrapper>
           <FadeInWrapper delay={2500} shouldSlide={true}>
             <div>
-              <CtaBtn to="rvsp">{ctaLabel}</CtaBtn>
+              <CtaBtn to="rvsp">{t('header.cta')}</CtaBtn>
             </div>
           </FadeInWrapper>
         </ContentWrapper>

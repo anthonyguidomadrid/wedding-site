@@ -15,14 +15,13 @@ export const footerNormalizer = (query: FooterQuery): FooterProps => {
 export const headerNormalizer = (query: HeaderQuery): HeaderProps => {
   const headerItem = query.headerCollection.items[0];
 
-  const { title, startingDate, finishingDate, place, ctaLabel, backgroundImage } = headerItem;
+  const { title, startingDate, finishingDate, place, backgroundImage } = headerItem;
 
   return {
     title,
     startingDate,
     finishingDate,
     place,
-    ctaLabel,
     backgroundImageLink: backgroundImage.url,
   };
 };

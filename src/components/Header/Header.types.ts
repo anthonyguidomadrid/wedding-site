@@ -3,6 +3,5 @@ export type HeaderProps = Partial<{
   startingDate: string;
   finishingDate: string;
   place: string;
-  ctaLabel: string;
   backgroundImageLink: string;
 }>;
