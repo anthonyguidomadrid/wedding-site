@@ -40,7 +40,6 @@ export const ContentWrapper = styled.div(({ theme }) => ({
 }));
 
 export const DateWrapper = styled.div(({ theme }) => ({
-  textTransform: 'capitalize',
   display: 'flex',
   flexDirection: 'column',
   [theme.breakpoints.up('md')]: {

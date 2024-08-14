@@ -22,6 +22,7 @@
     "cta:": "Confirmez votre présence"
   },
   "place": {
-    "map-link": "Voir sur la carte"
+    "map-link": "Voir sur la carte",
+    "date": "Le {{day}} à {{hour}}"
   }
 }

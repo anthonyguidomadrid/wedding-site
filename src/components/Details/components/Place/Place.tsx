@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
-import { formatDate, isEven } from '~/helpers';
+import { formatDate, formatTime, isEven } from '~/helpers';
 import { Place as PlaceProps } from '~/normalizers';
 
 export const Place: React.FC<PlaceProps> = ({
@@ -32,8 +32,11 @@ export const Place: React.FC<PlaceProps> = ({
       </Grid>
       <Grid item xs={12} md={6} style={{ padding: '16px' }}>
         <Typography variant="h3">{title}</Typography>
-        <Typography style={{ textTransform: 'capitalize' }}>
-          {formatDate(dateAndTime, locale)}
+        <Typography>
+          {t('place.date', {
+            day: formatDate(dateAndTime, locale),
+            hour: formatTime(dateAndTime, locale),
+          })}
         </Typography>
         <Typography>{addressLine1}</Typography>
         <Typography>{addressLine2}</Typography>
