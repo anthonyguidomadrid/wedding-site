@@ -4,7 +4,8 @@ import CardTravelIcon from '@mui/icons-material/CardTravel';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 
 import { MenuItem } from './Menu.types';
-import { SECTION_NAMES } from '../pages/HomePage/HomePage.constant';
+
+import { SECTION_NAMES } from '~/components/pages/HomePage/HomePage.constant';
 
 export const MENU_ITEMS: MenuItem[] = [
   {

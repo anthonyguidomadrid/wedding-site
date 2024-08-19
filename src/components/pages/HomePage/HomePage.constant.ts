@@ -11,6 +11,7 @@ export const SECTION_NAMES = {
   faq: 'faq',
   rvsp: 'rvsp',
   honeymoon: 'honeymoon',
+  footer: 'footer',
 };
 
 export const SECTIONS: Section[] = [
