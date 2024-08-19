@@ -4,22 +4,23 @@ import CardTravelIcon from '@mui/icons-material/CardTravel';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 
 import { MenuItem } from './Menu.types';
+import { SECTION_NAMES } from '../pages/HomePage/HomePage.constant';
 
 export const MENU_ITEMS: MenuItem[] = [
   {
-    item: 'details',
+    item: SECTION_NAMES.details,
     Icon: BrunchDiningIcon,
   },
   {
-    item: 'faq',
+    item: SECTION_NAMES.faq,
     Icon: QuestionAnswerIcon,
   },
   {
-    item: 'rvsp',
+    item: SECTION_NAMES.rvsp,
     Icon: BookOnlineIcon,
   },
   {
-    item: 'honeymoon',
+    item: SECTION_NAMES.honeymoon,
     Icon: CardTravelIcon,
   },
 ];

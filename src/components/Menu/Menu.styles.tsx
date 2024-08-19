@@ -10,14 +10,17 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
     display: 'flex',
     justifyContent: 'center',
     padding: theme.spacing(2),
-    backgroundColor: isTransparent ? 'transparent' : theme.palette.common.white,
-    [theme.breakpoints.up('md')]: {
-      backgroundColor: isTransparent ? 'transparent' : theme.palette.background.menu,
-    },
-    height: isMenuOpen ? '100vh' : '10vh',
-    transition: 'background-color 0.5s ease-in-out, height 1s ease-in-out',
+    backgroundColor: isTransparent
+      ? 'transparent'
+      : isMenuOpen
+      ? theme.palette.common.white
+      : theme.palette.background.menu,
+    transition: 'background-color 0.5s ease-in-out, max-height 1s ease-in-out',
+    maxHeight: isMenuOpen ? '100vh' : '100px', // Adjust '60px' to match the height when the menu is closed
+    overflow: 'hidden',
   }),
 );
+
 export const AbsoluteWrapper = styled.div(({ theme }) => ({
   position: 'absolute',
   right: theme.spacing(2),

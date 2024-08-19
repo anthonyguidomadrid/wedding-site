@@ -24,6 +24,7 @@ export const ContentfulWrapper = <TProps, Tquery>({
   useEffect(() => {
     const fetchData = async () => {
       if (inView) {
+        console.log({ name });
         try {
           const { data, errors } = await fetchContentfulData<Tquery>(query, {
             locale,
@@ -39,7 +40,7 @@ export const ContentfulWrapper = <TProps, Tquery>({
       }
     };
     fetchData();
-  }, [inView, locale, query, normalizer]);
+  }, [inView, locale, query, normalizer, name]);
 
   return (
     <section ref={ref}>
