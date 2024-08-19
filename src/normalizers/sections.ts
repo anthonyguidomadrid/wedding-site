@@ -26,12 +26,6 @@ export const headerNormalizer = (query: HeaderQuery): HeaderProps => {
   };
 };
 
-export const detailsNormalizer = (query: DetailsQuery): DetailsProps => {
-  const detailsItem = query.detailsCollection?.items[0];
-  const places = detailsItem?.placesCollection.items;
-  return {
-    title: detailsItem.title,
-    subtitle: detailsItem.subtitle,
-    places,
-  };
-};
+export const detailsNormalizer = (query: DetailsQuery): DetailsProps => ({
+  places: query.detailsCollection?.items[0]?.placesCollection.items,
+});

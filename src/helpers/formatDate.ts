@@ -6,12 +6,15 @@ const locales = {
   es: es,
 };
 
+const formatters = {
+  fr: 'iiii d MMMM yyyy',
+  es: "iiii d 'de' MMMM 'de' yyyy",
+};
+
 export const formatDate = (date: string, routerLocale = 'es') => {
   const parsedDate = new Date(date);
 
-  const formatter = routerLocale === 'es' ? "iiii d 'de' MMMM 'de' yyyy" : 'iiii d MMMM yyyy';
-
-  return format(parsedDate, formatter, { locale: locales[routerLocale] });
+  return format(parsedDate, formatters[routerLocale], { locale: locales[routerLocale] });
 };
 
 export const formatTime = (date: string, routerLocale = 'es') => {

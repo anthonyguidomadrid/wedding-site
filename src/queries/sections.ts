@@ -39,8 +39,6 @@ export const DETAILS_QUERY = gql`
   query Details($locale: String, $preview: Boolean) {
     detailsCollection(locale: $locale, preview: $preview, limit: 1) {
       items {
-        title
-        subtitle
         placesCollection(locale: $locale, preview: $preview, limit: 2) {
           items {
             title

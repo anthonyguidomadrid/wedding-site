@@ -49,8 +49,6 @@ export type Place = {
 };
 
 export type DetailsItem = {
-  title: string;
-  subtitle: string;
   placesCollection: { items: Place[] };
 };
 

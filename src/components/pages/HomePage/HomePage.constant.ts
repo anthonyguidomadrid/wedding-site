@@ -15,5 +15,6 @@ export const SECTIONS: Section[] = [
     query: DETAILS_QUERY,
     Component: Details,
     normalizer: detailsNormalizer,
+    name: 'details',
   },
 ];

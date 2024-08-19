@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
                 <Grid item>
                   <Typography variant="h3">{t('title.contact')}</Typography>
                 </Grid>
-                {phones.map(({ name, phoneNumber }) => (
+                {phones?.map(({ name, phoneNumber }) => (
                   <Grid item key={name}>
                     <Typography>
                       <span>{name}:</span> <a href={getPhoneLink(phoneNumber)}>{phoneNumber}</a>

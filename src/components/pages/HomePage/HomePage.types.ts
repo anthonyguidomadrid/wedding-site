@@ -1,11 +1,9 @@
 import { DetailsProps } from '~/components/Details';
 import { HeaderProps } from '~/components/Header';
+import { ContentfulWrapperProps } from '~/components/shared/ContentfulWrapper/ContentfulWrapper.types';
 import { HeaderQuery, DetailsQuery } from '~/normalizers';
 
-interface SectionInterface<TQuery, TProps> {
-  query: string;
-  Component: React.FC<TProps>;
-  normalizer: (query: TQuery) => TProps;
-}
-
-export type Section = SectionInterface<HeaderQuery & DetailsQuery, HeaderProps | DetailsProps>;
+export type Section = ContentfulWrapperProps<
+  HeaderProps & DetailsProps,
+  HeaderQuery & DetailsQuery
+>;

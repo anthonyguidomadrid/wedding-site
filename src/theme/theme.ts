@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import { TypographyStyleOptions } from '@mui/material/styles/createTypography';
 
 export const SPACER = 5;
 
@@ -39,7 +38,6 @@ export const theme = createTheme({
     h3: {
       fontSize: 22,
       fontWeight: 500,
-      textTransform: 'capitalize',
       fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
       paddingBottom: '8px',
     },

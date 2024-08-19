@@ -25,12 +25,13 @@ export const HomePage = () => {
 
   return (
     <div>
-      {SECTIONS.map(({ query, Component, normalizer }, index) => (
+      {SECTIONS.map(({ query, Component, normalizer, name }, index) => (
         <ContentfulWrapper
           key={index}
           query={query}
           Component={Component}
           normalizer={normalizer}
+          name={name}
         />
       ))}
       <Section name="faq" backgroundColor="#E3F4F4">

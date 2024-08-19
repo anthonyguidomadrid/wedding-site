@@ -20,7 +20,6 @@
     "cta": "Confirma tu asistencia"
   },
   "place": {
-    "map-link": "Ver en el mapa",
-    "date": "El {{day}} a las {{hour}}"
+    "map-link": "Ver en el mapa"
   }
 }

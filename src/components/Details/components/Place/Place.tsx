@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
-import { formatDate, formatTime, isEven } from '~/helpers';
+import { PlaceImage, PlaceInfoGrid } from './Place.styles';
+
+import { capitalizeFirstLetter, formatDate, formatTime, isEven } from '~/helpers';
 import { Place as PlaceProps } from '~/normalizers';
 
 export const Place: React.FC<PlaceProps> = ({
@@ -22,28 +24,18 @@ export const Place: React.FC<PlaceProps> = ({
   return (
     <Grid container flexDirection={isEvenPlace ? 'row' : 'row-reverse'}>
       <Grid item xs={12} md={6}>
-        <Image
-          src={url}
-          alt={description}
-          width={width}
-          height={height}
-          style={{ height: '100%', width: '100%' }}
-        />
+        <PlaceImage src={url} alt={description} width={width} height={height} />
       </Grid>
-      <Grid item xs={12} md={6} style={{ padding: '16px' }}>
+      <PlaceInfoGrid item xs={12} md={6}>
         <Typography variant="h3">{title}</Typography>
-        <Typography>
-          {t('place.date', {
-            day: formatDate(dateAndTime, locale),
-            hour: formatTime(dateAndTime, locale),
-          })}
-        </Typography>
+        <Typography>{capitalizeFirstLetter(formatDate(dateAndTime, locale))}</Typography>
+        <Typography>{formatTime(dateAndTime, locale)}</Typography>
         <Typography>{addressLine1}</Typography>
         <Typography>{addressLine2}</Typography>
         <Link href={mapLink} target="_blank">
           {t('place.map-link')}
         </Link>
-      </Grid>
+      </PlaceInfoGrid>
     </Grid>
   );
 };

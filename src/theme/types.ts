@@ -1,5 +1,4 @@
 import { Theme as MuiTheme, TypeBackground } from '@mui/material';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 declare module '@emotion/react' {
   export interface Theme extends MuiTheme {}
