@@ -24,15 +24,15 @@ FooterGrid.defaultProps = {
 };
 
 export const LogoGrid = styled(Grid)(({ theme }) => ({
-  height: '100%',
-  padding: theme.spacing(10),
-  paddingTop: theme.spacing(20),
+  padding: theme.spacing(5, 0),
   [theme.breakpoints.up('md')]: {
-    paddingTop: 0,
+    padding: 0,
   },
 }));
+
 LogoGrid.defaultProps = {
   container: true,
-  alignContent: 'center',
   justifyContent: 'center',
+  textAlign: 'center',
+  item: true,
 };

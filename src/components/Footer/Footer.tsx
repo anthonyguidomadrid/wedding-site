@@ -35,19 +35,19 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
               </FadeInWrapper>
             </FooterGrid>
           </Grid>
-          <Grid item xs={12} md={4} order={{ xs: 1, md: 2 }}>
-            <LogoGrid>
-              <FadeInWrapper>
-                <div
-                  style={{
-                    padding: '75px',
-                    backgroundColor: 'beige',
-                    borderRadius: '75px',
-                  }}
-                />
-              </FadeInWrapper>
-            </LogoGrid>
-          </Grid>
+          <LogoGrid xs={12} md={4} order={{ xs: 1, md: 2 }}>
+            <FadeInWrapper>
+              <div
+                style={{
+                  padding: '75px',
+                  backgroundColor: 'beige',
+                  borderRadius: '75px',
+                  height: '75px',
+                  width: '75px',
+                }}
+              />
+            </FadeInWrapper>
+          </LogoGrid>
           <Grid item xs={12} md={4} order={{ xs: 2, md: 3 }}>
             <FooterGrid>
               <FadeInWrapper>
