@@ -1,3 +1,5 @@
+import { Document } from '@contentful/rich-text-types';
+
 export type Image = {
   url: string;
   description: string;
@@ -55,5 +57,22 @@ export type DetailsItem = {
 export type DetailsQuery = {
   detailsCollection: {
     items: DetailsItem[];
+  };
+};
+
+export type QuestionItem = {
+  title: string;
+  answer: { json: Document };
+};
+
+export type FaqItem = {
+  questionsCollection: {
+    items: QuestionItem[];
+  };
+};
+
+export type FaqQuery = {
+  faqCollection: {
+    items: FaqItem[];
   };
 };

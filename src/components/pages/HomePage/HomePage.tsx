@@ -34,9 +34,6 @@ export const HomePage = () => {
           name={name}
         />
       ))}
-      <Section name="faq" backgroundColor="#E3F4F4">
-        <AnimatedDiv>{t('menu.faq')}</AnimatedDiv>
-      </Section>
       <Section name="rvsp" backgroundColor="#F8F6F4">
         <AnimatedDiv>{t('menu.rvsp')}</AnimatedDiv>
       </Section>

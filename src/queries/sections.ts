@@ -56,3 +56,20 @@ export const DETAILS_QUERY = gql`
   }
   ${IMAGE_FRAGMENT}
 `;
+
+export const FAQ_QUERY = gql`
+  query Faq($locale: String, $preview: Boolean) {
+    faqCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        questionsCollection {
+          items {
+            title
+            answer {
+              json
+            }
+          }
+        }
+      }
+    }
+  }
+`;
