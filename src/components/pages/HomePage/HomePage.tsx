@@ -2,9 +2,7 @@
 // import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AnimatedDiv } from './components/AnimatedDiv';
 import { SECTIONS } from './HomePage.constant';
-import { Section } from './HomePage.styles';
 
 import { ContentfulWrapper } from '~/components/shared/ContentfulWrapper';
 
@@ -34,12 +32,6 @@ export const HomePage = () => {
           name={name}
         />
       ))}
-      <Section name="rvsp" backgroundColor="#F8F6F4">
-        <AnimatedDiv>{t('menu.rvsp')}</AnimatedDiv>
-      </Section>
-      <Section name="honeymoon" backgroundColor="#C4DFDF">
-        <AnimatedDiv>{t('menu.honeymoon')}</AnimatedDiv>
-      </Section>
     </div>
   );
 };
