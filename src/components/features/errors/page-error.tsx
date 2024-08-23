@@ -60,7 +60,7 @@ export const PageError = (props: PropsInterface) => {
                 <File
                   size={100}
                   mood="ko"
-                  color={theme.palette.primary.main}
+                  color={theme.palette.text.primary}
                   className={classes.icon}
                 />
                 <Typography variant="h1" gutterBottom>

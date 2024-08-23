@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Typography } from '@mui/material';
 
 export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
   ({ theme, isTransparent, isMenuOpen }) => ({
@@ -14,7 +15,7 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
       ? 'transparent'
       : isMenuOpen
       ? theme.palette.common.white
-      : theme.palette.background.menu,
+      : theme.palette.background.overlay,
     transition: 'background-color 0.5s ease-in-out, max-height 1s ease-in-out',
     maxHeight: isMenuOpen ? '100vh' : '100px', // Adjust '60px' to match the height when the menu is closed
     overflow: 'hidden',
@@ -24,4 +25,11 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
 export const AbsoluteWrapper = styled.div(({ theme }) => ({
   position: 'absolute',
   right: theme.spacing(2),
+}));
+
+export const MenuTypography = styled(Typography)(() => ({
+  ':hover': {
+    opacity: 0.5,
+  },
+  transition: 'opacity 1s ease',
 }));

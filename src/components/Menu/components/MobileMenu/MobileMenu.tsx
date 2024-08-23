@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { MobileMenuItem } from './components';
 import { MenuButton, MenuItemsWrapper, MobileMenuWrapper } from './MobileMenu.styles';
 import { MENU_ITEMS } from '../../Menu.constant';
-import { AbsoluteWrapper } from '../../Menu.styles';
+import { AbsoluteWrapper, MenuTypography } from '../../Menu.styles';
 import { getMenuFontColor } from '../DesktopMenu/DesktopMenu.func';
 import { LanguageSelector } from '../LanguageSelector';
 import { MenuLogo } from '../MenuLogo';
@@ -41,7 +41,7 @@ export const MobileMenu = () => {
           {MENU_ITEMS.map(({ item, Icon }) => (
             <MobileMenuItem key={item} Icon={Icon}>
               <ScrollLink to={item} onClick={toogleMenu}>
-                {t(`menu.${item}`)}
+                <MenuTypography variant="menu">{t(`menu.${item}`)}</MenuTypography>
               </ScrollLink>
             </MobileMenuItem>
           ))}

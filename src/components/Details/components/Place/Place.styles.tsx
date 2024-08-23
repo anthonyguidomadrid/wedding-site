@@ -18,7 +18,7 @@ export const PlaceInfoGrid = styled(Grid)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   a: {
-    color: theme.palette.primary.main,
+    color: theme.palette.text.primary,
     textDecoration: 'underline',
     ':hover': {
       textDecoration: 'none',

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { MenuItemsProps } from './MenuItems.types';
 
+import { MenuTypography } from '~/components/Menu/Menu.styles';
 import { ScrollLink } from '~/components/shared/ScrollLink';
 
 export const MenuItems: React.FC<MenuItemsProps> = ({ itemsArray }) => {
@@ -10,7 +11,7 @@ export const MenuItems: React.FC<MenuItemsProps> = ({ itemsArray }) => {
     <>
       {itemsArray.map(({ item }) => (
         <ScrollLink key={item} to={item}>
-          {t(`menu.${item}`)}
+          <MenuTypography variant="menu">{t(`menu.${item}`)}</MenuTypography>
         </ScrollLink>
       ))}
     </>

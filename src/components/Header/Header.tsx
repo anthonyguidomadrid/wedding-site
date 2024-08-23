@@ -14,6 +14,7 @@ import { HeaderProps } from './Header.types';
 import { FadeInWrapper } from '../shared';
 
 import { capitalizeFirstLetter, formatDate } from '~/helpers';
+import { useMobile } from '~/hooks';
 
 export const Header: React.FC<HeaderProps> = ({
   title,
@@ -24,14 +25,17 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const { locale } = useRouter();
   const { t } = useTranslation();
+  const { isHorizontal } = useMobile();
   return (
     <HeaderSection>
       <FadeInWrapper>
         <ImageBackground backgroundImageLink={backgroundImageLink} />
         <ContentWrapper>
-          <FadeInWrapper delay={3500}>
-            <Counter endingDate={startingDate} />
-          </FadeInWrapper>
+          {!isHorizontal && (
+            <FadeInWrapper delay={3500}>
+              <Counter endingDate={startingDate} />
+            </FadeInWrapper>
+          )}
           <FadeInWrapper delay={1000} shouldSlide={true}>
             <Typography variant="h1">{title}</Typography>
           </FadeInWrapper>

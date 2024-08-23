@@ -9,4 +9,8 @@ export const LanguageButton = styled(Button)(({ theme }) => ({
     borderRight: `1px ${theme.palette.text.primary} solid`,
     paddingLeft: 0,
   },
+  ':hover': {
+    opacity: 0.5,
+  },
+  transition: 'color 0.5s ease, background-color 0.5s ease, opacity 1s ease',
 }));

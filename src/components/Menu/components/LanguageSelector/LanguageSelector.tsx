@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { MouseEvent } from 'react';
 
@@ -19,7 +20,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className })
     <>
       {locales?.map(loc => (
         <LanguageButton key={loc} value={loc} onClick={onLocaleChange} className={className}>
-          {loc.toUpperCase()}
+          <Typography variant="menu">{loc.toUpperCase()}</Typography>
         </LanguageButton>
       ))}
     </>

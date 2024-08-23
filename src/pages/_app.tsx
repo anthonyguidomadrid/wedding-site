@@ -14,6 +14,7 @@ import { queryConfig } from '~/lib/gql-client';
 import { theme } from '~/theme';
 import { useContentfulContext, ContentfulContentProvider } from '~/utils/contentful-context';
 import { store } from '~/utils/store';
+import '../styles/global.css';
 
 const LivePreviewProvider = ({ children }) => {
   const { previewActive, locale } = useContentfulContext();

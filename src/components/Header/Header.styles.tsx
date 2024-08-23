@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { ScrollLink } from '../shared/ScrollLink';
 
 export const HeaderSection = styled.section(({ theme }) => ({
-  height: '100vh',
+  minHeight: '100vh',
   textAlign: 'center',
   position: 'relative',
   color: theme.palette.common.white,
@@ -52,7 +52,7 @@ export const CtaBtn = styled(ScrollLink)(({ theme }) => ({
   padding: theme.spacing(1, 3),
   borderRadius: theme.spacing(3),
   '&:hover': {
-    backgroundColor: theme.palette.background.menu,
+    backgroundColor: theme.palette.background.overlay,
     color: theme.palette.text.primary,
   },
 }));

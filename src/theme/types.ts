@@ -6,7 +6,10 @@ declare module '@emotion/react' {
 
 declare module '@mui/material/styles/createPalette' {
   interface TypeBackground {
-    menu: string;
+    overlay: string;
+    primary: string;
+    greyDark: string;
+    greyLight: string;
   }
 }
 
@@ -20,15 +23,18 @@ declare module '@mui/material/styles' {
 
   interface TypographyVariants {
     small: React.CSSProperties;
+    menu: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     small: React.CSSProperties;
+    menu: React.CSSProperties;
   }
 }
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     small: true;
+    menu: true;
   }
 }

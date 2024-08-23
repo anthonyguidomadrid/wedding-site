@@ -18,7 +18,6 @@ export const MenuItemsWrapper = styled.div(({ theme }) => ({
 export const StyledLanguageSelector = styled(LanguageSelector)<{ textColor: string }>(
   ({ textColor, theme }) => ({
     color: textColor,
-    transition: 'color background-color 0.5s ease',
     padding: theme.spacing(0, 2),
     '&:not(:last-child)': {
       borderRight: `1px ${textColor} solid`,

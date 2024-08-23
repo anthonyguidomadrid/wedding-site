@@ -22,42 +22,56 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
 export const theme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `Red Hat Display, Arial, sans-serif`,
-    fontSize: 16,
+    fontFamily: `EB Garamond, Arial, sans-serif`,
+    fontSize: 18,
     h1: {
       fontSize: 72,
-      fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
+      fontFamily: 'Amalfi Coast, "Arial", sans-serif',
       '@media (max-width:900px)': {
         fontSize: 48,
+        margin: '24px 8px',
       },
+      margin: '32px 16px',
+      lineHeight: '2',
     },
     h2: {
       fontSize: 52,
-      fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
+      fontFamily: 'Amalfi Coast, "Arial", sans-serif',
     },
     h3: {
       fontSize: 22,
       fontWeight: 500,
-      fontFamily: 'Edu AU VIC WA NT Hand, "Arial", sans-serif',
-      paddingBottom: '8px',
+      fontFamily: 'Amalfi Coast, "Arial", sans-serif',
+      paddingBottom: '24px',
     },
     small: {
       fontSize: 12,
     },
+    menu: {
+      fontFamily: 'Cinzel, "Arial", sans-serif',
+      fontSize: 16,
+    },
   },
   palette: {
     text: {
-      primary: '#000',
+      primary: '#34382c',
+      secondary: '#4e4e49',
     },
     primary: {
-      main: '#000',
+      main: '#34382c',
+      light: '#4e4e49',
     },
     secondary: {
-      main: '#fff',
+      main: '#fffff2',
+      dark: '#a09f8d',
     },
     background: {
-      default: 'white',
-      menu: 'rgba(255, 255, 255, 0.9)',
+      default: '#fffff2',
+      paper: '#fffff2',
+      overlay: 'rgba(255, 255, 255, 0.9)',
+      primary: '#34382c',
+      greyDark: '#4e4e49',
+      greyLight: '#a09f8d',
     },
   },
   components: {},
