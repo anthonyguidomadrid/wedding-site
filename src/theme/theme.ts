@@ -22,14 +22,14 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
 export const theme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `EB Garamond, Arial, sans-serif`,
-    fontSize: 18,
+    fontFamily: `Playfair Display, Arial, sans-serif`,
+    fontSize: 16,
     h1: {
-      fontSize: 72,
+      fontSize: 68,
       fontFamily: 'Amalfi Coast, "Arial", sans-serif',
       '@media (max-width:900px)': {
-        fontSize: 48,
-        margin: '24px 8px',
+        fontSize: 42,
+        margin: '16px 8px',
       },
       margin: '32px 16px',
       lineHeight: '2',
@@ -40,16 +40,15 @@ export const theme = createTheme({
     },
     h3: {
       fontSize: 22,
-      fontWeight: 500,
-      fontFamily: 'Amalfi Coast, "Arial", sans-serif',
-      paddingBottom: '24px',
+      fontWeight: 600,
+      fontFamily: 'Cinzel, "Arial", sans-serif',
+      paddingBottom: '8px',
     },
     small: {
       fontSize: 12,
     },
     menu: {
       fontFamily: 'Cinzel, "Arial", sans-serif',
-      fontSize: 16,
     },
   },
   palette: {

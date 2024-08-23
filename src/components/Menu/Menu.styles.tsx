@@ -17,7 +17,7 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
       ? theme.palette.common.white
       : theme.palette.background.overlay,
     transition: 'background-color 0.5s ease-in-out, max-height 1s ease-in-out',
-    maxHeight: isMenuOpen ? '100vh' : '100px', // Adjust '60px' to match the height when the menu is closed
+    maxHeight: isMenuOpen ? '100vh' : '100px',
     overflow: 'hidden',
   }),
 );

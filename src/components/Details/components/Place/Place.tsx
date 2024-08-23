@@ -31,14 +31,21 @@ export const Place: React.FC<PlaceProps> = ({
       </Grid>
       <PlaceInfoGrid item xs={12} md={6}>
         <FadeInWrapper shouldSlide={true}>
-          <Typography variant="h3">{title}</Typography>
-          <Typography>{capitalizeFirstLetter(formatDate(dateAndTime, locale))}</Typography>
-          <Typography>{formatTime(dateAndTime, locale)}</Typography>
-          <Typography>{addressLine1}</Typography>
-          <Typography>{addressLine2}</Typography>
-          <Link href={mapLink} target="_blank">
-            {t('place.map-link')}
-          </Link>
+          <Grid container flexDirection="column" spacing="10">
+            <Grid item>
+              <Typography variant="h3">{title}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{capitalizeFirstLetter(formatDate(dateAndTime, locale))}</Typography>
+              <Typography>{formatTime(dateAndTime, locale)}</Typography>
+            </Grid>
+            <Grid item>
+              <Link href={mapLink} target="_blank">
+                <Typography>{addressLine1}</Typography>
+                <Typography>{addressLine2}</Typography>
+              </Link>
+            </Grid>
+          </Grid>
         </FadeInWrapper>
       </PlaceInfoGrid>
     </Grid>

@@ -35,7 +35,7 @@ export const ContentWrapper = styled.div(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  gap: theme.spacing(5),
+  gap: theme.spacing(7),
 }));
 
 export const DateWrapper = styled.div(({ theme }) => ({
@@ -50,7 +50,6 @@ export const DateWrapper = styled.div(({ theme }) => ({
 export const CtaBtn = styled(ScrollLink)(({ theme }) => ({
   border: `1px solid ${theme.palette.common.white}`,
   padding: theme.spacing(1, 3),
-  borderRadius: theme.spacing(3),
   '&:hover': {
     backgroundColor: theme.palette.background.overlay,
     color: theme.palette.text.primary,
