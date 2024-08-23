@@ -12,5 +12,5 @@ export const LanguageButton = styled(Button)(({ theme }) => ({
   ':hover': {
     opacity: 0.5,
   },
-  transition: 'color 0.5s ease, background-color 0.5s ease, opacity 1s ease, borderRight 0.5s ease',
+  transition: 'color 0.5s ease, background-color 0.5s ease, opacity 1s ease',
 }));

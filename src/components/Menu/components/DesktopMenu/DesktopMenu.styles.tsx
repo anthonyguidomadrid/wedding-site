@@ -22,5 +22,6 @@ export const StyledLanguageSelector = styled(LanguageSelector)<{ textColor: stri
     '&:not(:last-child)': {
       borderRight: `1px ${textColor} solid`,
     },
+    transition: 'border-right 0.5s ease',
   }),
 );
