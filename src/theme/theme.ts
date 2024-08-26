@@ -54,20 +54,20 @@ export const theme = createTheme({
   palette: {
     text: {
       primary: '#34382c',
-      secondary: '#4e4e49',
+      secondary: '#fffff5',
     },
     primary: {
       main: '#34382c',
       light: '#4e4e49',
     },
     secondary: {
-      main: '#fffff2',
+      main: '#fffff5',
       dark: '#a09f8d',
     },
     background: {
       default: '#fffff2',
-      paper: '#fffff2',
-      overlay: 'rgba(255, 255, 255, 0.9)',
+      paper: '#fffff5',
+      overlay: 'rgba(255, 255, 245, 0.9)',
       primary: '#34382c',
       greyDark: '#4e4e49',
       greyLight: '#a09f8d',

@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import { FooterGrid, FooterWrapper, LogoGrid } from './Footer.styles';
 import { FooterProps } from './Footer.types';
+
+import LogoWhite from '/public/svg/logo-white.svg';
+
 import { MENU_ITEMS } from '../Menu/Menu.constant';
 import { FadeInWrapper, ScrollLink } from '../shared';
 
@@ -37,15 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
           </Grid>
           <LogoGrid xs={12} md={4} order={{ xs: 1, md: 2 }}>
             <FadeInWrapper>
-              <div
-                style={{
-                  padding: '75px',
-                  backgroundColor: 'beige',
-                  borderRadius: '75px',
-                  height: '75px',
-                  width: '75px',
-                }}
-              />
+              <LogoWhite width="170" height="120" />
             </FadeInWrapper>
           </LogoGrid>
           <Grid item xs={12} md={4} order={{ xs: 2, md: 3 }}>

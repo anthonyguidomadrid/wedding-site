@@ -6,7 +6,7 @@ export const HeaderSection = styled.section(({ theme }) => ({
   minHeight: '100vh',
   textAlign: 'center',
   position: 'relative',
-  color: theme.palette.common.white,
+  color: theme.palette.text.secondary,
   overflow: 'hidden',
   display: 'flex',
   justifyContent: 'center',
@@ -48,7 +48,7 @@ export const DateWrapper = styled.div(({ theme }) => ({
 }));
 
 export const CtaBtn = styled(ScrollLink)(({ theme }) => ({
-  border: `1px solid ${theme.palette.common.white}`,
+  border: `1px solid ${theme.palette.text.secondary}`,
   padding: theme.spacing(1, 3),
   '&:hover': {
     backgroundColor: theme.palette.background.overlay,

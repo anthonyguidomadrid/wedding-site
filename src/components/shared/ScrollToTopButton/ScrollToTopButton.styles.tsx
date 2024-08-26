@@ -5,7 +5,7 @@ export const ButtonToTop = styled(Button)(({ theme }) => ({
   position: 'fixed',
   bottom: theme.spacing(2),
   right: theme.spacing(2),
-  backgroundColor: theme.palette.common.white,
+  backgroundColor: theme.palette.background.paper,
   opacity: 0.5,
   transition: 'opacity 0.5s ease-in-out, padding 0.5s ease-in-out',
   transform: 'rotate(-90deg)',
@@ -14,7 +14,7 @@ export const ButtonToTop = styled(Button)(({ theme }) => ({
   borderRadius: '24px',
   padding: '10px',
   '&:hover': {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.background.paper,
     opacity: 0.75,
   },
   [theme.breakpoints.up('md')]: {

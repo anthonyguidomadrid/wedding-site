@@ -3,10 +3,10 @@ import { Grid } from '@mui/material';
 
 export const FooterWrapper = styled.section(({ theme }) => ({
   backgroundColor: theme.palette.text.primary,
-  color: theme.palette.common.white,
+  color: theme.palette.text.secondary,
   textAlign: 'center',
   a: {
-    color: theme.palette.common.white,
+    color: theme.palette.text.secondary,
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'underline',
