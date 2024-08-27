@@ -35,14 +35,16 @@ export const theme = createTheme({
       lineHeight: '2',
     },
     h2: {
-      fontSize: 52,
+      fontSize: 45,
       fontFamily: 'Amalfi Coast, "Arial", sans-serif',
+      marginBottom: '56px',
+      lineHeight: '2',
     },
     h3: {
       fontSize: 22,
       fontWeight: 600,
       fontFamily: 'Cinzel, "Arial", sans-serif',
-      paddingBottom: '8px',
+      marginBottom: '8px',
     },
     small: {
       fontSize: 12,

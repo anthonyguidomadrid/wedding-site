@@ -1,14 +1,12 @@
 import { Grid, Typography } from '@mui/material';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
 
 import { PlaceImage, PlaceInfoGrid } from './Place.styles';
 
+import { FadeInWrapper } from '~/components/shared';
 import { capitalizeFirstLetter, formatDate, formatTime, isEven } from '~/helpers';
 import { Place as PlaceProps } from '~/normalizers';
-import { FadeInWrapper } from '~/components/shared';
 
 export const Place: React.FC<PlaceProps> = ({
   title,
@@ -20,7 +18,6 @@ export const Place: React.FC<PlaceProps> = ({
   index,
 }) => {
   const { locale } = useRouter();
-  const { t } = useTranslation();
   const isEvenPlace = isEven(index);
   return (
     <Grid container flexDirection={isEvenPlace ? 'row' : 'row-reverse'}>

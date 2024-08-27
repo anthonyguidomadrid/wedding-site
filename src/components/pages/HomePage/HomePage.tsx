@@ -1,6 +1,5 @@
 // import dynamic from 'next/dynamic';
 // import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { SECTIONS } from './HomePage.constant';
 
@@ -19,8 +18,6 @@ import { ContentfulWrapper } from '~/components/shared/ContentfulWrapper';
 // import { GREETING_QUERY, SECTION_QUERY } from '~/queries/sections';
 
 export const HomePage = () => {
-  const { t } = useTranslation();
-
   return (
     <div>
       {SECTIONS.map(({ query, Component, normalizer, name }, index) => (
