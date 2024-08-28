@@ -41,7 +41,7 @@ export const MobileMenu = () => {
           {MENU_ITEMS.map(({ item, Icon }) => (
             <MobileMenuItem key={item} Icon={Icon}>
               <ScrollLink to={item} onClick={toogleMenu}>
-                <MenuTypography variant="menu">{t(`menu.${item}`)}</MenuTypography>
+                <MenuTypography variant="title">{t(`menu.${item}`)}</MenuTypography>
               </ScrollLink>
             </MobileMenuItem>
           ))}

@@ -49,7 +49,7 @@ export const theme = createTheme({
     small: {
       fontSize: 12,
     },
-    menu: {
+    title: {
       fontFamily: 'Cinzel, "Arial", sans-serif',
     },
   },

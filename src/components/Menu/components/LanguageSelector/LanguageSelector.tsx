@@ -20,7 +20,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className })
     <>
       {locales?.map(loc => (
         <LanguageButton key={loc} value={loc} onClick={onLocaleChange} className={className}>
-          <Typography variant="menu">{loc.toUpperCase()}</Typography>
+          <Typography variant="title">{loc.toUpperCase()}</Typography>
         </LanguageButton>
       ))}
     </>

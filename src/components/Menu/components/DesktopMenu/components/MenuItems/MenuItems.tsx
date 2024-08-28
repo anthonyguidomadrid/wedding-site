@@ -11,7 +11,7 @@ export const MenuItems: React.FC<MenuItemsProps> = ({ itemsArray }) => {
     <>
       {itemsArray.map(({ item }) => (
         <ScrollLink key={item} to={item}>
-          <MenuTypography variant="menu">{t(`menu.${item}`)}</MenuTypography>
+          <MenuTypography variant="title">{t(`menu.${item}`)}</MenuTypography>
         </ScrollLink>
       ))}
     </>

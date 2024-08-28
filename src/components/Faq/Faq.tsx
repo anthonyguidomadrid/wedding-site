@@ -1,5 +1,6 @@
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 import { CenteredTitle } from './Faq.styles';
@@ -17,12 +18,34 @@ export const Faq = ({ questions }: FaqProps) => {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#34382c',
-        color: 'white',
+        color: '#fffff5',
         padding: '40px',
         marginBottom: '500px',
+        position: 'relative',
       }}
     >
-      <div style={{ backgroundColor: 'rgba(255, 255, 245, 0.3)', padding: '32px 16px' }}>
+      <Image
+        src="/images/olive.png"
+        width="220"
+        height="400"
+        alt="olive background"
+        style={{ position: 'absolute', bottom: 15, left: 5, opacity: 0.5, zIndex: 1 }}
+      />
+      <Image
+        src="/images/olive.png"
+        width="200"
+        height="340"
+        alt="olive background 2"
+        style={{
+          position: 'absolute',
+          transform: 'rotate(-90deg)',
+          top: -50,
+          right: 80,
+          opacity: 0.5,
+          zIndex: 1,
+        }}
+      />
+      <div style={{ backgroundColor: '#717469', padding: '32px 16px', zIndex: 2, opacity: 0.85 }}>
         <CenteredTitle variant="h2">{t('menu.faq')}</CenteredTitle>
         {questions?.map(({ title, answer: { json } }, index) => {
           return (
@@ -42,7 +65,7 @@ export const Faq = ({ questions }: FaqProps) => {
                 expandIcon={<ArrowDropDownIcon style={{ color: 'white' }} />}
                 sx={{ backgroundColor: 'transparent', color: 'white' }}
               >
-                <Typography variant="menu">{title}</Typography>
+                <Typography variant="title">{title}</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ fontSize: '1rem' }}>
                 <RichTextRenderer richTextDocument={json} />

@@ -23,18 +23,18 @@ declare module '@mui/material/styles' {
 
   interface TypographyVariants {
     small: React.CSSProperties;
-    menu: React.CSSProperties;
+    title: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     small: React.CSSProperties;
-    menu: React.CSSProperties;
+    title: React.CSSProperties;
   }
 }
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     small: true;
-    menu: true;
+    title: true;
   }
 }
