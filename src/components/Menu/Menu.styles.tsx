@@ -15,7 +15,7 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
       ? 'transparent'
       : isMenuOpen
       ? theme.palette.text.secondary
-      : theme.palette.background.overlay,
+      : theme.palette.background.whiteOverlay,
     transition: 'background-color 0.5s ease-in-out, max-height 1s ease-in-out',
     maxHeight: isMenuOpen ? '100vh' : '100px',
     overflow: 'hidden',

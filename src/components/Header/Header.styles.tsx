@@ -51,7 +51,8 @@ export const CtaBtn = styled(ScrollLink)(({ theme }) => ({
   border: `1px solid ${theme.palette.text.secondary}`,
   padding: theme.spacing(1, 3),
   '&:hover': {
-    backgroundColor: theme.palette.background.overlay,
+    backgroundColor: theme.palette.background.whiteOverlay,
     color: theme.palette.text.primary,
   },
+  transition: 'ease 1s background-color, ease 1s color',
 }));

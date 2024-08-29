@@ -39,6 +39,10 @@ export const theme = createTheme({
       fontFamily: 'Amalfi Coast, "Arial", sans-serif',
       marginBottom: '56px',
       lineHeight: '2',
+      '@media (max-width:900px)': {
+        fontSize: 32,
+        margin: '28px 0px',
+      },
     },
     h3: {
       fontSize: 22,
@@ -69,10 +73,11 @@ export const theme = createTheme({
     background: {
       default: '#fffff2',
       paper: '#fffff5',
-      overlay: 'rgba(255, 255, 245, 0.9)',
+      whiteOverlay: 'rgba(255, 255, 245, 0.9)',
       primary: '#34382c',
       greyDark: '#4e4e49',
       greyLight: '#a09f8d',
+      greenOverlay: 'rgba(113, 116, 105, 0.85)',
     },
   },
   components: {},

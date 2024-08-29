@@ -6,10 +6,11 @@ declare module '@emotion/react' {
 
 declare module '@mui/material/styles/createPalette' {
   interface TypeBackground {
-    overlay: string;
+    whiteOverlay: string;
     primary: string;
     greyDark: string;
     greyLight: string;
+    greenOverlay: string;
   }
 }
 
