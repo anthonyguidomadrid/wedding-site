@@ -26,7 +26,6 @@ export const FaqWrapper = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10),
   },
-  marginBottom: '500px',
 }));
 
 export const OliveBackground = styled(Image)(({ theme }) => ({

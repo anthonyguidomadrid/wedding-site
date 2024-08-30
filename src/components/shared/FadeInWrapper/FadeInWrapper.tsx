@@ -12,6 +12,7 @@ export const FadeInWrapper: React.FC<FadeInWrapperProps> = ({
   display = true,
   delay = 0,
   shouldSlide = false,
+  container,
 }) => {
   const { ref, inView } = useInView({ triggerOnce: true });
   const [showAfterDelay, setShowAfterDelay] = useState(false);
@@ -29,13 +30,14 @@ export const FadeInWrapper: React.FC<FadeInWrapperProps> = ({
     }
   }, [delay, display, inView]);
 
+  console.log({ container });
   return (
     <Fade in={shouldDisplay} timeout={timeout}>
       <Box ref={ref}>
         <OptionalWrapper
           Wrapper={SlideWrapper}
           condition={shouldSlide}
-          props={{ shouldDisplay, timeout }}
+          props={{ shouldDisplay, timeout, container }}
         >
           <Box>{children}</Box>
         </OptionalWrapper>
