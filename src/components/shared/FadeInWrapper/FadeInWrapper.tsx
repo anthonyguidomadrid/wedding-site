@@ -30,7 +30,6 @@ export const FadeInWrapper: React.FC<FadeInWrapperProps> = ({
     }
   }, [delay, display, inView]);
 
-  console.log({ container });
   return (
     <Fade in={shouldDisplay} timeout={timeout}>
       <Box ref={ref}>
