@@ -77,7 +77,7 @@ export const theme = createTheme({
       primary: '#34382c',
       greyDark: '#4e4e49',
       greyLight: '#a09f8d',
-      greenOverlay: 'rgba(113, 116, 105, 0.9)',
+      greenOverlay: 'rgba(113, 116, 105, 0.85)',
     },
   },
   components: {},

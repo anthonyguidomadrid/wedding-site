@@ -4,5 +4,5 @@ export type FadeInWrapperProps = {
   display?: boolean;
   delay?: number;
   shouldSlide?: boolean;
-  container?: HTMLElement | null;
+  container?: HTMLElement;
 };

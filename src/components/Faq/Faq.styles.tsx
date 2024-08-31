@@ -14,6 +14,7 @@ export const CenteredTitle = styled(Typography)(() => ({
 }));
 
 export const FaqWrapper = styled(Box)(({ theme }) => ({
+  zIndex: 0,
   minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
@@ -31,7 +32,7 @@ export const FaqWrapper = styled(Box)(({ theme }) => ({
 export const OliveBackground = styled(Image)(({ theme }) => ({
   position: 'absolute',
   opacity: 0.5,
-  zIndex: 1,
+  zIndex: -10,
   [theme.breakpoints.up('md')]: {
     width: 200,
     height: 320,
