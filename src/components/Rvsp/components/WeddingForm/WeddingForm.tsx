@@ -49,13 +49,16 @@ export const WeddingForm = () => {
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400, mx: 'auto', mt: 4 }}>
       <FormControl fullWidth margin="normal">
-        <InputLabel id="attending-label">Are you attending?</InputLabel>
+        <InputLabel id="attending-label" sx={{ color: 'black' }}>
+          Are you attending?
+        </InputLabel>
         <Select
           labelId="attending-label"
           name="attending"
           value={formData.attending}
           onChange={handleChange}
           label="Are you attending?"
+          sx={{ color: 'black' }}
         >
           <MenuItem value="yes_dinner_cocktail">Yes to dinner and cocktail</MenuItem>
           <MenuItem value="yes_dinner_only">Yes only to dinner</MenuItem>
@@ -72,6 +75,9 @@ export const WeddingForm = () => {
         value={formData.email}
         onChange={handleChange}
         required
+        InputLabelProps={{
+          style: { color: 'black' }, // Change the label color to black
+        }}
       />
 
       <TextField
@@ -82,15 +88,21 @@ export const WeddingForm = () => {
         value={formData.name}
         onChange={handleChange}
         required
+        InputLabelProps={{
+          style: { color: 'black' }, // Change the label color to black
+        }}
       />
 
       <TextField
         fullWidth
         margin="normal"
-        label="Guest (optional)"
+        label="Guest name (optional)"
         name="guest"
         value={formData.guest}
         onChange={handleChange}
+        InputLabelProps={{
+          style: { color: 'black' }, // Change the label color to black
+        }}
       />
 
       <FormGroup>
@@ -101,11 +113,9 @@ export const WeddingForm = () => {
           name="phoneNumber"
           value={formData.phoneNumber}
           onChange={handleChange}
-        />
-
-        <FormControlLabel
-          control={<Checkbox checked={formData.whatsapp} onChange={handleCheckboxChange} />}
-          label="Available on WhatsApp"
+          InputLabelProps={{
+            style: { color: 'black' }, // Change the label color to black
+          }}
         />
       </FormGroup>
 
@@ -117,6 +127,9 @@ export const WeddingForm = () => {
         type="number"
         value={formData.childrenCount}
         onChange={handleChange}
+        InputLabelProps={{
+          style: { color: 'black' }, // Change the label color to black
+        }}
       />
 
       <TextField
@@ -128,6 +141,9 @@ export const WeddingForm = () => {
         onChange={handleChange}
         multiline
         rows={2}
+        InputLabelProps={{
+          style: { color: 'black' }, // Change the label color to black
+        }}
       />
 
       <TextField
@@ -139,6 +155,9 @@ export const WeddingForm = () => {
         onChange={handleChange}
         multiline
         rows={2}
+        InputLabelProps={{
+          style: { color: 'black' }, // Change the label color to black
+        }}
       />
 
       <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
