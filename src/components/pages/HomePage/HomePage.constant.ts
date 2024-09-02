@@ -3,8 +3,9 @@ import { Section } from './HomePage.types';
 import { Details } from '~/components/Details';
 import { Faq } from '~/components/Faq';
 import { Header } from '~/components/Header';
-import { detailsNormalizer, faqNormalizer, headerNormalizer } from '~/normalizers';
-import { DETAILS_QUERY, FAQ_QUERY, HEADER_QUERY } from '~/queries';
+import { Rvsp } from '~/components/Rvsp';
+import { detailsNormalizer, faqNormalizer, headerNormalizer, rvspNormalizer } from '~/normalizers';
+import { DETAILS_QUERY, FAQ_QUERY, HEADER_QUERY, RVSP_QUERY } from '~/queries';
 
 export const SECTION_NAMES = {
   header: 'header',
@@ -33,5 +34,11 @@ export const SECTIONS: Section[] = [
     Component: Faq,
     normalizer: faqNormalizer,
     name: SECTION_NAMES.faq,
+  },
+  {
+    query: RVSP_QUERY,
+    Component: Rvsp,
+    normalizer: rvspNormalizer,
+    name: SECTION_NAMES.rvsp,
   },
 ];

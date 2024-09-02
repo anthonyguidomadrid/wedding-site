@@ -76,3 +76,16 @@ export type FaqQuery = {
     items: FaqItem[];
   };
 };
+
+export type Rvsp = {
+  title: string;
+  subtitle: string;
+  backgroundImage: Image;
+  limitDate: string;
+};
+
+export type RvspQuery = {
+  rvspCollection: {
+    items: Rvsp[];
+  };
+};

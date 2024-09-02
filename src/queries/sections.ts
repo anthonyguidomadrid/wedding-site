@@ -73,3 +73,19 @@ export const FAQ_QUERY = gql`
     }
   }
 `;
+
+export const RVSP_QUERY = gql`
+  query Rvsp($locale: String, $preview: Boolean) {
+    rvspCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        title
+        subtitle
+        backgroundImage {
+          description
+          url
+        }
+        limitDate
+      }
+    }
+  }
+`;

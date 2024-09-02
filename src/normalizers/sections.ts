@@ -1,9 +1,10 @@
-import { DetailsQuery, FaqQuery, FooterQuery, HeaderQuery } from './types';
+import { DetailsQuery, FaqQuery, FooterQuery, HeaderQuery, RvspQuery } from './types';
 
 import { DetailsProps } from '~/components/Details/Details.types';
 import { FaqProps } from '~/components/Faq/Faq.types';
 import { FooterProps } from '~/components/Footer';
 import { HeaderProps } from '~/components/Header';
+import { RvspProps } from '~/components/Rvsp/Rvsp.types';
 
 export const footerNormalizer = (query: FooterQuery): FooterProps => {
   const footerItem = query.footerCollection.items[0];
@@ -35,4 +36,8 @@ export const faqNormalizer = (query: FaqQuery): FaqProps => {
   return {
     questions: query.faqCollection.items[0].questionsCollection.items,
   };
+};
+
+export const rvspNormalizer = (query: RvspQuery): RvspProps => {
+  return query.rvspCollection.items[0];
 };
