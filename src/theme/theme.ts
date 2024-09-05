@@ -35,7 +35,7 @@ export const theme = createTheme({
       lineHeight: '2',
     },
     h2: {
-      fontSize: 45,
+      fontSize: 40,
       fontFamily: 'Amalfi Coast, "Arial", sans-serif',
       marginBottom: '40px',
       lineHeight: '2',
