@@ -23,5 +23,23 @@
   },
   "place": {
     "map-link": "Voir sur la carte"
+  },
+  "form": {
+    "attending": {
+      "title": "Venez-vous?",
+      "options": {
+        "both": "Oui au dîner et au cocktail",
+        "dinner": "Oui seulement au dîner",
+        "no": "Non"
+      }
+    },
+    "email": "Email",
+    "guest": "Invité supplémentaire (facultatif)",
+    "diet": "Régime alimentaires",
+    "name": "Prénom et Nom",
+    "phone": "Numéro de téléphone avec indicatif",
+    "children": "Combien d'enfants?",
+    "playlist": "Chansons pour la playlist",
+    "submit": "Envoyer"
   }
 }

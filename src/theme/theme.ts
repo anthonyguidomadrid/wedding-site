@@ -37,7 +37,7 @@ export const theme = createTheme({
     h2: {
       fontSize: 45,
       fontFamily: 'Amalfi Coast, "Arial", sans-serif',
-      marginBottom: '56px',
+      marginBottom: '40px',
       lineHeight: '2',
       '@media (max-width:900px)': {
         fontSize: 32,
@@ -55,6 +55,9 @@ export const theme = createTheme({
     },
     title: {
       fontFamily: 'Cinzel, "Arial", sans-serif',
+    },
+    bold: {
+      fontWeight: 700,
     },
   },
   palette: {

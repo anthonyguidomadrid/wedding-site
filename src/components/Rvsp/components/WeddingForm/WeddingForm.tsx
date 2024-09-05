@@ -1,28 +1,33 @@
-import {
-  TextField,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
-  FormGroup,
-  Checkbox,
-  FormControlLabel,
-  Button,
-  Box,
-} from '@mui/material';
+import { MenuItem, Select, FormControl, FormGroup, Grid } from '@mui/material';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import {
+  FormGridContainer,
+  FormGridItem,
+  StyledForm,
+  StyledInputLabel,
+  StyledTextField,
+  SubmitButton,
+} from './WeddingForm.style';
 
 export const WeddingForm = () => {
+  const {
+    query: { email, name, phone, skipGuest },
+  } = useRouter();
+  const { t } = useTranslation();
+  const shouldSkipGuest = skipGuest === 'true';
+
   const [formData, setFormData] = useState({
     attending: '',
-    email: '',
-    name: '',
+    email: email ?? '',
+    name: name ?? '',
     guest: '',
-    phoneNumber: '',
-    whatsapp: false,
-    childrenCount: 0,
-    dietaryRequirements: '',
-    playlistSongs: '',
+    phone: phone ?? '',
+    children: 0,
+    diet: '',
+    playlist: '',
   });
 
   const handleChange = e => {
@@ -33,136 +38,113 @@ export const WeddingForm = () => {
     }));
   };
 
-  const handleCheckboxChange = e => {
-    setFormData(prevData => ({
-      ...prevData,
-      whatsapp: e.target.checked,
-    }));
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
     console.log(formData);
-    // Add form submission logic here
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400, mx: 'auto', mt: 4 }}>
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="attending-label" sx={{ color: 'black' }}>
-          Are you attending?
-        </InputLabel>
-        <Select
-          labelId="attending-label"
-          name="attending"
-          value={formData.attending}
-          onChange={handleChange}
-          label="Are you attending?"
-          sx={{ color: 'black' }}
-        >
-          <MenuItem value="yes_dinner_cocktail">Yes to dinner and cocktail</MenuItem>
-          <MenuItem value="yes_dinner_only">Yes only to dinner</MenuItem>
-          <MenuItem value="no">No</MenuItem>
-        </Select>
-      </FormControl>
+    <StyledForm onSubmit={handleSubmit}>
+      <FormGridContainer>
+        <FormGridItem>
+          <FormControl fullWidth margin="normal" required>
+            <StyledInputLabel>{t('form.attending.title')}</StyledInputLabel>
+            <Select
+              name="attending"
+              value={formData.attending}
+              onChange={handleChange}
+              label={t('form.attending.title')}
+            >
+              {['both', 'dinner', 'no'].map(option => (
+                <MenuItem key={option} value={option}>
+                  {t(`form.attending.options.${option}`)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </FormGridItem>
 
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Email"
-        name="email"
-        type="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        InputLabelProps={{
-          style: { color: 'black' }, // Change the label color to black
-        }}
-      />
+        <FormGridItem>
+          <StyledTextField
+            label={t('form.name')}
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </FormGridItem>
+      </FormGridContainer>
+      <FormGridContainer>
+        <FormGridItem>
+          <StyledTextField
+            label={t('form.email')}
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </FormGridItem>
+        <FormGridItem>
+          <FormGroup>
+            <StyledTextField
+              label={t('form.phone')}
+              name="phone"
+              value={formData.phone}
+              placeholder="+34 XXX XXX XXX"
+              onChange={handleChange}
+              required
+            />
+          </FormGroup>
+        </FormGridItem>
+      </FormGridContainer>
+      {!shouldSkipGuest && (
+        <FormGridContainer>
+          <FormGridItem>
+            <StyledTextField
+              label={t('form.guest')}
+              name="guest"
+              value={formData.guest}
+              onChange={handleChange}
+            />
+          </FormGridItem>
+          <FormGridItem>
+            <StyledTextField
+              label={t('form.children')}
+              name="children"
+              type="number"
+              value={formData.children}
+              onChange={handleChange}
+            />
+          </FormGridItem>
+        </FormGridContainer>
+      )}
+      <FormGridContainer>
+        <FormGridItem>
+          <StyledTextField
+            label={t('form.playlist')}
+            name="playlist"
+            value={formData.playlist}
+            onChange={handleChange}
+            multiline
+            rows={2}
+          />
+        </FormGridItem>
+        <FormGridItem>
+          <StyledTextField
+            fullWidth
+            margin="normal"
+            label={t('form.diet')}
+            name="diet"
+            value={formData.diet}
+            onChange={handleChange}
+            multiline
+            rows={2}
+          />
+        </FormGridItem>
+      </FormGridContainer>
 
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Name"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-        InputLabelProps={{
-          style: { color: 'black' }, // Change the label color to black
-        }}
-      />
-
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Guest name (optional)"
-        name="guest"
-        value={formData.guest}
-        onChange={handleChange}
-        InputLabelProps={{
-          style: { color: 'black' }, // Change the label color to black
-        }}
-      />
-
-      <FormGroup>
-        <TextField
-          fullWidth
-          margin="normal"
-          label="Phone Number"
-          name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-          InputLabelProps={{
-            style: { color: 'black' }, // Change the label color to black
-          }}
-        />
-      </FormGroup>
-
-      <TextField
-        fullWidth
-        margin="normal"
-        label="How many children?"
-        name="childrenCount"
-        type="number"
-        value={formData.childrenCount}
-        onChange={handleChange}
-        InputLabelProps={{
-          style: { color: 'black' }, // Change the label color to black
-        }}
-      />
-
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Dietary Requirements"
-        name="dietaryRequirements"
-        value={formData.dietaryRequirements}
-        onChange={handleChange}
-        multiline
-        rows={2}
-        InputLabelProps={{
-          style: { color: 'black' }, // Change the label color to black
-        }}
-      />
-
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Songs for the Playlist"
-        name="playlistSongs"
-        value={formData.playlistSongs}
-        onChange={handleChange}
-        multiline
-        rows={2}
-        InputLabelProps={{
-          style: { color: 'black' }, // Change the label color to black
-        }}
-      />
-
-      <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
-        Submit
-      </Button>
-    </Box>
+      <SubmitButton>{t('form.submit')}</SubmitButton>
+    </StyledForm>
   );
 };

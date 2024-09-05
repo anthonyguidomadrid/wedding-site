@@ -13,7 +13,7 @@ import {
 import { HeaderProps } from './Header.types';
 import { FadeInWrapper } from '../shared';
 
-import { capitalizeFirstLetter, formatDate } from '~/helpers';
+import { formatDate } from '~/helpers';
 import { useMobile } from '~/hooks';
 
 export const Header: React.FC<HeaderProps> = ({
@@ -41,12 +41,8 @@ export const Header: React.FC<HeaderProps> = ({
           </FadeInWrapper>
           <FadeInWrapper delay={1500} shouldSlide={true}>
             <DateWrapper>
-              {startingDate && (
-                <Typography>{capitalizeFirstLetter(formatDate(startingDate, locale))} -</Typography>
-              )}
-              {finishingDate && (
-                <Typography>{capitalizeFirstLetter(formatDate(finishingDate, locale))}</Typography>
-              )}
+              {startingDate && <Typography>{formatDate(startingDate, locale)} -</Typography>}
+              {finishingDate && <Typography>{formatDate(finishingDate, locale)}</Typography>}
             </DateWrapper>
           </FadeInWrapper>
           <FadeInWrapper delay={2000} shouldSlide={true}>

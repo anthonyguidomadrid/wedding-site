@@ -21,5 +21,19 @@
   },
   "place": {
     "map-link": "Ver en el mapa"
+  },
+  "form": {
+    "attending": {
+      "title": "¿Asistirás?",
+      "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "no": "No" }
+    },
+    "email": "Email",
+    "guest": "Invitado adicional (opcional)",
+    "diet": "Requerimientos alimenticios",
+    "name": "Nombre y Apellido",
+    "phone": "Número de teléfono con prefijo",
+    "children": "¿Cuántos niños?",
+    "playlist": "Canciones para la playlist",
+    "submit": "Enviar"
   }
 }

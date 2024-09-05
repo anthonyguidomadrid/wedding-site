@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import { fr, es } from 'date-fns/locale';
+import { capitalizeFirstLetter } from './capitalizeFirstLetter';
 
 const locales = {
   fr: fr,
@@ -14,7 +15,9 @@ const formatters = {
 export const formatDate = (date: string, routerLocale = 'es') => {
   const parsedDate = new Date(date);
 
-  return format(parsedDate, formatters[routerLocale], { locale: locales[routerLocale] });
+  return capitalizeFirstLetter(
+    format(parsedDate, formatters[routerLocale], { locale: locales[routerLocale] }),
+  );
 };
 
 export const formatTime = (date: string, routerLocale = 'es') => {

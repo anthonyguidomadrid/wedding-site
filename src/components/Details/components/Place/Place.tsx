@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { PlaceImage, PlaceInfoGrid } from './Place.styles';
 
 import { FadeInWrapper } from '~/components/shared';
-import { capitalizeFirstLetter, formatDate, formatTime, isEven } from '~/helpers';
+import { formatDate, formatTime, isEven } from '~/helpers';
 import { Place as PlaceProps } from '~/normalizers';
 
 export const Place: React.FC<PlaceProps> = ({
@@ -33,7 +33,7 @@ export const Place: React.FC<PlaceProps> = ({
               <Typography variant="h3">{title}</Typography>
             </Grid>
             <Grid item>
-              <Typography>{capitalizeFirstLetter(formatDate(dateAndTime, locale))}</Typography>
+              <Typography>{formatDate(dateAndTime, locale)}</Typography>
               <Typography>{formatTime(dateAndTime, locale)}</Typography>
             </Grid>
             <Grid item>
