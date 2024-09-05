@@ -8,6 +8,7 @@ export const RvspWrapper = styled(Grid)<{ backgroundImageUrl?: string }>(
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     minHeight: '100vh',
+    alignItems: 'center',
   }),
 );
 
