@@ -89,3 +89,42 @@ export type RvspQuery = {
     items: Rvsp[];
   };
 };
+
+export type HoneymoonItem = {
+  description: { json: Document };
+  title: string;
+  backgroundImage: {
+    url: string;
+  };
+};
+
+export type HoneymoonQuery = {
+  honeymoonCollection: {
+    items: HoneymoonItem[];
+  };
+};
+
+export type BankAccount = {
+  fullName: string;
+  iban?: string;
+  swiftBic?: string;
+  accountNumberId?: string;
+  dni?: string;
+};
+
+export type ModalItem = {
+  title: string;
+  subtitle: string;
+  bankAccountsCollection: { items: BankAccount[] };
+  bizumPhonesCollection: {
+    items: Phone[];
+  };
+  paypalLink: string;
+  ctaLabel: string;
+};
+
+export type HoneyMoonModalQuery = {
+  paymentModalCollection: {
+    items: ModalItem[];
+  };
+};

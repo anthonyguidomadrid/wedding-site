@@ -1,9 +1,19 @@
-import { DetailsQuery, FaqQuery, FooterQuery, HeaderQuery, RvspQuery } from './types';
+import {
+  DetailsQuery,
+  FaqQuery,
+  FooterQuery,
+  HeaderQuery,
+  HoneyMoonModalQuery,
+  HoneymoonQuery,
+  RvspQuery,
+} from './types';
 
 import { DetailsProps } from '~/components/Details/Details.types';
 import { FaqProps } from '~/components/Faq/Faq.types';
 import { FooterProps } from '~/components/Footer';
 import { HeaderProps } from '~/components/Header';
+import { HoneymoonModalProps } from '~/components/Honeymoon/components/HoneymoonModal/HoneyMoonModal.types';
+import { HoneymoonProps } from '~/components/Honeymoon/Honeymoon.types';
 import { RvspProps } from '~/components/Rvsp/Rvsp.types';
 
 export const footerNormalizer = (query: FooterQuery): FooterProps => {
@@ -40,4 +50,26 @@ export const faqNormalizer = (query: FaqQuery): FaqProps => {
 
 export const rvspNormalizer = (query: RvspQuery): RvspProps => {
   return query.rvspCollection.items[0];
+};
+
+export const honeymoonNormalizer = (query: HoneymoonQuery): HoneymoonProps => {
+  const { title, description, backgroundImage } = query.honeymoonCollection.items[0];
+  return {
+    title,
+    description: description.json,
+    backgroundImageUrl: backgroundImage.url,
+  };
+};
+
+export const honeymonModalNormalizer = (query: HoneyMoonModalQuery): HoneymoonModalProps => {
+  const { title, subtitle, paypalLink, ctaLabel, bankAccountsCollection, bizumPhonesCollection } =
+    query.paymentModalCollection.items[0];
+  return {
+    title,
+    subtitle,
+    paypalLink,
+    ctaLabel,
+    bankAccounts: bankAccountsCollection.items,
+    bizumPhones: bizumPhonesCollection.items,
+  };
 };

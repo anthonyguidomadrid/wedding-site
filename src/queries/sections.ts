@@ -89,3 +89,47 @@ export const RVSP_QUERY = gql`
     }
   }
 `;
+
+export const HONEYMOON_QUERY = gql`
+  query Honeymoon($locale: String, $preview: Boolean) {
+    honeymoonCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        title
+        description {
+          json
+        }
+        backgroundImage {
+          url
+        }
+      }
+    }
+  }
+`;
+
+export const HONEYMOON_MODAL_QUERY = gql`
+  query HoneymoonModal($locale: String, $preview: Boolean) {
+    paymentModalCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        title
+        subtitle
+        bankAccountsCollection(limit: 3) {
+          items {
+            fullName
+            iban
+            swiftBic
+            accountNumberId
+            dni
+          }
+        }
+        bizumPhonesCollection(limit: 2) {
+          items {
+            name
+            phoneNumber
+          }
+        }
+        paypalLink
+        ctaLabel
+      }
+    }
+  }
+`;
