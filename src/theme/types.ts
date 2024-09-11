@@ -18,25 +18,35 @@ declare module '@mui/material/styles' {
   interface Palette {
     background: TypeBackground;
   }
+
   interface PaletteOptions {
     background?: Partial<TypeBackground>;
   }
 
   interface TypographyVariants {
     small: React.CSSProperties;
+    tiny: React.CSSProperties;
     title: React.CSSProperties;
     bold: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     small: React.CSSProperties;
+    tiny: React.CSSProperties;
     title: React.CSSProperties;
     bold: React.CSSProperties;
   }
 }
 
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    white: true;
+  }
+}
+
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
+    tiny: true;
     small: true;
     title: true;
     bold: true;

@@ -51,6 +51,9 @@ export const theme = createTheme({
       marginBottom: '8px',
     },
     small: {
+      fontSize: 14,
+    },
+    tiny: {
       fontSize: 12,
     },
     title: {

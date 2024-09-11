@@ -35,5 +35,25 @@
     "children": "¿Cuántos niños?",
     "playlist": "Canciones para la playlist",
     "submit": "Enviar"
+  },
+  "honeymoon": {
+    "modal": {
+      "title": {
+        "bank": "Transferencia bancaria",
+        "bizum": "Bizum",
+        "paypal": "Paypal"
+      },
+      "button": {
+        "paypal": "Ir a Paypal"
+      },
+      "bank": {
+        "name": "<strong>Titular:</strong> {{value}}",
+        "iban": "<strong>IBAN:</strong> {{value}}",
+        "swift": "<strong>SWIFT/BIC:</strong> {{value}}",
+        "number": "<strong>Número de cuenta:</strong> {{value}}",
+        "dni": "<strong>DNI:</strong> {{value}}"
+      },
+      "phone": "<strong>{{name}}:</strong> {{phone}}"
+    }
   }
 }

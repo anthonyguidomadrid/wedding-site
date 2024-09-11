@@ -8,7 +8,7 @@ export const DurationGridItem: React.FC<DurationGridProps> = ({ timeDuration, du
   return (
     <Grid item xs={2}>
       <Typography>{timeDuration}</Typography>
-      <Typography variant="small">{t(`counter.${durationType}`)}</Typography>
+      <Typography variant="tiny">{t(`counter.${durationType}`)}</Typography>
     </Grid>
   );
 };

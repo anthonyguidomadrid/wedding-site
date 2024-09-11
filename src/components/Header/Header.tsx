@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
@@ -11,7 +11,7 @@ import {
   ImageBackground,
 } from './Header.styles';
 import { HeaderProps } from './Header.types';
-import { FadeInWrapper } from '../shared';
+import { FadeInWrapper, ScrollLink } from '../shared';
 
 import { formatDate } from '~/helpers';
 import { useMobile } from '~/hooks';
@@ -49,9 +49,13 @@ export const Header: React.FC<HeaderProps> = ({
             <Typography>{place}</Typography>
           </FadeInWrapper>
           <FadeInWrapper delay={2500} shouldSlide={true}>
-            <div>
-              <CtaBtn to="rvsp">{t('header.cta')}</CtaBtn>
-            </div>
+            <Box>
+              <ScrollLink to="rvsp">
+                <Button color="secondary" variant="outlined">
+                  {t('header.cta')}
+                </Button>
+              </ScrollLink>
+            </Box>
           </FadeInWrapper>
         </ContentWrapper>
       </FadeInWrapper>
