@@ -48,10 +48,10 @@ export const theme = createTheme({
       fontSize: 22,
       fontWeight: 600,
       fontFamily: 'Cinzel, "Arial", sans-serif',
-      marginBottom: '8px',
+      marginBottom: '12px',
     },
     small: {
-      fontSize: 14,
+      fontSize: 16,
     },
     tiny: {
       fontSize: 12,

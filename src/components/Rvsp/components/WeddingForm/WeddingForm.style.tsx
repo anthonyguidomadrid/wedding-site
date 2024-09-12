@@ -54,5 +54,5 @@ export const FormGridItem = styled(Grid)();
 FormGridItem.defaultProps = {
   item: true,
   xs: 12,
-  sm: 6,
+  lg: 6,
 };

@@ -1,11 +1,12 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { Trans } from 'react-i18next';
 
+import { PhoneWrapper } from './BizumPhone.styles';
 import { BizumPhonesProps } from './BizumPhones.types';
 
 export const BizumPhones = ({ bizumPhones }: BizumPhonesProps) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+    <PhoneWrapper>
       {bizumPhones.map(({ name, phoneNumber }) => {
         return (
           <Typography variant="small" key={name} sx={{ display: 'block' }}>
@@ -17,6 +18,6 @@ export const BizumPhones = ({ bizumPhones }: BizumPhonesProps) => {
           </Typography>
         );
       })}
-    </Box>
+    </PhoneWrapper>
   );
 };

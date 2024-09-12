@@ -1,6 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 
 import { HoneymoonModal } from './components/HoneymoonModal';
+import { ContentHoneymoonGrid, ImageHoneymoonGrid } from './Honeymoon.styles';
 import { HoneymoonProps } from './Honeymoon.types';
 import { RichTextRenderer } from '../shared';
 import { ContentfulWrapper } from '../shared/ContentfulWrapper';
@@ -10,20 +11,8 @@ import { HONEYMOON_MODAL_QUERY } from '~/queries';
 
 export const Honeymoon = ({ title, description, backgroundImageUrl }: HoneymoonProps) => {
   return (
-    <Grid container sx={{ minHeight: '100vh' }}>
-      <Grid
-        item
-        sm={12}
-        md={6}
-        sx={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          display: 'flex',
-          textAlign: 'center',
-          padding: '30px',
-          flexDirection: 'column',
-        }}
-      >
+    <Grid container>
+      <ContentHoneymoonGrid item sm={12} lg={6}>
         <Typography variant="h2">{title}</Typography>
         <RichTextRenderer richTextDocument={description!} />
         <ContentfulWrapper
@@ -31,8 +20,8 @@ export const Honeymoon = ({ title, description, backgroundImageUrl }: HoneymoonP
           Component={HoneymoonModal}
           normalizer={honeymonModalNormalizer}
         />
-      </Grid>
-      <Grid item sm={12} md={6} sx={{ backgroundImage: `url(${backgroundImageUrl})` }} />
+      </ContentHoneymoonGrid>
+      <ImageHoneymoonGrid backgroundImageUrl={backgroundImageUrl!} item sm={12} lg={6} />
     </Grid>
   );
 };

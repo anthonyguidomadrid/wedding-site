@@ -22,7 +22,7 @@ export const Rvsp = ({ title, subtitle, backgroundImage, limitDate }: RvspProps)
   return (
     <FadeInWrapper>
       <RvspWrapper backgroundImageUrl={backgroundImage?.url}>
-        <Grid item sm={6}>
+        <Grid item md={6}>
           <FadeInWrapper delay={1000}>
             <FormWrapper>
               <Typography variant="h2">{title}</Typography>

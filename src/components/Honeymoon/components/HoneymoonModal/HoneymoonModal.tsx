@@ -18,6 +18,13 @@ import { useTranslation } from 'react-i18next';
 
 import { BankAccount } from './components/BankAccount';
 import { BizumPhones } from './components/BizumPhones';
+import {
+  CloseIconButton,
+  TitleWithIconWrapper,
+  ModalContentWrapper,
+  ModalTitleWrapper,
+  PaymentMethodGrid,
+} from './HoneymoonModal.styles';
 import { HoneymoonModalProps } from './HoneyMoonModal.types';
 
 export const HoneymoonModal = ({
@@ -35,55 +42,46 @@ export const HoneymoonModal = ({
   return (
     <>
       <Dialog onClose={handleClose} open={open} maxWidth="md">
-        <Box sx={{ textAlign: 'center', padding: '24px' }}>
+        <ModalTitleWrapper>
           <DialogTitle>{title}</DialogTitle>
           <Typography>{subtitle}</Typography>
-        </Box>
-        <IconButton
-          aria-label="close"
-          onClick={handleClose}
-          sx={theme => ({
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: theme.palette.grey[500],
-          })}
-        >
+        </ModalTitleWrapper>
+        <CloseIconButton onClick={handleClose}>
           <CloseIcon />
-        </IconButton>
-        <DialogContent>
-          <Grid container spacing={15}>
+        </CloseIconButton>
+        <ModalContentWrapper>
+          <Grid container spacing={{ xs: 7, md: 14 }}>
             <Grid item md={6}>
-              <Typography variant="h3">
-                <AccountBalanceIcon fontSize="small" sx={{ marginRight: '8px' }} />
-                {t('honeymoon.modal.title.bank')}
-              </Typography>
+              <TitleWithIconWrapper>
+                <AccountBalanceIcon fontSize="small" />
+                <Typography variant="h3">{t('honeymoon.modal.title.bank')}</Typography>
+              </TitleWithIconWrapper>
               <Grid container spacing={3}>
                 {bankAccounts.map(bankAccount => {
                   return <BankAccount key={bankAccount.fullName} {...bankAccount} />;
                 })}
               </Grid>
             </Grid>
-            <Grid item md={6} sx={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+            <PaymentMethodGrid item md={6}>
               <Box>
-                <Typography variant="h3">
-                  <PhonelinkRingIcon fontSize="small" sx={{ marginRight: '8px' }} />
-                  {t('honeymoon.modal.title.bizum')}
-                </Typography>
+                <TitleWithIconWrapper>
+                  <PhonelinkRingIcon fontSize="small" />
+                  <Typography variant="h3">{t('honeymoon.modal.title.bizum')}</Typography>
+                </TitleWithIconWrapper>
                 <BizumPhones bizumPhones={bizumPhones} />
               </Box>
               <Box>
-                <Typography variant="h3">
-                  <PaymentsIcon fontSize="small" sx={{ marginRight: '8px' }} />
-                  {t('honeymoon.modal.title.paypal')}
-                </Typography>
+                <TitleWithIconWrapper>
+                  <PaymentsIcon fontSize="small" />
+                  <Typography variant="h3">{t('honeymoon.modal.title.paypal')}</Typography>
+                </TitleWithIconWrapper>
                 <Link href={paypalLink} target="_blank">
                   <Button variant="outlined">{t('honeymoon.modal.button.paypal')}</Button>
                 </Link>
               </Box>
-            </Grid>
+            </PaymentMethodGrid>
           </Grid>
-        </DialogContent>
+        </ModalContentWrapper>
       </Dialog>
       <Button onClick={handleOpen} variant="outlined">
         {ctaLabel}
