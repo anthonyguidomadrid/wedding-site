@@ -1,6 +1,6 @@
-import { MenuItem, Select, FormControl, FormGroup, Grid } from '@mui/material';
+import { MenuItem, Select, FormControl, FormGroup } from '@mui/material';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -11,6 +11,9 @@ import {
   StyledTextField,
   SubmitButton,
 } from './WeddingForm.style';
+import { WeddingFormData } from './WeddingForm.types';
+
+import { getStringValue } from '~/helpers';
 
 export const WeddingForm = () => {
   const {
@@ -19,16 +22,20 @@ export const WeddingForm = () => {
   const { t } = useTranslation();
   const shouldSkipGuest = skipGuest === 'true';
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<WeddingFormData>({
     attending: '',
-    email: email ?? '',
-    name: name ?? '',
+    email: getStringValue(email),
+    name: getStringValue(name),
     guest: '',
-    phone: phone ?? '',
+    phone: getStringValue(phone),
     children: 0,
     diet: '',
     playlist: '',
   });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -38,9 +45,31 @@ export const WeddingForm = () => {
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
+    setError(false);
+
+    try {
+      const response = await fetch('/api/mailchimp', {
+        body: JSON.stringify(formData),
+
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        method: 'POST',
+      });
+      if (!response.ok) {
+        throw new Error(JSON.stringify(response) || 'Something went wrong');
+      }
+
+      setSuccess(true);
+      setLoading(false);
+    } catch (err) {
+      setError(true);
+      setLoading(false);
+    }
   };
 
   return (
