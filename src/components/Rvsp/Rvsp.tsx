@@ -17,7 +17,13 @@ import { FadeInWrapper } from '../shared';
 
 import { formatDate } from '~/helpers';
 
-export const Rvsp = ({ title, subtitle, backgroundImage, limitDate }: RvspProps) => {
+export const Rvsp: React.FC<RvspProps> = ({
+  title,
+  subtitle,
+  backgroundImage,
+  limitDate,
+  email,
+}) => {
   const { locale } = useRouter();
   return (
     <FadeInWrapper>
@@ -28,7 +34,7 @@ export const Rvsp = ({ title, subtitle, backgroundImage, limitDate }: RvspProps)
               <Typography variant="h2">{title}</Typography>
               <Typography>{subtitle}</Typography>
               <Typography variant="bold">{formatDate(limitDate!, locale)}</Typography>
-              <WeddingForm />
+              <WeddingForm email={email!} />
             </FormWrapper>
           </FadeInWrapper>
         </Grid>

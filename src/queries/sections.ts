@@ -87,6 +87,11 @@ export const RVSP_QUERY = gql`
         limitDate
       }
     }
+    footerCollection(locale: $locale, preview: $preview, limit: 1) {
+      items {
+        email
+      }
+    }
   }
 `;
 

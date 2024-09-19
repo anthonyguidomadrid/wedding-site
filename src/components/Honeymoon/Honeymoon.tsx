@@ -9,7 +9,7 @@ import { ContentfulWrapper } from '../shared/ContentfulWrapper';
 import { honeymonModalNormalizer } from '~/normalizers';
 import { HONEYMOON_MODAL_QUERY } from '~/queries';
 
-export const Honeymoon = ({ title, description, backgroundImageUrl }: HoneymoonProps) => {
+export const Honeymoon: React.FC<HoneymoonProps> = ({ title, description, backgroundImageUrl }) => {
   return (
     <Grid container>
       <ContentHoneymoonGrid>

@@ -49,7 +49,7 @@ export const faqNormalizer = (query: FaqQuery): FaqProps => {
 };
 
 export const rvspNormalizer = (query: RvspQuery): RvspProps => {
-  return query.rvspCollection.items[0];
+  return { ...query.rvspCollection.items[0], email: query.footerCollection.items[0].email };
 };
 
 export const honeymoonNormalizer = (query: HoneymoonQuery): HoneymoonProps => {

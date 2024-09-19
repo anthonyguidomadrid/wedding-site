@@ -25,13 +25,11 @@
     "map-link": "Voir sur la carte"
   },
   "form": {
-    "attending": {
-      "title": "Venez-vous?",
-      "options": {
-        "both": "Oui au dîner et au cocktail",
-        "dinner": "Oui seulement au dîner",
-        "no": "Non"
-      }
+    "attending": "Venez-vous?",
+    "options": {
+      "both": "Oui au dîner et au cocktail",
+      "dinner": "Oui seulement au dîner",
+      "no": "Non"
     },
     "email": "Email",
     "guest": "Invité supplémentaire (facultatif)",
@@ -40,7 +38,15 @@
     "phone": "Numéro de téléphone avec indicatif",
     "children": "Combien d'enfants?",
     "playlist": "Chansons pour la playlist",
-    "submit": "Envoyer"
+    "submit": "Envoyer",
+    "success": {
+      "title": "Un grand merci pour ta confirmation !",
+      "subtitle": "Tu recevras un e-mail sous peu avec les informations que tu as soumises. Si des informations sont incorrectes, n'hésite pas à actualiser la page et à soumettre le formulaire à nouveau ou nous contacter à"
+    },
+    "error": {
+      "title": "Oups, quelque chose s'est mal passé",
+      "subtitle": "Il semble qu'il y ait eu un problème lors de l'envoi de vos données. Veuillez nous contacter directement à"
+    }
   },
   "honeymoon": {
     "modal": {

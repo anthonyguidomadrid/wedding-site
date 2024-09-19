@@ -1,15 +1,16 @@
 import { Grid, Typography } from '@mui/material';
+import React from 'react';
 import { Trans } from 'react-i18next';
 
 import { BankAccount as BankAccountProps } from '~/normalizers';
 
-export const BankAccount = ({
+export const BankAccount: React.FC<BankAccountProps> = ({
   fullName: name,
   iban,
   swiftBic: swift,
   accountNumberId: number,
   dni,
-}: BankAccountProps) => {
+}) => {
   const fields = [
     { key: 'name', value: name },
     { key: 'iban', value: iban },

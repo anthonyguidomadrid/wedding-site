@@ -27,6 +27,7 @@ export const FormWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  transition: 'height 1s ease',
   [theme.breakpoints.up('lg')]: {
     margin: theme.spacing(10),
     padding: theme.spacing(10),

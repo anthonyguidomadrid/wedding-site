@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -16,7 +16,7 @@ import {
 import { FaqProps } from './Faq.types';
 import { FadeInWrapper, RichTextRenderer } from '../shared';
 
-export const Faq = ({ questions }: FaqProps) => {
+export const Faq: React.FC<FaqProps> = ({ questions }) => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLElement>(null);
   const [container, setContainer] = useState<HTMLElement | null>(null);

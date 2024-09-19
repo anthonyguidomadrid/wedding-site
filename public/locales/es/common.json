@@ -23,10 +23,8 @@
     "map-link": "Ver en el mapa"
   },
   "form": {
-    "attending": {
-      "title": "¿Asistirás?",
-      "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "no": "No" }
-    },
+    "attending": "¿Asistirás?",
+    "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "no": "No" },
     "email": "Email",
     "guest": "Invitado adicional (opcional)",
     "diet": "Requerimientos alimenticios",
@@ -34,7 +32,15 @@
     "phone": "Número de teléfono con prefijo",
     "children": "¿Cuántos niños?",
     "playlist": "Canciones para la playlist",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "success": {
+      "title": "¡Muchas gracias por tu confirmación!",
+      "subtitle": "Recibirás un correo electrónico en breve con los datos que has enviado. Si alguna información no es correcta, no dudes en actualizar la página y enviar el formulario nuevamente o contactar con nosotros a"
+    },
+    "error": {
+      "title": "Ups, algo salió mal",
+      "subtitle": "Parece que hubo un problema al enviar tus datos. Por favor, contáctanos directamente a"
+    }
   },
   "honeymoon": {
     "modal": {

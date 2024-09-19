@@ -1,8 +1,9 @@
-import { MenuItem, Select, FormControl, FormGroup } from '@mui/material';
+import { MenuItem, Select, FormControl, FormGroup, CircularProgress } from '@mui/material';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ConfirmationScreen } from './components/ConfirmationScreen/ConfirmationScreen';
 import {
   FormGridContainer,
   FormGridItem,
@@ -11,11 +12,11 @@ import {
   StyledTextField,
   SubmitButton,
 } from './WeddingForm.style';
-import { WeddingFormData } from './WeddingForm.types';
+import { WeddingFormData, WeddingFormProps } from './WeddingForm.types';
 
 import { getStringValue } from '~/helpers';
 
-export const WeddingForm = () => {
+export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) => {
   const {
     query: { email, name, phone, skipGuest },
   } = useRouter();
@@ -72,21 +73,32 @@ export const WeddingForm = () => {
     }
   };
 
+  if (success || error) {
+    return (
+      <ConfirmationScreen
+        formData={success ? formData : undefined}
+        response={success ? 'success' : 'error'}
+        email={adminEmail}
+      />
+    );
+  }
+
   return (
     <StyledForm onSubmit={handleSubmit}>
       <FormGridContainer>
         <FormGridItem>
           <FormControl fullWidth margin="normal" required>
-            <StyledInputLabel>{t('form.attending.title')}</StyledInputLabel>
+            <StyledInputLabel>{t('form.attending')}</StyledInputLabel>
             <Select
+              disabled={loading}
               name="attending"
               value={formData.attending}
               onChange={handleChange}
-              label={t('form.attending.title')}
+              label={t('form.attending')}
             >
               {['both', 'dinner', 'no'].map(option => (
                 <MenuItem key={option} value={option}>
-                  {t(`form.attending.options.${option}`)}
+                  {t(`form.options.${option}`)}
                 </MenuItem>
               ))}
             </Select>
@@ -100,6 +112,7 @@ export const WeddingForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </FormGridItem>
       </FormGridContainer>
@@ -112,6 +125,7 @@ export const WeddingForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={loading}
           />
         </FormGridItem>
         <FormGridItem>
@@ -123,6 +137,7 @@ export const WeddingForm = () => {
               placeholder="+34 XXX XXX XXX"
               onChange={handleChange}
               required
+              disabled={loading}
             />
           </FormGroup>
         </FormGridItem>
@@ -135,6 +150,7 @@ export const WeddingForm = () => {
               name="guest"
               value={formData.guest}
               onChange={handleChange}
+              disabled={loading}
             />
           </FormGridItem>
           <FormGridItem>
@@ -144,6 +160,7 @@ export const WeddingForm = () => {
               type="number"
               value={formData.children}
               onChange={handleChange}
+              disabled={loading}
             />
           </FormGridItem>
         </FormGridContainer>
@@ -157,6 +174,7 @@ export const WeddingForm = () => {
             onChange={handleChange}
             multiline
             rows={2}
+            disabled={loading}
           />
         </FormGridItem>
         <FormGridItem>
@@ -169,11 +187,14 @@ export const WeddingForm = () => {
             onChange={handleChange}
             multiline
             rows={2}
+            disabled={loading}
           />
         </FormGridItem>
       </FormGridContainer>
 
-      <SubmitButton>{t('form.submit')}</SubmitButton>
+      <SubmitButton disabled={loading}>
+        {loading ? <CircularProgress size={24} color="inherit" /> : t('form.submit')}
+      </SubmitButton>
     </StyledForm>
   );
 };

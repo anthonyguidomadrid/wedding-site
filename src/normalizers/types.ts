@@ -82,11 +82,15 @@ export type Rvsp = {
   subtitle: string;
   backgroundImage: Image;
   limitDate: string;
+  email: string;
 };
 
 export type RvspQuery = {
   rvspCollection: {
     items: Rvsp[];
+  };
+  footerCollection: {
+    items: Pick<FooterItem, 'email'>[];
   };
 };
 

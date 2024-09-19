@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { BankAccount } from './components/BankAccount';
@@ -27,14 +27,14 @@ import {
 } from './HoneymoonModal.styles';
 import { HoneymoonModalProps } from './HoneyMoonModal.types';
 
-export const HoneymoonModal = ({
+export const HoneymoonModal: React.FC<HoneymoonModalProps> = ({
   ctaLabel,
   title,
   subtitle,
   bankAccounts,
   bizumPhones,
   paypalLink,
-}: HoneymoonModalProps) => {
+}) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

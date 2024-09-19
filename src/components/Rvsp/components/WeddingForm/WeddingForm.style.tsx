@@ -29,6 +29,7 @@ StyledTextField.defaultProps = {
       color: theme.palette.text.primary,
     },
   },
+  inputProps: { maxLength: 1000 },
 };
 
 export const SubmitButton = styled(Button)(({ theme }) => ({

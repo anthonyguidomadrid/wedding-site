@@ -11,6 +11,8 @@ import { FadeInWrapper, ScrollLink } from '../shared';
 
 import { getMailLink, getPhoneLink } from '~/helpers';
 
+import Link from 'next/link';
+
 export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
   const { t } = useTranslation();
   return (
@@ -32,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
                 ))}
                 <Grid item>
                   <Typography>
-                    <a href={getMailLink(email)}>{email}</a>
+                    <Link href={getMailLink(email)}>{email}</Link>
                   </Typography>
                 </Grid>
               </FadeInWrapper>

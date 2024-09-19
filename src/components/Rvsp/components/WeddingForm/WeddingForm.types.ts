@@ -1,3 +1,5 @@
+import { Rvsp } from '~/normalizers';
+
 export type WeddingFormData = {
   attending: 'none' | 'dinner' | 'both' | '';
   email: string;
@@ -8,3 +10,5 @@ export type WeddingFormData = {
   diet: string;
   playlist: string;
 };
+
+export type WeddingFormProps = Pick<Rvsp, 'email'>;

@@ -4,7 +4,7 @@ import { Trans } from 'react-i18next';
 import { PhoneWrapper } from './BizumPhone.styles';
 import { BizumPhonesProps } from './BizumPhones.types';
 
-export const BizumPhones = ({ bizumPhones }: BizumPhonesProps) => {
+export const BizumPhones: React.FC<BizumPhonesProps> = ({ bizumPhones }) => {
   return (
     <PhoneWrapper>
       {bizumPhones.map(({ name, phoneNumber }) => {
