@@ -24,7 +24,7 @@
   },
   "form": {
     "attending": "¿Asistirás?",
-    "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "no": "No" },
+    "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "none": "No" },
     "email": "Email",
     "guest": "Invitado adicional (opcional)",
     "diet": "Requerimientos alimenticios",

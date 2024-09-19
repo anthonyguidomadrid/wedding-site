@@ -29,7 +29,7 @@
     "options": {
       "both": "Oui au dîner et au cocktail",
       "dinner": "Oui seulement au dîner",
-      "no": "Non"
+      "none": "Non"
     },
     "email": "Email",
     "guest": "Invité supplémentaire (facultatif)",
