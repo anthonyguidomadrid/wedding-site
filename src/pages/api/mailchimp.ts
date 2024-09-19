@@ -64,6 +64,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         });
 
         if (response.status >= 400) {
+          console.log({ response });
           return res.status(400).json({ error: 'Error updating contact.' });
         }
 

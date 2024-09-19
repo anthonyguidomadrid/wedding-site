@@ -1,7 +1,8 @@
 import { MenuItem, Select, FormControl, FormGroup, CircularProgress } from '@mui/material';
 import { useRouter } from 'next/router';
-import { FormEventHandler, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { scroller } from 'react-scroll';
 
 import { ConfirmationScreen } from './components/ConfirmationScreen/ConfirmationScreen';
 import {
@@ -74,6 +75,11 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) =
   };
 
   if (success || error) {
+    scroller.scrollTo('rvsp', {
+      duration: 2000,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    });
     return (
       <ConfirmationScreen
         formData={success ? formData : undefined}
@@ -96,7 +102,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) =
               onChange={handleChange}
               label={t('form.attending')}
             >
-              {['both', 'dinner', 'no'].map(option => (
+              {['both', 'dinner', 'none'].map(option => (
                 <MenuItem key={option} value={option}>
                   {t(`form.options.${option}`)}
                 </MenuItem>
