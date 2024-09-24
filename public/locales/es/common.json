@@ -26,7 +26,7 @@
     "attending": "¿Asistirás?",
     "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "none": "No" },
     "email": "Email",
-    "guest": "Invitado adicional (opcional)",
+    "guest": "Invitado adicional",
     "diet": "Requerimientos alimenticios",
     "name": "Nombre y Apellido",
     "phone": "Número de teléfono con prefijo",
@@ -35,7 +35,7 @@
     "submit": "Enviar",
     "success": {
       "title": "¡Muchas gracias por tu confirmación!",
-      "subtitle": "Recibirás un correo electrónico en breve con los datos que has enviado. Si alguna información no es correcta, no dudes en actualizar la página y enviar el formulario nuevamente o contactar con nosotros a"
+      "subtitle": "Recibirás un correo electrónico de confirmación en los próximos días. Si alguna información no es correcta, no dudes en actualizar la página y enviar el formulario nuevamente o contactar con nosotros a"
     },
     "error": {
       "title": "Ups, algo salió mal",

@@ -32,7 +32,7 @@
       "none": "Non"
     },
     "email": "Email",
-    "guest": "Invité supplémentaire (facultatif)",
+    "guest": "Invité supplémentaire",
     "diet": "Régime alimentaires",
     "name": "Prénom et Nom",
     "phone": "Numéro de téléphone avec indicatif",
@@ -41,7 +41,7 @@
     "submit": "Envoyer",
     "success": {
       "title": "Un grand merci pour ta confirmation !",
-      "subtitle": "Tu recevras un e-mail sous peu avec les informations que tu as soumises. Si des informations sont incorrectes, n'hésite pas à actualiser la page et à soumettre le formulaire à nouveau ou nous contacter à"
+      "subtitle": "Tu recevras un e-mail de confirmation dans les prochains jours. Si des informations sont incorrectes, n'hésite pas à actualiser la page et à soumettre le formulaire à nouveau ou nous contacter à"
     },
     "error": {
       "title": "Oups, quelque chose s'est mal passé",

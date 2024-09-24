@@ -132,3 +132,18 @@ export type HoneyMoonModalQuery = {
     items: ModalItem[];
   };
 };
+
+export type SeoItem = {
+  pageTitle: string;
+  pageDescription: string;
+  canonicalUrl?: string;
+  noFollow: boolean;
+  noIndex: boolean;
+  shareImagesCollection: { items: Image[] };
+};
+
+export type SeoQuery = {
+  seoCollection: {
+    items: SeoItem[];
+  };
+};

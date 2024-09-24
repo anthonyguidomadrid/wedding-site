@@ -59,6 +59,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^15.3.0",
     "next-pwa": "^5.6.0",
+    "next-seo": "^6.6.0",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -72,7 +73,8 @@
     "rehype-react": "^7.1.1",
     "remark-breaks": "^3.0.2",
     "styled-components": "^6.1.11",
-    "styled-jsx": "^5.0.2"
+    "styled-jsx": "^5.0.2",
+    "urijs": "^1.19.11"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
