@@ -1,14 +1,17 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 
-import { PageProps } from './types';
-
 import { HomePage } from '~/components/pages/HomePage';
 import { Seo } from '~/components/shared';
 import { fetchSeoData } from '~/lib/get-seo-metadata';
 import { getServerSideTranslations } from '~/lib/get-serverside-translations';
+import { SeoItem } from '~/normalizers';
 
-const LandingPage: NextPage<PageProps> = ({ seo }) => {
+export interface LandingPageProps {
+  seo: SeoItem;
+}
+
+const LandingPage: NextPage<LandingPageProps> = ({ seo }) => {
   return (
     <>
       <Seo {...seo} />
