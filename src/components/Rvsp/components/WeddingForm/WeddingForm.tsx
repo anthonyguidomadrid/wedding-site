@@ -19,7 +19,7 @@ import { getStringValue } from '~/helpers';
 
 export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) => {
   const {
-    query: { email, name, phone, skipGuest },
+    query: { email, name, phone, skipGuest, guest },
   } = useRouter();
   const { t } = useTranslation();
   const shouldSkipGuest = skipGuest === 'true';
@@ -28,7 +28,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) =
     attending: '',
     email: getStringValue(email),
     name: getStringValue(name),
-    guest: '',
+    guest: getStringValue(guest),
     phone: getStringValue(phone),
     children: 0,
     diet: '',

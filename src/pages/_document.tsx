@@ -46,7 +46,14 @@ export default class CustomDocument extends Document {
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+          <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png" />
+          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" />
+          <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+          <link rel="icon" href="/favicons/favicon.ico" />
         </Head>
         <body>
           <Main />
