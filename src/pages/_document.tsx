@@ -2,6 +2,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ServerStyleSheets } from '@mui/styles';
 import Document, { DocumentContext, Head, Main, NextScript, Html } from 'next/document';
+import { useRouter } from 'next/router';
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import flush from 'styled-jsx';
@@ -11,8 +12,9 @@ import { theme } from '~/theme';
 
 export default class CustomDocument extends Document {
   render() {
+    const { locale } = this.props;
     return (
-      <Html lang="en" dir="ltr">
+      <Html lang={locale} dir="ltr">
         <Head>
           <meta name="robots" content="noindex, nofollow" />
 
