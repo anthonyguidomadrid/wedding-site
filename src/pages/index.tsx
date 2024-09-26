@@ -22,13 +22,10 @@ const LandingPage: NextPage<LandingPageProps> = ({ seo }) => {
 
 export const getServerSideProps = async ({ locale }: NextPageContext) => {
   try {
-    const queryClient = new QueryClient();
-
     return {
       props: {
         ...(await getServerSideTranslations(locale)),
         ...(await fetchSeoData(locale)),
-        dehydratedState: dehydrate(queryClient),
       },
     };
   } catch {
