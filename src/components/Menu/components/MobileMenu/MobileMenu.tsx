@@ -11,7 +11,8 @@ import { getMenuFontColor } from '../DesktopMenu/DesktopMenu.func';
 import { LanguageSelector } from '../LanguageSelector';
 import { MenuLogo } from '../MenuLogo';
 
-import { ScrollLink, FadeInWrapper } from '~/components/shared';
+import { FadeInWrapper } from '~/components/shared/FadeInWrapper';
+import { ScrollLink } from '~/components/shared/ScrollLink';
 import { useMobileMenu, useScroll } from '~/hooks';
 
 export const MobileMenu = () => {

@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import { FooterGrid, FooterWrapper, LogoGrid } from './Footer.styles';
@@ -7,11 +8,10 @@ import { FooterProps } from './Footer.types';
 import LogoWhite from '/public/svg/logo-white.svg';
 
 import { MENU_ITEMS } from '../Menu/Menu.constant';
-import { FadeInWrapper, ScrollLink } from '../shared';
+import { FadeInWrapper } from '../shared/FadeInWrapper';
+import { ScrollLink } from '../shared/ScrollLink';
 
 import { getMailLink, getPhoneLink } from '~/helpers';
-
-import Link from 'next/link';
 
 export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
   const { t } = useTranslation();

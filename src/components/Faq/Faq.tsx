@@ -14,7 +14,8 @@ import {
   TopRightOliveBackground,
 } from './Faq.styles';
 import { FaqProps } from './Faq.types';
-import { FadeInWrapper, RichTextRenderer } from '../shared';
+import { FadeInWrapper } from '../shared/FadeInWrapper';
+import { RichTextRenderer } from '../shared/RichTextRenderer';
 
 export const Faq: React.FC<FaqProps> = ({ questions }) => {
   const { t } = useTranslation();

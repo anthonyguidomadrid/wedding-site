@@ -3,8 +3,9 @@ import { Grid, Typography } from '@mui/material';
 import { HoneymoonModal } from './components/HoneymoonModal';
 import { ContentHoneymoonGrid, HoneymoonImage, HoneymoonImageWrapper } from './Honeymoon.styles';
 import { HoneymoonProps } from './Honeymoon.types';
-import { FadeInWrapper, RichTextRenderer } from '../shared';
 import { ContentfulWrapper } from '../shared/ContentfulWrapper';
+import { FadeInWrapper } from '../shared/FadeInWrapper';
+import { RichTextRenderer } from '../shared/RichTextRenderer';
 
 import { honeymonModalNormalizer } from '~/normalizers';
 import { HONEYMOON_MODAL_QUERY } from '~/queries';

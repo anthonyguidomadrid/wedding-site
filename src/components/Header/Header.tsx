@@ -3,15 +3,10 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
 import { Counter } from './components/Counter';
-import {
-  ContentWrapper,
-  CtaBtn,
-  DateWrapper,
-  HeaderSection,
-  ImageBackground,
-} from './Header.styles';
+import { ContentWrapper, DateWrapper, HeaderSection, ImageBackground } from './Header.styles';
 import { HeaderProps } from './Header.types';
-import { FadeInWrapper, ScrollLink } from '../shared';
+import { FadeInWrapper } from '../shared/FadeInWrapper';
+import { ScrollLink } from '../shared/ScrollLink';
 
 import { formatDate } from '~/helpers';
 import { useMobile } from '~/hooks';

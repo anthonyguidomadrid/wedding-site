@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { PlaceImage, PlaceInfoGrid } from './Place.styles';
 
-import { FadeInWrapper } from '~/components/shared';
+import { FadeInWrapper } from '~/components/shared/FadeInWrapper';
 import { formatDate, formatTime, isEven } from '~/helpers';
 import { Place as PlaceProps } from '~/normalizers';
 

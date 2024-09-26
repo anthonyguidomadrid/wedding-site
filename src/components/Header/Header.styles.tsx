@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-import { ScrollLink } from '../shared/ScrollLink';
-
 export const HeaderSection = styled.section(({ theme }) => ({
   minHeight: '100vh',
   textAlign: 'center',
@@ -45,14 +43,4 @@ export const DateWrapper = styled.div(({ theme }) => ({
     flexDirection: 'row',
     gap: theme.spacing(1),
   },
-}));
-
-export const CtaBtn = styled(ScrollLink)(({ theme }) => ({
-  border: `1px solid ${theme.palette.text.secondary}`,
-  padding: theme.spacing(1, 3),
-  '&:hover': {
-    backgroundColor: theme.palette.background.whiteOverlay,
-    color: theme.palette.text.primary,
-  },
-  transition: 'ease 1s background-color, ease 1s color',
 }));

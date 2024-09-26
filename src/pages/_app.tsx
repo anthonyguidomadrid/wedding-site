@@ -60,7 +60,7 @@ const CustomApp = ({
     if (router.pathname !== '/') {
       router.replace('/');
     }
-  }, [router.pathname]);
+  }, [router]);
 
   return (
     <>

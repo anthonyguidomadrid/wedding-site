@@ -1,19 +1,10 @@
-import {
-  FormControl,
-  FormGroup,
-  FormHelperText,
-  Grid,
-  Input,
-  InputLabel,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 
 import { WeddingForm } from './components/WeddingForm';
 import { FormWrapper, RvspWrapper } from './Rvsp.styles';
 import { RvspProps } from './Rvsp.types';
-import { FadeInWrapper } from '../shared';
+import { FadeInWrapper } from '../shared/FadeInWrapper';
 
 import { formatDate } from '~/helpers';
 

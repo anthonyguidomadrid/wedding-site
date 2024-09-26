@@ -2,7 +2,7 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 
 import { HomePage } from '~/components/pages/HomePage';
-import { Seo } from '~/components/shared';
+import { Seo } from '~/components/shared/Seo';
 import { fetchSeoData } from '~/lib/get-seo-metadata';
 import { getServerSideTranslations } from '~/lib/get-serverside-translations';
 import { SeoItem } from '~/normalizers';

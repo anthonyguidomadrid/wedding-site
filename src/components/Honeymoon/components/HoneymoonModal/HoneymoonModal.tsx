@@ -2,16 +2,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import CloseIcon from '@mui/icons-material/Close';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
-import {
-  Box,
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  Grid,
-  IconButton,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Dialog, DialogTitle, Grid, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';

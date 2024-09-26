@@ -2,7 +2,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ServerStyleSheets } from '@mui/styles';
 import Document, { DocumentContext, Head, Main, NextScript, Html } from 'next/document';
-import { useRouter } from 'next/router';
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import flush from 'styled-jsx';
