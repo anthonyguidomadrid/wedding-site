@@ -56,6 +56,12 @@ const CustomApp = ({
     };
   }, [router.events]);
 
+  useEffect(() => {
+    if (router.pathname !== '/') {
+      router.replace('/');
+    }
+  }, [router.pathname]);
+
   return (
     <>
       <Head>
