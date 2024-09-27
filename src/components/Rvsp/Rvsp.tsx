@@ -18,7 +18,12 @@ export const Rvsp: React.FC<RvspProps> = ({
         <Grid item md={6}>
           <FadeInWrapper delay={1000}>
             <FormWrapper>
-              <WeddingForm email={email!} title={title} subtitle={subtitle} limitDate={limitDate} />
+              <WeddingForm
+                email={email!}
+                title={title!}
+                subtitle={subtitle!}
+                limitDate={limitDate!}
+              />
             </FormWrapper>
           </FadeInWrapper>
         </Grid>
