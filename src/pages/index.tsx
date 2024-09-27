@@ -1,4 +1,3 @@
-import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 
 import { HomePage } from '~/components/pages/HomePage';

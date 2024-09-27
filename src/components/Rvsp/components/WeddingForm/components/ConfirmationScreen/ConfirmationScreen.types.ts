@@ -1,6 +1,7 @@
-import { WeddingFormData, WeddingFormProps } from '../../WeddingForm.types';
+import { WeddingFormData } from '../../WeddingForm.types';
 
-export type ConfirmationScreenProps = WeddingFormProps & {
+export type ConfirmationScreenProps = {
+  email: string;
   formData?: WeddingFormData;
   response: 'success' | 'error';
 };

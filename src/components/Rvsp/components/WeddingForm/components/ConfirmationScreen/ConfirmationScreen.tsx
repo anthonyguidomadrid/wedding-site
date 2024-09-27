@@ -29,7 +29,7 @@ export const ConfirmationScreen: React.FC<ConfirmationScreenProps> = ({
           value = key === 'attending' ? t(`form.options.${value}`) : value;
           return (
             value && (
-              <DataWrapper>
+              <DataWrapper key={value}>
                 <Typography key={key} variant="bold">
                   {t(`form.${key}`)}
                 </Typography>

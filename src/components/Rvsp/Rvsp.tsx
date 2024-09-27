@@ -1,12 +1,9 @@
-import { Grid, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
+import { Grid } from '@mui/material';
 
 import { WeddingForm } from './components/WeddingForm';
 import { FormWrapper, RvspWrapper } from './Rvsp.styles';
 import { RvspProps } from './Rvsp.types';
 import { FadeInWrapper } from '../shared/FadeInWrapper';
-
-import { formatDate } from '~/helpers';
 
 export const Rvsp: React.FC<RvspProps> = ({
   title,
@@ -15,17 +12,13 @@ export const Rvsp: React.FC<RvspProps> = ({
   limitDate,
   email,
 }) => {
-  const { locale } = useRouter();
   return (
     <FadeInWrapper>
       <RvspWrapper backgroundImageUrl={backgroundImage?.url}>
         <Grid item md={6}>
           <FadeInWrapper delay={1000}>
             <FormWrapper>
-              <Typography variant="h2">{title}</Typography>
-              <Typography>{subtitle}</Typography>
-              <Typography variant="bold">{formatDate(limitDate!, locale)}</Typography>
-              <WeddingForm email={email!} />
+              <WeddingForm email={email!} title={title} subtitle={subtitle} limitDate={limitDate} />
             </FormWrapper>
           </FadeInWrapper>
         </Grid>

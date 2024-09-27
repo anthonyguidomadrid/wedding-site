@@ -1,4 +1,11 @@
-import { MenuItem, Select, FormControl, FormGroup, CircularProgress } from '@mui/material';
+import {
+  MenuItem,
+  Select,
+  FormControl,
+  FormGroup,
+  CircularProgress,
+  Typography,
+} from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,9 +22,16 @@ import {
 } from './WeddingForm.style';
 import { WeddingFormData, WeddingFormProps } from './WeddingForm.types';
 
-import { getStringValue } from '~/helpers';
+import { formatDate, getStringValue } from '~/helpers';
+import { useWeddingFormApi } from '~/hooks/useWeddingFormApi';
 
-export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) => {
+export const WeddingForm: React.FC<WeddingFormProps> = ({
+  email: adminEmail,
+  title,
+  subtitle,
+  limitDate,
+}) => {
+  const { locale } = useRouter();
   const {
     query: { email, name, phone, skipGuest, guest },
   } = useRouter();
@@ -35,9 +49,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) =
     playlist: '',
   });
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const { submitWeddingForm, loading, error, success } = useWeddingFormApi();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -49,29 +61,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) =
 
   const handleSubmit = async e => {
     e.preventDefault();
-    setLoading(true);
-    setError(false);
-
-    try {
-      const response = await fetch('/api/mailchimp', {
-        body: JSON.stringify(formData),
-
-        headers: {
-          'Content-Type': 'application/json',
-        },
-
-        method: 'POST',
-      });
-      if (!response.ok) {
-        throw new Error(JSON.stringify(response) || 'Something went wrong');
-      }
-
-      setSuccess(true);
-      setLoading(false);
-    } catch (err) {
-      setError(true);
-      setLoading(false);
-    }
+    await submitWeddingForm(formData);
   };
 
   if (success || error) {
@@ -91,6 +81,9 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({ email: adminEmail }) =
 
   return (
     <StyledForm onSubmit={handleSubmit}>
+      <Typography variant="h2">{title}</Typography>
+      <Typography>{subtitle}</Typography>
+      <Typography variant="bold">{formatDate(limitDate!, locale)}</Typography>
       <FormGridContainer>
         <FormGridItem>
           <FormControl fullWidth margin="normal" required>

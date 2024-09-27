@@ -11,4 +11,4 @@ export type WeddingFormData = {
   playlist: string;
 };
 
-export type WeddingFormProps = Pick<Rvsp, 'email'>;
+export type WeddingFormProps = Pick<Rvsp, 'email' | 'title' | 'subtitle' | 'limitDate'>;
