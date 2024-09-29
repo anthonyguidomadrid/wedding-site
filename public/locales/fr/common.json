@@ -1,9 +1,9 @@
 {
   "menu": {
     "details": "Le Mariage",
-    "faq": "Questions / Réponses",
+    "faq": "Questions fréquentes",
     "rvsp": "Confirmation",
-    "honeymoon": "Lune de miel"
+    "honeymoon": "Cadeaux"
   },
   "title": {
     "welcome": "Le Mariage de Juan y Anthony",
@@ -19,7 +19,7 @@
     "seconds": "Secondes"
   },
   "header": {
-    "cta": "Je confirme"
+    "cta": "Confirmez votre présence"
   },
   "place": {
     "map-link": "Voir sur la carte"
@@ -33,7 +33,7 @@
     },
     "email": "Email",
     "guest": "Invité supplémentaire",
-    "diet": "Régime alimentaires",
+    "diet": "Régimes alimentaires",
     "name": "Prénom et Nom",
     "phone": "Numéro de téléphone avec indicatif",
     "children": "Combien d'enfants?",

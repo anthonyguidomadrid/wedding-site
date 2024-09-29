@@ -1,9 +1,9 @@
 {
   "menu": {
     "details": "La Boda",
-    "faq": "Preguntas y respuestas",
+    "faq": "Preguntas frecuentes",
     "rvsp": "Confirmación",
-    "honeymoon": "Luna de miel"
+    "honeymoon": "Regalos"
   },
   "title": {
     "contact": "Contacta con nosotros",
@@ -17,7 +17,7 @@
     "seconds": "Segundos"
   },
   "header": {
-    "cta": "Confirmo mi asistencia"
+    "cta": "Confirma tu asistencia"
   },
   "place": {
     "map-link": "Ver en el mapa"
