@@ -37,6 +37,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
   } = useRouter();
   const { t } = useTranslation();
   const shouldSkipGuest = skipGuest === 'true';
+  const isOverdue = new Date(limitDate) < new Date();
 
   const [formData, setFormData] = useState<WeddingFormData>({
     attending: '',
@@ -50,6 +51,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
   });
 
   const { submitWeddingForm, loading, error, success } = useWeddingFormApi();
+  const isDisabled = loading || isOverdue;
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -89,7 +91,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
           <FormControl fullWidth margin="normal" required>
             <StyledInputLabel>{t('form.attending')}</StyledInputLabel>
             <Select
-              disabled={loading}
+              disabled={isDisabled}
               name="attending"
               value={formData.attending}
               onChange={handleChange}
@@ -111,7 +113,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
             value={formData.name}
             onChange={handleChange}
             required
-            disabled={loading}
+            disabled={isDisabled}
           />
         </FormGridItem>
       </FormGridContainer>
@@ -124,7 +126,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
             value={formData.email}
             onChange={handleChange}
             required
-            disabled={loading}
+            disabled={isDisabled}
           />
         </FormGridItem>
         <FormGridItem>
@@ -136,7 +138,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               placeholder="+34 XXX XXX XXX"
               onChange={handleChange}
               required
-              disabled={loading}
+              disabled={isDisabled}
             />
           </FormGroup>
         </FormGridItem>
@@ -149,7 +151,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               name="guest"
               value={formData.guest}
               onChange={handleChange}
-              disabled={loading}
+              disabled={isDisabled}
             />
           </FormGridItem>
           <FormGridItem>
@@ -159,7 +161,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               type="number"
               value={formData.children}
               onChange={handleChange}
-              disabled={loading}
+              disabled={isDisabled}
             />
           </FormGridItem>
         </FormGridContainer>
@@ -173,7 +175,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
             onChange={handleChange}
             multiline
             rows={2}
-            disabled={loading}
+            disabled={isDisabled}
           />
         </FormGridItem>
         <FormGridItem>
@@ -186,12 +188,12 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
             onChange={handleChange}
             multiline
             rows={2}
-            disabled={loading}
+            disabled={isDisabled}
           />
         </FormGridItem>
       </FormGridContainer>
 
-      <SubmitButton disabled={loading}>
+      <SubmitButton disabled={isDisabled}>
         {loading ? <CircularProgress size={24} color="inherit" /> : t('form.submit')}
       </SubmitButton>
     </StyledForm>

@@ -27,7 +27,7 @@
   "form": {
     "attending": "Venez-vous?",
     "options": {
-      "both": "Oui au dîner et au cocktail",
+      "both": "Oui au dîner et au vin d'honneur",
       "dinner": "Oui seulement au dîner",
       "none": "Non"
     },
@@ -35,7 +35,7 @@
     "guest": "Invité supplémentaire",
     "diet": "Régimes alimentaires",
     "name": "Prénom et Nom",
-    "phone": "Numéro de téléphone avec indicatif",
+    "phone": "Numéro de téléphone",
     "children": "Combien d'enfants?",
     "playlist": "Chansons pour la playlist",
     "submit": "Envoyer",

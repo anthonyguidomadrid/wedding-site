@@ -35,12 +35,12 @@ export const theme = createTheme({
       lineHeight: '2',
     },
     h2: {
-      fontSize: 40,
+      fontSize: 35,
       fontFamily: 'Amalfi Coast, "Arial", sans-serif',
       marginBottom: '40px',
-      lineHeight: '2.5',
+      lineHeight: '2',
       '@media (max-width:900px)': {
-        fontSize: 32,
+        fontSize: 30,
         margin: '28px 0px',
       },
     },
