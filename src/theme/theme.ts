@@ -1,26 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 
-export const SPACER = 5;
-
-interface ColorConfigInterface {
-  headlineColor: string;
-  textColor: string;
-  backgroundColor: string;
-  buttonColor: 'primary' | 'secondary';
-}
-
-const colorConfigs: { [key: string]: ColorConfigInterface } = {};
-
-export const getColorConfigFromPalette = (palette: string): ColorConfigInterface => {
-  if (colorConfigs[`palette-${palette}`] === undefined) {
-    return colorConfigs['palette-1. White (#FFFFFF)'];
-  }
-
-  return colorConfigs[`palette-${palette}`];
-};
-
 export const theme = createTheme({
-  spacing: SPACER,
+  spacing: 5,
   typography: {
     fontFamily: `Playfair Display, Arial, sans-serif`,
     fontSize: 16,
@@ -86,5 +67,4 @@ export const theme = createTheme({
       greenOverlay: 'rgba(113, 116, 105, 0.85)',
     },
   },
-  components: {},
 });

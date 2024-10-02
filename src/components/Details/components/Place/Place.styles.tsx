@@ -5,7 +5,7 @@ import Image from 'next/image';
 export const PlaceImage = styled(Image)(() => ({
   height: '50vh',
   width: '100%',
-  objectFit: 'cover',
+  objectFit: 'cover' as const,
   display: 'block',
 }));
 

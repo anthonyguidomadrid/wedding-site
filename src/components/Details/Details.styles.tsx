@@ -3,5 +3,5 @@ import { Box } from '@mui/material';
 
 export const DetailsWrapper = styled(Box)(() => ({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column' as const,
 }));

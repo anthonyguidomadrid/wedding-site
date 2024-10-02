@@ -40,8 +40,8 @@
     "playlist": "Chansons pour la playlist",
     "submit": "Envoyer",
     "success": {
-      "title": "Un grand merci pour ta confirmation !",
-      "subtitle": "Tu recevras un e-mail de confirmation dans les prochains jours. Si des informations sont incorrectes, n'hésite pas à actualiser la page et à soumettre le formulaire à nouveau ou nous contacter à"
+      "title": "Un grand merci pour votre confirmation !",
+      "subtitle": "Vous recevrez un e-mail de confirmation dans les prochains jours. Si des informations sont incorrectes, n'hésitez pas à actualiser la page et à soumettre le formulaire à nouveau ou nous contacter à"
     },
     "error": {
       "title": "Oups, quelque chose s'est mal passé",

@@ -1,12 +1,7 @@
 import { QueryCache } from '@tanstack/query-core';
-import Router from 'next/router';
 
 export const queryConfig = {
-  queryCache: new QueryCache({
-    onError: () => {
-      Router.push({ pathname: '/404' });
-    },
-  }),
+  queryCache: new QueryCache(),
   defaultOptions: {
     queries: {
       retry: false,
