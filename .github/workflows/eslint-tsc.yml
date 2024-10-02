@@ -42,4 +42,4 @@ jobs:
         run: yarn lint
 
       - name: TSC
-        run: yarn type-check
+        run: yarn type:check
