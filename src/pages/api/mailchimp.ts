@@ -8,7 +8,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, attending, name, guest, phone, children, diet, playlist } =
     req.body as WeddingFormData;
 
-  if (!email || !name || !phone) {
+  if (!email || !name) {
     return res.status(400).json({ error: 'Missing required data' });
   }
 

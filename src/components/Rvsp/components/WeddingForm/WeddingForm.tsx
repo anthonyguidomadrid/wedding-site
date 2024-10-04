@@ -137,7 +137,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               value={formData.phone}
               placeholder="+34 XXX XXX XXX"
               onChange={handleChange}
-              required
+              required={formData.attending != 'none'}
               disabled={isDisabled}
             />
           </FormGroup>
