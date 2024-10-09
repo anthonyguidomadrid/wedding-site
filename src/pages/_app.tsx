@@ -2,6 +2,7 @@ import { ContentfulLivePreviewProvider } from '@contentful/live-preview/react';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { DehydratedState, QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { AppProps } from 'next/app';
 import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
@@ -73,6 +74,7 @@ const CustomApp = ({
                   <Layout preview={previewActive}>
                     <Component {...pageProps} err={err} />
                   </Layout>
+                  <SpeedInsights />
                 </Hydrate>
               </Provider>
             </ThemeProvider>
