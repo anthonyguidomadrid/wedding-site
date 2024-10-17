@@ -30,6 +30,7 @@ export const HoneymoonModal: React.FC<HoneymoonModalProps> = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { t } = useTranslation();
+
   return (
     <>
       <Dialog onClose={handleClose} open={open} maxWidth="md">
@@ -41,7 +42,7 @@ export const HoneymoonModal: React.FC<HoneymoonModalProps> = ({
           <CloseIcon />
         </CloseIconButton>
         <ModalContentWrapper>
-          <Grid container spacing={{ xs: 7, md: 14 }}>
+          <Grid container spacing={{ xs: 7, md: 10 }}>
             <Grid item md={6}>
               <TitleWithIconWrapper>
                 <AccountBalanceIcon fontSize="small" />

@@ -124,6 +124,7 @@ export const HONEYMOON_MODAL_QUERY = gql`
             swiftBic
             accountNumberId
             dni
+            name
           }
         }
         bizumPhonesCollection(limit: 2) {

@@ -10,10 +10,12 @@ export const BankAccount: React.FC<BankAccountProps> = ({
   swiftBic: swift,
   accountNumberId: number,
   dni,
+  name: bankName,
 }) => {
   const fields = [
     { key: 'name', value: name },
     { key: 'iban', value: iban },
+    { key: 'bankName', value: bankName },
     { key: 'swift', value: swift },
     { key: 'number', value: number },
     { key: 'dni', value: dni },

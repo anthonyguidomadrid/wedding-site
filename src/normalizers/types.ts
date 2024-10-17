@@ -114,6 +114,7 @@ export type BankAccount = {
   swiftBic?: string;
   accountNumberId?: string;
   dni?: string;
+  name: string;
 };
 
 export type ModalItem = {

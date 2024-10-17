@@ -22,20 +22,18 @@ ContentHoneymoonGrid.defaultProps = {
   lg: 6,
 };
 
-export const HoneymoonImage = styled(Box)<{ backgroundImageUrl: string }>(
-  ({ theme, backgroundImageUrl }) => ({
-    backgroundImage: `url(${backgroundImageUrl})`,
-    minHeight: '50vh',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100%',
-    width: '100%',
-    [theme.breakpoints.up('lg')]: {
-      minHeight: '100vh',
-    },
-  }),
-);
+export const HoneymoonImage = styled(Box)<{ url: string }>(({ theme, url }) => ({
+  backgroundImage: `url(${url})`,
+  minHeight: '50vh',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  height: '100%',
+  width: '100%',
+  [theme.breakpoints.up('lg')]: {
+    minHeight: '100vh',
+  },
+}));
 
 export const HoneymoonImageWrapper = styled(Grid)(() => ({ width: '100%' }));
 HoneymoonImageWrapper.defaultProps = {

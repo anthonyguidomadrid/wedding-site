@@ -1,19 +1,17 @@
 import styled from '@emotion/styled';
 import { Box, Grid } from '@mui/material';
 
-export const RvspWrapper = styled(Grid)<{ backgroundImageUrl?: string }>(
-  ({ theme, backgroundImageUrl }) => ({
-    backgroundImage: `url(${backgroundImageUrl})`,
-    flexDirection: 'row-reverse',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    minHeight: '100vh',
-    alignItems: 'center',
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
-    },
-  }),
-);
+export const RvspWrapper = styled(Grid)<{ url?: string }>(({ theme, url }) => ({
+  backgroundImage: `url(${url})`,
+  flexDirection: 'row-reverse',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  minHeight: '100vh',
+  alignItems: 'center',
+  [theme.breakpoints.down('md')]: {
+    justifyContent: 'center',
+  },
+}));
 
 RvspWrapper.defaultProps = {
   container: true,

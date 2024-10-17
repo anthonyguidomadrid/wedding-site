@@ -14,7 +14,7 @@ export const Rvsp: React.FC<RvspProps> = ({
 }) => {
   return (
     <FadeInWrapper>
-      <RvspWrapper backgroundImageUrl={backgroundImage?.url}>
+      <RvspWrapper url={backgroundImage?.url}>
         <Grid item md={6}>
           <FadeInWrapper delay={1000}>
             <FormWrapper>

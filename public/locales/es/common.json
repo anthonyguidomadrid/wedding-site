@@ -57,7 +57,8 @@
         "iban": "<strong>IBAN:</strong> {{value}}",
         "swift": "<strong>SWIFT/BIC:</strong> {{value}}",
         "number": "<strong>Número de cuenta:</strong> {{value}}",
-        "dni": "<strong>DNI:</strong> {{value}}"
+        "dni": "<strong>DNI:</strong> {{value}}",
+        "bankName": "<strong>Banco:</strong>  {{value}}"
       },
       "phone": "<strong>{{name}}:</strong> {{phone}}"
     }

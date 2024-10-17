@@ -26,7 +26,7 @@ export const Honeymoon: React.FC<HoneymoonProps> = ({ title, description, backgr
       </ContentHoneymoonGrid>
       <HoneymoonImageWrapper>
         <FadeInWrapper delay={500}>
-          <HoneymoonImage backgroundImageUrl={backgroundImageUrl!} />
+          <HoneymoonImage url={backgroundImageUrl!} />
         </FadeInWrapper>
       </HoneymoonImageWrapper>
     </Grid>
