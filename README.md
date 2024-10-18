@@ -31,7 +31,6 @@ To get started, please follow the guidelines outlined below:
 - [Dependencies](#dependencies)
 - [Development](#development)
 - [Contentful API & GraphQL](#contentful-api--graphql)
-- [Contentful Components](#contentful-components)
 - [Deployment](#deployment)
 
 ---
