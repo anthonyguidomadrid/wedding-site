@@ -14,8 +14,8 @@ export const BankAccount: React.FC<BankAccountProps> = ({
 }) => {
   const fields = [
     { key: 'name', value: name },
-    { key: 'iban', value: iban },
     { key: 'bankName', value: bankName },
+    { key: 'iban', value: iban },
     { key: 'swift', value: swift },
     { key: 'number', value: number },
     { key: 'dni', value: dni },
