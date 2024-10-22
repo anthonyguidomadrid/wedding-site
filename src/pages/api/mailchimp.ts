@@ -7,9 +7,14 @@ import { WeddingFormData } from '~/components/Rvsp/components/WeddingForm/Weddin
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, attending, name, guest, phone, children, diet, playlist } =
     req.body as WeddingFormData;
+  const isDev = process.env.CONTENTFUL_ENV === 'develop';
 
   if (!email || !name) {
     return res.status(400).json({ error: 'Missing required data' });
+  }
+
+  if (isDev) {
+    return res.status(200).json({ success: true });
   }
 
   try {
