@@ -2,7 +2,7 @@
 
 Welcome to the **Contentful Wedding Site**, a single-page React application powered by **Next.js** and **Contentful** as a headless CMS.
 
-![The homepage of the Wedding Site](marketing-starter-template.jpg 'The homepage of the Wedding Site')
+![The homepage of the Wedding Site](/public/images/wedding-site-template.jpg 'The homepage of the Wedding Site')
 
 ---
 
@@ -119,6 +119,11 @@ You can deploy the Starter Template to your preferred hosting provider. This app
 | [Environment Variables Documentation](https://vercel.com/docs/concepts/projects/environment-variables)                                                                                                                                                                                                                                                                                                                                                                                              | [Environment Variables Documentation](https://docs.netlify.com/environment-variables/overview/)                                                                                                                                                                                                                                                            |
 
 Make sure to configure the necessary [environment variables](#environment-variables) in your hosting provider's settings.
+
+### Live Demo
+
+You can view a live example of the application at the following link: [Live Demo](https://wedding-site-template.vercel.app/)
+
 
 ---
 
