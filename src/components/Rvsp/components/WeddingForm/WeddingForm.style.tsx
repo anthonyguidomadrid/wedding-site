@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, Button, Grid, InputLabel, TextField } from '@mui/material';
+import { Box, Button, Grid, InputLabel, TextField, Typography } from '@mui/material';
 
 import { theme } from '~/theme';
 
@@ -57,3 +57,9 @@ FormGridItem.defaultProps = {
   xs: 12,
   lg: 6,
 };
+
+export const ErrorTypography = styled(Typography)(({ theme }) => ({
+  color: theme.palette.error.main,
+  display: 'block',
+  marginTop: theme.spacing(2),
+}));

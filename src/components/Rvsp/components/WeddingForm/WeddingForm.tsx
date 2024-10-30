@@ -13,6 +13,7 @@ import { scroller } from 'react-scroll';
 
 import { ConfirmationScreen } from './components/ConfirmationScreen/ConfirmationScreen';
 import {
+  ErrorTypography,
   FormGridContainer,
   FormGridItem,
   StyledForm,
@@ -49,6 +50,8 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
     diet: '',
     playlist: '',
   });
+  const [hasValidationError, setHasValidationError] = useState(false);
+  const isAttending = formData.attending != 'none';
 
   const { submitWeddingForm, loading, error, success } = useWeddingFormApi();
   const isDisabled = loading || isOverdue;
@@ -61,17 +64,30 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
     }));
   };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    await submitWeddingForm(formData);
-  };
-
-  if (success || error) {
+  const scrollToTop = () =>
     scroller.scrollTo('rvsp', {
       duration: 2000,
       delay: 0,
       smooth: 'easeInOutQuart',
     });
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if (
+      !formData.email ||
+      !formData.name ||
+      !formData.attending ||
+      (isAttending && !formData.phone)
+    ) {
+      setHasValidationError(true);
+      scrollToTop();
+    } else {
+      await submitWeddingForm(formData);
+    }
+  };
+
+  if (success || error) {
+    scrollToTop();
     return (
       <ConfirmationScreen
         formData={success ? formData : undefined}
@@ -82,13 +98,16 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
   }
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm>
       <Typography variant="h2">{title}</Typography>
       <Typography>{subtitle}</Typography>
       <Typography variant="bold">{formatDate(limitDate!, locale)}</Typography>
+      {hasValidationError && (
+        <ErrorTypography variant="small">{t('form.error.field')}</ErrorTypography>
+      )}
       <FormGridContainer>
         <FormGridItem>
-          <FormControl fullWidth margin="normal" required error>
+          <FormControl fullWidth margin="normal" required error={!formData.attending}>
             <StyledInputLabel>{t('form.attending')}</StyledInputLabel>
             <Select
               disabled={isDisabled}
@@ -114,6 +133,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
             onChange={handleChange}
             required
             disabled={isDisabled}
+            error={!formData.name}
           />
         </FormGridItem>
       </FormGridContainer>
@@ -127,6 +147,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
             onChange={handleChange}
             required
             disabled={isDisabled}
+            error={!formData.email}
           />
         </FormGridItem>
         <FormGridItem>
@@ -137,9 +158,9 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               value={formData.phone}
               placeholder="+34 XXX XXX XXX"
               onChange={handleChange}
-              required={formData.attending != 'none'}
+              required={isAttending}
               disabled={isDisabled}
-              error
+              error={isAttending && !formData.phone}
             />
           </FormGroup>
         </FormGridItem>
@@ -194,7 +215,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
         </FormGridItem>
       </FormGridContainer>
 
-      <SubmitButton disabled={isDisabled}>
+      <SubmitButton disabled={isDisabled} onClick={handleSubmit}>
         {loading ? <CircularProgress size={24} color="inherit" /> : t('form.submit')}
       </SubmitButton>
     </StyledForm>

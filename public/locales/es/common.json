@@ -39,7 +39,8 @@
     },
     "error": {
       "title": "Ups, algo salió mal",
-      "subtitle": "Parece que hubo un problema al enviar tus datos. Por favor, contáctanos directamente a"
+      "subtitle": "Parece que hubo un problema al enviar tus datos. Por favor, contáctanos directamente a",
+      "field": "Por favor, completa todos los campos requeridos."
     }
   },
   "honeymoon": {
