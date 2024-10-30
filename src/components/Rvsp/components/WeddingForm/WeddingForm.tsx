@@ -88,7 +88,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
       <Typography variant="bold">{formatDate(limitDate!, locale)}</Typography>
       <FormGridContainer>
         <FormGridItem>
-          <FormControl fullWidth margin="normal" required>
+          <FormControl fullWidth margin="normal" required error>
             <StyledInputLabel>{t('form.attending')}</StyledInputLabel>
             <Select
               disabled={isDisabled}
