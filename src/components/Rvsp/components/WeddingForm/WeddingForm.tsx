@@ -139,6 +139,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               onChange={handleChange}
               required={formData.attending != 'none'}
               disabled={isDisabled}
+              error
             />
           </FormGroup>
         </FormGridItem>
