@@ -184,6 +184,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               value={formData.children}
               onChange={handleChange}
               disabled={isDisabled}
+              inputProps={{ min: 0, max: 10 }}
             />
           </FormGridItem>
         </FormGridContainer>
