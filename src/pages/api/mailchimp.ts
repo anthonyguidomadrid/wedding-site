@@ -10,9 +10,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const isDev = process.env.CONTENTFUL_ENV === 'develop';
 
   if (!email || !name) {
-    const error = { error: 'Missing required data' };
-    console.error('API Error:', error);
-    return res.status(400).json({ error });
+    const errorMessage = 'Missing required data';
+    console.error({ errorMessage });
+    return res.status(400).json({ errorMessage });
   }
 
   if (isDev) {
@@ -25,9 +25,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const DATACENTER = process.env.MAILCHIMP_API_SERVER;
 
     if (!AUDIENCE_ID || !API_KEY || !DATACENTER) {
-      const error = { error: 'Missing Mailchimp configuration' };
-      console.error({ error });
-      return res.status(500).json({ error });
+      const errorMessage = 'Missing Mailchimp configuration';
+      console.error({ errorMessage });
+      return res.status(500).json({ errorMessage });
     }
 
     const subscriberHash = crypto.createHash('md5').update(email.toLowerCase()).digest('hex');
@@ -74,9 +74,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         const responseBody = await response.json();
         if (response.status >= 400) {
-          const error = { error: responseBody.detail || 'Error updating contact.' };
-          console.error({ error });
-          return res.status(400).json({ error });
+          const errorMessage = responseBody.detail || 'Error updating contact.';
+          console.error({ errorMessage });
+          return res.status(400).json({ errorMessage });
         }
 
         return res.status(200).json({ error: '' });
@@ -96,31 +96,31 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         const responseBody = await response.json();
         if (response.status >= 400) {
-          const error = { error: responseBody.detail || 'Error creating contact.' };
-          console.error({ error });
-          return res.status(400).json({ error });
+          const errorMessage = responseBody.detail || 'Error creating contact.';
+          console.error({ errorMessage });
+          return res.status(400).json({ errorMessage });
         }
 
         return res.status(201).json({ error: '' });
       }
     } catch (error) {
       if (error instanceof Error) {
-        const err = { error: error.message };
-        console.error({ err });
-        return res.status(500).json({ err });
+        const errorMessage = error.message;
+        console.error({ errorMessage });
+        return res.status(500).json({ errorMessage });
       }
-      const err = { error: 'An unknown error occurred' };
-      console.error({ err });
-      return res.status(500).json({ err });
+      const errorMessage = 'An unknown error occurred';
+      console.error({ errorMessage });
+      return res.status(500).json({ errorMessage });
     }
   } catch (error) {
     if (error instanceof Error) {
-      const err = { error: error.message };
-      console.error({ err });
-      return res.status(500).json({ err });
+      const errorMessage = error.message;
+      console.error({ errorMessage });
+      return res.status(500).json({ errorMessage });
     }
-    const err = { error: 'An unknown error occurred' };
-    console.error({ err });
-    return res.status(500).json({ err });
+    const errorMessage = 'An unknown error occurred';
+    console.error({ errorMessage });
+    return res.status(500).json({ errorMessage });
   }
 };
