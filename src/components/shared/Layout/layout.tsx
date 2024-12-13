@@ -12,7 +12,7 @@ import { FOOTER_QUERY } from '~/queries/sections';
 
 interface LayoutPropsInterface {
   preview: boolean;
-  children: ReactElement;
+  children: React.ReactNode;
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
