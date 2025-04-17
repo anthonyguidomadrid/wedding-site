@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import { fr, es } from 'date-fns/locale';
+import { toZonedTime } from 'date-fns-tz';
 
 import { capitalizeFirstLetter } from './capitalizeFirstLetter';
 
@@ -13,8 +14,10 @@ const formatters = {
   es: "iiii d 'de' MMMM 'de' yyyy",
 };
 
+const TIMEZONE = process.env.NEXT_PUBLIC_EVENTS_TIMEZONE || 'Europe/Paris';
+
 export const formatDate = (date: string, routerLocale = 'es') => {
-  const parsedDate = new Date(date);
+  const parsedDate = toZonedTime(new Date(date), TIMEZONE);
 
   return capitalizeFirstLetter(
     format(parsedDate, formatters[routerLocale], { locale: locales[routerLocale] }),
@@ -22,5 +25,6 @@ export const formatDate = (date: string, routerLocale = 'es') => {
 };
 
 export const formatTime = (date: string, routerLocale = 'es') => {
-  return format(date, "HH'h'mm", { locale: locales[routerLocale] });
+  const parsedDate = toZonedTime(new Date(date), TIMEZONE);
+  return format(parsedDate, "HH'h'mm", { locale: locales[routerLocale] });
 };
