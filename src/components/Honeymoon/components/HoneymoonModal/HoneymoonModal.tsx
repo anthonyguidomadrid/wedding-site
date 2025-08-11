@@ -62,15 +62,17 @@ export const HoneymoonModal: React.FC<HoneymoonModalProps> = ({
                 </TitleWithIconWrapper>
                 <BizumPhones bizumPhones={bizumPhones} />
               </Box>
-              <Box>
-                <TitleWithIconWrapper>
-                  <PaymentsIcon fontSize="small" />
-                  <Typography variant="h3">{t('honeymoon.modal.title.paypal')}</Typography>
-                </TitleWithIconWrapper>
-                <Link href={paypalLink} target="_blank">
-                  <Button variant="outlined">{t('honeymoon.modal.button.paypal')}</Button>
-                </Link>
-              </Box>
+              {paypalLink && (
+                <Box>
+                  <TitleWithIconWrapper>
+                    <PaymentsIcon fontSize="small" />
+                    <Typography variant="h3">{t('honeymoon.modal.title.paypal')}</Typography>
+                  </TitleWithIconWrapper>
+                  <Link href={paypalLink} target="_blank">
+                    <Button variant="outlined">{t('honeymoon.modal.button.paypal')}</Button>
+                  </Link>
+                </Box>
+              )}
             </PaymentMethodGrid>
           </Grid>
         </ModalContentWrapper>
