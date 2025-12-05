@@ -1,6 +1,6 @@
 import { ContentfulLivePreviewProvider } from '@contentful/live-preview/react';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import { DehydratedState, QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query';
+import { DehydratedState, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { AppProps } from 'next/app';
@@ -25,8 +25,7 @@ const LivePreviewProvider = ({ children }) => {
     <ContentfulLivePreviewProvider
       locale={locale}
       enableInspectorMode={previewActive}
-      enableLiveUpdates={previewActive}
-    >
+      enableLiveUpdates={previewActive}>
       {children}
     </ContentfulLivePreviewProvider>
   );
@@ -72,13 +71,11 @@ const CustomApp = ({
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
               <Provider store={store}>
-                <Hydrate state={dehydratedState}>
-                  <Layout preview={previewActive}>
-                    <GoogleAnalytics trackPageViews />
-                    <Component {...pageProps} err={err} />
-                  </Layout>
-                  <SpeedInsights />
-                </Hydrate>
+                <Layout preview={previewActive}>
+                  <GoogleAnalytics trackPageViews />
+                  <Component {...pageProps} err={err} />
+                </Layout>
+                <SpeedInsights />
               </Provider>
             </ThemeProvider>
           </StyledEngineProvider>

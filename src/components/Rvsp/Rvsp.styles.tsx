@@ -1,21 +1,19 @@
-import styled from '@emotion/styled';
-import { Box, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-export const RvspWrapper = styled(Grid)<{ url?: string }>(({ theme, url }) => ({
+export const RvspWrapper = styled(Box)<{ url?: string }>(({ theme, url }) => ({
+  display: 'flex',
   backgroundImage: `url(${url})`,
   flexDirection: 'row-reverse',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   minHeight: '100vh',
   alignItems: 'center',
+  width: '100%',
   [theme.breakpoints.down('md')]: {
     justifyContent: 'center',
   },
 }));
-
-RvspWrapper.defaultProps = {
-  container: true,
-};
 
 export const FormWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.whiteOverlay,

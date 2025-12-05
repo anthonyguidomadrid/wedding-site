@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Box } from '@mui/material';
 
 import { WeddingForm } from './components/WeddingForm';
 import { FormWrapper, RvspWrapper } from './Rvsp.styles';
@@ -15,7 +15,7 @@ export const Rvsp: React.FC<RvspProps> = ({
   return (
     <FadeInWrapper>
       <RvspWrapper url={backgroundImage?.url}>
-        <Grid item md={6}>
+        <Box sx={{ width: { xs: '100%', md: '50%' }, display: 'flex', justifyContent: 'center' }}>
           <FadeInWrapper delay={1000}>
             <FormWrapper>
               <WeddingForm
@@ -26,7 +26,7 @@ export const Rvsp: React.FC<RvspProps> = ({
               />
             </FormWrapper>
           </FadeInWrapper>
-        </Grid>
+        </Box>
       </RvspWrapper>
     </FadeInWrapper>
   );

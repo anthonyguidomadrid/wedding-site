@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -20,31 +20,31 @@ export const Place: React.FC<PlaceProps> = ({
   const { locale } = useRouter();
   const isEvenPlace = isEven(index);
   return (
-    <Grid container flexDirection={isEvenPlace ? 'row' : 'row-reverse'}>
-      <Grid item xs={12} md={6}>
+    <Box display="flex" flexDirection={isEvenPlace ? 'row' : 'row-reverse'}>
+      <Box sx={{ width: { xs: '100%', md: '50%' } }}>
         <FadeInWrapper>
           <PlaceImage src={url} alt={description} width={width} height={height} />
         </FadeInWrapper>
-      </Grid>
-      <PlaceInfoGrid item xs={12} md={6}>
+      </Box>
+      <PlaceInfoGrid sx={{ width: { xs: '100%', md: '50%' } }}>
         <FadeInWrapper shouldSlide={true}>
-          <Grid container flexDirection="column" spacing="10">
-            <Grid item>
+          <Box display="flex" flexDirection="column" gap={2}>
+            <Box>
               <Typography variant="h3">{title}</Typography>
-            </Grid>
-            <Grid item>
+            </Box>
+            <Box>
               <Typography>{formatDate(dateAndTime, locale)}</Typography>
               <Typography>{formatTime(dateAndTime, locale)}</Typography>
-            </Grid>
-            <Grid item>
+            </Box>
+            <Box>
               <Link href={mapLink} target="_blank">
                 <Typography>{addressLine1}</Typography>
                 <Typography>{addressLine2}</Typography>
               </Link>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </FadeInWrapper>
       </PlaceInfoGrid>
-    </Grid>
+    </Box>
   );
 };

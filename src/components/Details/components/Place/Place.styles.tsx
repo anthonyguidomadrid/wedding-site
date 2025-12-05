@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 import Image from 'next/image';
 
 export const PlaceImage = styled(Image)(() => ({
@@ -9,7 +9,7 @@ export const PlaceImage = styled(Image)(() => ({
   display: 'block',
 }));
 
-export const PlaceInfoGrid = styled(Grid)(({ theme }) => ({
+export const PlaceInfoGrid = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),
   textAlign: 'center',
   minHeight: '50vh',

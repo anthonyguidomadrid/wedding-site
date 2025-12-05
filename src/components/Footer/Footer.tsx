@@ -1,11 +1,11 @@
-import { Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import { FooterGrid, FooterWrapper, LogoGrid } from './Footer.styles';
 import { FooterProps } from './Footer.types';
 
-import LogoWhite from '/public/svg/logo-white.svg';
+// Use public svg via <img> to avoid Turbopack/SVGR issues
 
 import { MENU_ITEMS } from '../Menu/Menu.constant';
 import { FadeInWrapper } from '../shared/FadeInWrapper';
@@ -18,48 +18,48 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
   return (
     <FadeInWrapper>
       <FooterWrapper>
-        <Grid container alignItems="center">
-          <Grid item xs={12} md={4} order={{ xs: 3, md: 1 }}>
+        <Box display="flex" alignItems="center" flexWrap="wrap">
+          <Box sx={{ width: { xs: '100%', md: '33.3333%' }, order: { xs: 3, md: 1 } }}>
             <FooterGrid>
               <FadeInWrapper>
-                <Grid item>
+                <Box>
                   <Typography variant="h3">{t('title.contact')}</Typography>
-                </Grid>
+                </Box>
                 {phones?.map(({ name, phoneNumber }, index) => (
-                  <Grid item key={index}>
+                  <Box key={index}>
                     <Typography>
                       <span>{name}:</span> <a href={getPhoneLink(phoneNumber)}>{phoneNumber}</a>
                     </Typography>
-                  </Grid>
+                  </Box>
                 ))}
-                <Grid item>
+                <Box>
                   <Typography>
                     <Link href={getMailLink(email)}>{email}</Link>
                   </Typography>
-                </Grid>
+                </Box>
               </FadeInWrapper>
             </FooterGrid>
-          </Grid>
-          <LogoGrid xs={12} md={4} order={{ xs: 1, md: 2 }}>
+          </Box>
+          <LogoGrid sx={{ width: { xs: '100%', md: '33.3333%' }, order: { xs: 1, md: 2 } }}>
             <FadeInWrapper>
-              <LogoWhite width="170" height="120" />
+              <img src="/svg/logo-white.svg" alt="logo" width={170} height={120} />
             </FadeInWrapper>
           </LogoGrid>
-          <Grid item xs={12} md={4} order={{ xs: 2, md: 3 }}>
+          <Box sx={{ width: { xs: '100%', md: '33.3333%' }, order: { xs: 2, md: 3 } }}>
             <FooterGrid>
               <FadeInWrapper>
-                <Grid item>
+                <Box>
                   <Typography variant="h3">{t('title.menu')}</Typography>
-                </Grid>
+                </Box>
                 {MENU_ITEMS.map(({ item }) => (
-                  <Grid item key={item}>
+                  <Box key={item}>
                     <ScrollLink to={item}>{t(`menu.${item}`)}</ScrollLink>
-                  </Grid>
+                  </Box>
                 ))}
               </FadeInWrapper>
             </FooterGrid>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </FooterWrapper>
     </FadeInWrapper>
   );

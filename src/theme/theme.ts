@@ -1,7 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
-  spacing: 5,
+  // Use a spacing function to ensure theme.spacing(...) is available
+  spacing: (factor: number) => factor * 8,
   typography: {
     fontFamily: `Playfair Display, Arial, sans-serif`,
     fontSize: 16,

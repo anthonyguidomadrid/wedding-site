@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import { Box, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-export const ContentHoneymoonGrid = styled(Grid)(({ theme }) => ({
+export const ContentHoneymoonGrid = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   display: 'flex',
@@ -16,12 +16,6 @@ export const ContentHoneymoonGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-ContentHoneymoonGrid.defaultProps = {
-  item: true,
-  sm: 12,
-  lg: 6,
-};
-
 export const HoneymoonImage = styled(Box)<{ url: string }>(({ theme, url }) => ({
   backgroundImage: `url(${url})`,
   minHeight: '50vh',
@@ -35,9 +29,4 @@ export const HoneymoonImage = styled(Box)<{ url: string }>(({ theme, url }) => (
   },
 }));
 
-export const HoneymoonImageWrapper = styled(Grid)(() => ({ width: '100%' }));
-HoneymoonImageWrapper.defaultProps = {
-  item: true,
-  sm: 12,
-  lg: 6,
-};
+export const HoneymoonImageWrapper = styled(Box)(() => ({ width: '100%' }));

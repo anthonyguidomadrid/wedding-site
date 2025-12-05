@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
-import { Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-export const GridContainer = styled(Grid)(() => ({ minWidth: '350px' }));
-GridContainer.defaultProps = {
+export const GridContainer = styled('div')(() => ({
+  minWidth: '350px',
+  display: 'flex',
   justifyContent: 'center',
-  spacing: 2,
-  container: true,
-};
+  gap: '16px',
+  flexWrap: 'wrap' as const,
+}));

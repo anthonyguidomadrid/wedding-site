@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 
-export const HeaderSection = styled.section(({ theme }) => ({
+export const HeaderSection = styled('section')(({ theme }) => ({
   minHeight: '100vh',
   textAlign: 'center',
   position: 'relative',
@@ -11,7 +11,7 @@ export const HeaderSection = styled.section(({ theme }) => ({
   alignItems: 'center',
 }));
 
-export const ImageBackground = styled.div<{ backgroundImageLink?: string }>(
+export const ImageBackground = styled('div')<{ backgroundImageLink?: string }>(
   ({ backgroundImageLink }) => ({
     position: 'absolute',
     top: 0,
@@ -26,7 +26,7 @@ export const ImageBackground = styled.div<{ backgroundImageLink?: string }>(
   }),
 );
 
-export const ContentWrapper = styled.div(({ theme }) => ({
+export const ContentWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   zIndex: 2,
   display: 'flex',
@@ -36,7 +36,7 @@ export const ContentWrapper = styled.div(({ theme }) => ({
   gap: theme.spacing(7),
 }));
 
-export const DateWrapper = styled.div(({ theme }) => ({
+export const DateWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   [theme.breakpoints.up('md')]: {

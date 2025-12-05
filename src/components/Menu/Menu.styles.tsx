@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 
-export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
+export const Nav = styled('nav')<{ isTransparent: boolean; isMenuOpen: boolean }>(
   ({ theme, isTransparent, isMenuOpen }) => ({
     position: 'fixed',
     top: 0,
@@ -14,15 +14,15 @@ export const Nav = styled.nav<{ isTransparent: boolean; isMenuOpen: boolean }>(
     backgroundColor: isTransparent
       ? 'transparent'
       : isMenuOpen
-      ? theme.palette.text.secondary
-      : theme.palette.background.whiteOverlay,
+        ? theme.palette.text.secondary
+        : theme.palette.background.whiteOverlay,
     transition: 'background-color 0.5s ease-in-out, max-height 1s ease-in-out',
     maxHeight: isMenuOpen ? '100vh' : '100px',
     overflow: 'hidden',
   }),
 );
 
-export const AbsoluteWrapper = styled.div(({ theme }) => ({
+export const AbsoluteWrapper = styled('div')(({ theme }) => ({
   position: 'absolute',
   right: theme.spacing(2),
 }));

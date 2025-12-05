@@ -81,10 +81,6 @@ The Starter Template will be accessible at `http://localhost:3000`. All required
 
 It's recommended to use the Node version specified in the `.nvmrc` file. To easily switch between Node versions, consider using [nvm](https://github.com/nvm-sh/nvm).
 
-### Husky & Git Hooks
-
-This repository utilizes [Husky](https://github.com/typicode/husky) to enforce commit hooks. The configuration for `pre-commit` and `pre-push` hooks can be found in the `.husky` folder at the root of the project.
-
 #### Pre-commit Hook
 
 Before a commit is allowed, the TypeScript compiler (`tsc`) must succeed, and the `lint-staged` script will be executed. This ensures that ESLint and Prettier rules are enforced on staged files. 
@@ -94,14 +90,6 @@ The `tsc` command is executed separately from `lint-staged` because it checks al
 #### Pre-push Hook
 
 The same tasks (TypeScript compilation and linting) are enforced for the pre-push hook.
-
-#### Bypassing Husky Hooks
-
-To bypass the `pre-commit` or `pre-push` hooks, use the `--no-verify` flag in your Git commands. 
-
-⚠️ Use this option with caution and only if you understand the implications. ⚠️
-
----
 
 ### Contentful API & GraphQL
 

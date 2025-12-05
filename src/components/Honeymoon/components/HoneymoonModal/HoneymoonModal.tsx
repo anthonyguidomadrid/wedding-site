@@ -2,7 +2,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import CloseIcon from '@mui/icons-material/Close';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
-import { Box, Button, Dialog, DialogTitle, Grid, Typography } from '@mui/material';
+import { Box, Button, Dialog, DialogTitle, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -42,19 +42,19 @@ export const HoneymoonModal: React.FC<HoneymoonModalProps> = ({
           <CloseIcon />
         </CloseIconButton>
         <ModalContentWrapper>
-          <Grid container spacing={{ xs: 7, md: 10 }}>
-            <Grid item md={6}>
+          <Box display="flex" flexWrap="wrap" gap={{ xs: 7, md: 10 }}>
+            <Box sx={{ width: { xs: '100%', md: '50%' } }}>
               <TitleWithIconWrapper>
                 <AccountBalanceIcon fontSize="small" />
                 <Typography variant="h3">{t('honeymoon.modal.title.bank')}</Typography>
               </TitleWithIconWrapper>
-              <Grid container spacing={3}>
-                {bankAccounts.map(bankAccount => {
-                  return <BankAccount key={bankAccount.fullName} {...bankAccount} />;
-                })}
-              </Grid>
-            </Grid>
-            <PaymentMethodGrid item md={6}>
+              <Box>
+                {bankAccounts.map(bankAccount => (
+                  <BankAccount key={bankAccount.fullName} {...bankAccount} />
+                ))}
+              </Box>
+            </Box>
+            <PaymentMethodGrid sx={{ width: { xs: '100%', md: '50%' } }}>
               <Box>
                 <TitleWithIconWrapper>
                   <PhonelinkRingIcon fontSize="small" />
@@ -74,7 +74,7 @@ export const HoneymoonModal: React.FC<HoneymoonModalProps> = ({
                 </Box>
               )}
             </PaymentMethodGrid>
-          </Grid>
+          </Box>
         </ModalContentWrapper>
       </Dialog>
       <Button onClick={handleOpen} variant="outlined">

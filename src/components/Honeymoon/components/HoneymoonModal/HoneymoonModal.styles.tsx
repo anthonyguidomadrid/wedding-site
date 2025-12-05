@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { Box, DialogContent, Grid, IconButton } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Box, DialogContent, IconButton } from '@mui/material';
 
 export const ModalTitleWrapper = styled(Box)(({ theme }) => ({
   textAlign: 'center',
@@ -27,7 +27,7 @@ export const TitleWithIconWrapper = styled(Box)(({ theme }) => ({
   gap: theme.spacing(2),
 }));
 
-export const PaymentMethodGrid = styled(Grid)(({ theme }) => ({
+export const PaymentMethodGrid = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   gap: theme.spacing(6),

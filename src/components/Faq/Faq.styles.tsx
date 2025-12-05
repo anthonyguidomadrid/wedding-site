@@ -29,7 +29,9 @@ export const FaqWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const OliveBackground = styled(Image)(({ theme }) => ({
+export const OliveBackground = styled(({ width = 140, height = 250, ...props }: any) => (
+  <Image width={width} height={height} {...props} />
+))(({ theme }) => ({
   position: 'absolute',
   opacity: 0.5,
   zIndex: -10,
@@ -38,11 +40,6 @@ export const OliveBackground = styled(Image)(({ theme }) => ({
     height: 320,
   },
 }));
-
-OliveBackground.defaultProps = {
-  width: 140,
-  height: 250,
-};
 
 export const BottomLeftOliveBackground = styled(OliveBackground)(() => ({
   bottom: 10,

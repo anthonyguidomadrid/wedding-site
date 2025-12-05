@@ -5,8 +5,7 @@ import { MenuLogoProps } from './MenuLogo.types';
 
 import { useMobile, useMobileMenu, useScroll } from '~/hooks';
 
-import LogoDark from '/public/svg/logo-dark.svg';
-import LogoWhite from '/public/svg/logo-white.svg';
+// using public assets via <img> to avoid SVGR/Turbopack import issues
 
 export const MenuLogo: React.FC<MenuLogoProps> = ({ onClick }) => {
   const { scrollToTop, isAtTop } = useScroll();
@@ -21,9 +20,9 @@ export const MenuLogo: React.FC<MenuLogoProps> = ({ onClick }) => {
   return (
     <Button onClick={onLogoClick}>
       {(isAtTop && !isMobile) || (isMobile && isAtTop && !isMobileMenuOpen) ? (
-        <LogoWhite height="50" width="70" />
+        <img src="/svg/logo-white.svg" alt="logo" height={50} width={70} />
       ) : (
-        <LogoDark height="50" width="70" />
+        <img src="/svg/logo-dark.svg" alt="logo" height={50} width={70} />
       )}
     </Button>
   );

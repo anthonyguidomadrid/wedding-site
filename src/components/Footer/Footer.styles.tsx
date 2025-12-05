@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import { Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-export const FooterWrapper = styled.section(({ theme }) => ({
+export const FooterWrapper = styled('section')(({ theme }) => ({
   backgroundColor: theme.palette.text.primary,
   color: theme.palette.text.secondary,
   textAlign: 'center',
@@ -14,25 +14,16 @@ export const FooterWrapper = styled.section(({ theme }) => ({
   },
 }));
 
-export const FooterGrid = styled(Grid)(({ theme }) => ({
+export const FooterGrid = styled(Box)(({ theme }) => ({
   padding: theme.spacing(10),
 }));
-FooterGrid.defaultProps = {
-  container: true,
-  flexDirection: 'column',
-  spacing: 3,
-};
 
-export const LogoGrid = styled(Grid)(({ theme }) => ({
+export const LogoGrid = styled(Box)(({ theme }) => ({
   padding: theme.spacing(5, 0),
   [theme.breakpoints.up('md')]: {
     padding: 0,
   },
-}));
-
-LogoGrid.defaultProps = {
-  container: true,
+  display: 'flex',
   justifyContent: 'center',
   textAlign: 'center',
-  item: true,
-};
+}));

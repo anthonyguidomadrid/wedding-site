@@ -63,10 +63,23 @@ module.exports = withPlugins(plugins, {
    */
   images: {
     deviceSizes: [320, 420, 768, 1024, 1200, 1600],
-    domains: ['images.ctfassets.net', 'images.eu.ctfassets.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.eu.ctfassets.net',
+        pathname: '/**',
+      },
+    ],
     path: '/_next/image',
     loader: 'default',
   },
+  // Provide a minimal turbopack config to avoid build-time errors when using a custom webpack config
+  turbopack: {},
 
   webpack(config, options) {
     if (!options.isServer || process.env.circularDependencies) {

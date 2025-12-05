@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { Trans } from 'react-i18next';
 
@@ -22,7 +22,7 @@ export const BankAccount: React.FC<BankAccountProps> = ({
   ];
 
   return (
-    <Grid item flexDirection="column" display="flex">
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       {fields.map(
         ({ key, value }) =>
           value && (
@@ -35,6 +35,6 @@ export const BankAccount: React.FC<BankAccountProps> = ({
             </Typography>
           ),
       )}
-    </Grid>
+    </Box>
   );
 };
