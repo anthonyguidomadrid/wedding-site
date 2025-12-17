@@ -5,7 +5,7 @@ import { theme } from '~/theme';
 
 export const useMobile = () => {
   const [isHorizontal, setIsHorizontal] = useState(false);
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
   useEffect(() => {
     // Function to check viewport height

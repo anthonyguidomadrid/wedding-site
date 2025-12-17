@@ -25,3 +25,12 @@ export const PlaceInfoGrid = styled(Box)(({ theme }) => ({
     },
   },
 }));
+
+export const PlaceWrapper = styled(Box)<{ isEvenPlace: boolean }>(({ theme, isEvenPlace }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+
+  [theme.breakpoints.up('md')]: {
+    flexDirection: isEvenPlace ? 'row' : 'row-reverse',
+  },
+}));

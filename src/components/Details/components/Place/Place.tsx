@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { PlaceImage, PlaceInfoGrid } from './Place.styles';
+import { PlaceImage, PlaceInfoGrid, PlaceWrapper } from './Place.styles';
 
 import { FadeInWrapper } from '~/components/shared/FadeInWrapper';
 import { formatDate, formatTime, isEven } from '~/helpers';
@@ -20,7 +20,7 @@ export const Place: React.FC<PlaceProps> = ({
   const { locale } = useRouter();
   const isEvenPlace = isEven(index);
   return (
-    <Box display="flex" flexDirection={isEvenPlace ? 'row' : 'row-reverse'}>
+    <PlaceWrapper isEvenPlace={isEvenPlace}>
       <Box sx={{ width: { xs: '100%', md: '50%' } }}>
         <FadeInWrapper>
           <PlaceImage src={url} alt={description} width={width} height={height} />
@@ -45,6 +45,6 @@ export const Place: React.FC<PlaceProps> = ({
           </Box>
         </FadeInWrapper>
       </PlaceInfoGrid>
-    </Box>
+    </PlaceWrapper>
   );
 };
