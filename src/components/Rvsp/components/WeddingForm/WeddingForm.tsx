@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { scroller } from 'react-scroll';
 
@@ -38,7 +38,9 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
   } = useRouter();
   const { t } = useTranslation();
   const shouldSkipGuest = skipGuest === 'true';
-  const isOverdue = new Date(limitDate) < new Date();
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true), []);
+  const isOverdue = isMounted ? new Date(limitDate) < new Date() : false;
 
   const [formData, setFormData] = useState<WeddingFormData>({
     attending: '',
