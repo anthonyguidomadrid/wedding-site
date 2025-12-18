@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
-import { FooterGrid, FooterWrapper, LogoGrid } from './Footer.styles';
+import { FooterGrid, FooterWrapper, LogoGrid, FooterNote } from './Footer.styles';
 import { FooterProps } from './Footer.types';
 
 // Use public svg via <img> to avoid Turbopack/SVGR issues
@@ -60,6 +60,21 @@ export const Footer: React.FC<FooterProps> = ({ email, phones }) => {
             </FooterGrid>
           </Box>
         </Box>
+        <FooterNote>
+          <Typography variant="body2">
+            <Trans
+              i18nKey="footer.developedBy"
+              components={[
+                <Link
+                  href="https://www.anthonyguido.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key="a"
+                />,
+              ]}
+            />
+          </Typography>
+        </FooterNote>
       </FooterWrapper>
     </FadeInWrapper>
   );

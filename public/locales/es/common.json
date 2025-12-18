@@ -63,5 +63,8 @@
       },
       "phone": "<strong>{{name}}:</strong> {{phone}}"
     }
+  },
+  "footer": {
+    "developedBy": "Sitio web desarrollado por <0>Anthony Guido</0>"
   }
 }

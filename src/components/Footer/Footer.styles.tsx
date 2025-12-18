@@ -27,3 +27,16 @@ export const LogoGrid = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   textAlign: 'center',
 }));
+
+export const FooterNote = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: `0.5px solid ${theme.palette.background.paper}`,
+  color: theme.palette.text.secondary,
+  a: {
+    textDecoration: 'underline',
+    color: theme.palette.text.secondary,
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  },
+}));

@@ -68,5 +68,8 @@
         "bankName": "<strong>Banque:</strong>  {{value}}"
       }
     }
+  },
+  "footer": {
+    "developedBy": "Site développé par <0>Anthony Guido</0>"
   }
 }
