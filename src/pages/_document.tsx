@@ -62,7 +62,12 @@ CustomDocument.getInitialProps = async function (ctx: DocumentContext) {
   const initialProps = await Document.getInitialProps(ctx);
 
   const locale = ctx.locale || ctx.defaultLocale || 'en';
-  const translations = await getServerSideTranslations(locale);
+  let translations = {};
+  try {
+    translations = await getServerSideTranslations(locale);
+  } catch (err) {
+    console.error('Document getServerSideTranslations error:', err);
+  }
 
   return {
     ...initialProps,

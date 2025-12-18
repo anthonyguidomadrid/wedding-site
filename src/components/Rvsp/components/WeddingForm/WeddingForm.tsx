@@ -116,8 +116,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
               name="attending"
               value={formData.attending}
               onChange={handleChange}
-              label={t('form.attending')}
-            >
+              label={t('form.attending')}>
               {['both', 'dinner', 'none'].map(option => (
                 <MenuItem key={option} value={option}>
                   {t(`form.options.${option}`)}

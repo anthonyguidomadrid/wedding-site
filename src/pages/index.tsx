@@ -28,7 +28,7 @@ export const getServerSideProps = async ({ locale }: NextPageContext) => {
       },
     };
   } catch (err) {
-    console.log('Error fetching landing page data:', err);
+    console.error('Landing page getServerSideProps error:', err);
     return {
       notFound: true,
     };
