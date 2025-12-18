@@ -32,12 +32,12 @@
       "none": "Non"
     },
     "email": "Email",
-    "guest": "Invité supplémentaire",
+    "guest": "Accompagnant(e)",
     "diet": "Régimes alimentaires",
     "name": "Prénom et Nom",
     "phone": "Numéro de téléphone",
     "children": "Combien d'enfants?",
-    "playlist": "Chansons pour la playlist",
+    "playlist": "Playlist",
     "submit": "Envoyer",
     "success": {
       "title": "Un grand merci pour votre confirmation !",

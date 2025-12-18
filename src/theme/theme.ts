@@ -40,6 +40,7 @@ export const theme = createTheme({
     },
     title: {
       fontFamily: 'Cinzel, "Arial", sans-serif',
+      fontSize: 16,
     },
     bold: {
       fontWeight: 700,

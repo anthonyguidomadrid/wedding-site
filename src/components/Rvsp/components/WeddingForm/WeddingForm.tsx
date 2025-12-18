@@ -107,37 +107,31 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
       {hasValidationError && (
         <ErrorTypography variant="small">{t('form.error.field')}</ErrorTypography>
       )}
-      <FormGridContainer>
-        <FormGridItem>
-          <FormControl fullWidth margin="normal" required error={!formData.attending}>
-            <StyledInputLabel>{t('form.attending')}</StyledInputLabel>
-            <Select
-              disabled={isDisabled}
-              name="attending"
-              value={formData.attending}
-              onChange={handleChange}
-              label={t('form.attending')}>
-              {['both', 'dinner', 'none'].map(option => (
-                <MenuItem key={option} value={option}>
-                  {t(`form.options.${option}`)}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </FormGridItem>
+      <FormControl fullWidth margin="normal" required error={!formData.attending}>
+        <StyledInputLabel>{t('form.attending')}</StyledInputLabel>
+        <Select
+          disabled={isDisabled}
+          name="attending"
+          value={formData.attending}
+          onChange={handleChange}
+          label={t('form.attending')}>
+          {['both', 'dinner', 'none'].map(option => (
+            <MenuItem key={option} value={option}>
+              {t(`form.options.${option}`)}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
 
-        <FormGridItem>
-          <StyledTextField
-            label={t('form.name')}
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            disabled={isDisabled}
-            error={!formData.name}
-          />
-        </FormGridItem>
-      </FormGridContainer>
+      <StyledTextField
+        label={t('form.name')}
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+        disabled={isDisabled}
+        error={!formData.name}
+      />
       <FormGridContainer>
         <FormGridItem>
           <StyledTextField
@@ -204,8 +198,6 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
         </FormGridItem>
         <FormGridItem>
           <StyledTextField
-            fullWidth
-            margin="normal"
             label={t('form.diet')}
             name="diet"
             value={formData.diet}
@@ -217,7 +209,7 @@ export const WeddingForm: React.FC<WeddingFormProps> = ({
         </FormGridItem>
       </FormGridContainer>
 
-      <SubmitButton disabled={isDisabled} onClick={handleSubmit}>
+      <SubmitButton variant="contained" disabled={isDisabled} onClick={handleSubmit}>
         {loading ? <CircularProgress size={24} color="inherit" /> : t('form.submit')}
       </SubmitButton>
     </StyledForm>

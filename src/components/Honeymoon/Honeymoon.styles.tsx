@@ -10,9 +10,11 @@ export const ContentHoneymoonGrid = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   minHeight: '100vh',
   gap: theme.spacing(2),
+  width: '100%',
   [theme.breakpoints.up('lg')]: {
     padding: theme.spacing(0, 24),
     gap: theme.spacing(4),
+    width: '50%',
   },
 }));
 
@@ -29,4 +31,7 @@ export const HoneymoonImage = styled(Box)<{ url: string }>(({ theme, url }) => (
   },
 }));
 
-export const HoneymoonImageWrapper = styled(Box)(() => ({ width: '100%' }));
+export const HoneymoonImageWrapper = styled(Box)(({ theme }) => ({
+  width: '100%',
+  [theme.breakpoints.up('lg')]: { width: '50%' },
+}));
