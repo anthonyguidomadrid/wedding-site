@@ -15,6 +15,7 @@ export const StyledTextField = styled(TextField)(({ theme }) => ({
   width: '100%',
   '& .MuiInputLabel-root': {
     color: theme.palette.text.primary,
+    fontSize: '1rem',
   },
   '& .MuiInputBase-input': {
     color: theme.palette.text.primary,
@@ -30,16 +31,20 @@ export const SubmitButton = styled(Button)(({ theme }) => ({
 }));
 
 export const FormGridContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
   alignItems: 'center',
   gap: theme.spacing(1),
   marginTop: theme.spacing(1),
+  [theme.breakpoints.up('md')]: {
+    display: 'flex',
+  },
 }));
 
 export const FormGridItem = styled(Box)(({ theme }) => ({
   width: '100%',
-  [theme.breakpoints.up('lg')]: {
+  marginTop: theme.spacing(1),
+  [theme.breakpoints.up('md')]: {
     width: '50%',
+    marginTop: 0,
   },
 }));
 
