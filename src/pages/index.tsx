@@ -27,7 +27,8 @@ export const getServerSideProps = async ({ locale }: NextPageContext) => {
         ...(await fetchSeoData(locale)),
       },
     };
-  } catch {
+  } catch (err) {
+    console.log('Error fetching landing page data:', err);
     return {
       notFound: true,
     };
