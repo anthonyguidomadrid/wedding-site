@@ -27,7 +27,7 @@
     "options": { "both": "Sí a la cena y cóctel", "dinner": "Sí solo a la cena", "none": "No" },
     "email": "Email",
     "guest": "Accompañante",
-    "diet": "Requerimientos alimenticios",
+    "diet": "Dieta",
     "name": "Nombre y Apellido",
     "phone": "Número de teléfono",
     "children": "¿Cuántos niños?",
