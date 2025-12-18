@@ -20,5 +20,6 @@ export const MenuItemsWrapper = styled('div')<{ isMobileMenuOpen: boolean }>(
     overflow: 'hidden',
     gap: theme.spacing(7),
     transition: 'height 1s ease-in-out',
+    alignItems: 'flex-start',
   }),
 );
